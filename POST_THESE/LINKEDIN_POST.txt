@@ -1,0 +1,27 @@
+THE CLOSER.
+
+They used to parachute me into burning Fortune-100 data platforms.
+Now I build local AI stacks that measure.
+
+22 years. JPMorgan, BNY Mellon, PepsiCo, Navy Federal, Micron, Toyota, Mercedes-Benz.
+19 of 20 crisis accounts recovered.
+$10M+ in enterprise sales influenced.
+
+Last 18 months I applied that same fire-department discipline to AI:
+
+→ Private RTX 4070 lab (TabbyAPI / Ollama / Docker / CUDA)
+→ 27× local LLM decode after GPU routing — measured, not claimed
+→ Multi-agent pipelines with regression checks
+→ Production WhatsApp agent stacks with 10+ skills
+
+Customer satisfaction is worthless. Customer loyalty is priceless.
+
+Available: AI Systems Engineer / Agent Architect / Local LLM infrastructure.
+Remote. High-autonomy teams only.
+
+715-970-0204
+jpanasuk@gmail.com · jpanasuk@yahoo.com
+github.com/jpanasuk-netizen
+huggingface.co/jpanasuk
+
+#AIEngineer #LocalLLM #DataEngineering #OpenToWork

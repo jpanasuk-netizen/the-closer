@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jeremy Panasuk · LinkedIn Banner 1584×396</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1584px; height: 396px; overflow: hidden; background: #050814; }
+    .stage {
+      position: relative;
+      width: 1584px; height: 396px;
+      background: #050814 url("assets/hero-lab.jpg") 8% center / cover no-repeat;
+      color: #e8eef7;
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+    .stage::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(5,8,20,0.2) 0%, rgba(5,8,20,0.55) 42%, rgba(5,8,20,0.92) 68%, rgba(5,8,20,0.96) 100%);
+    }
+    .bar { position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: linear-gradient(180deg, #22d3ee, #7c3aed); }
+    .copy { position: absolute; z-index: 2; top: 36px; left: 720px; right: 48px; }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: #22d3ee;
+    }
+    h1 { font-family: "Bebas Neue", sans-serif; font-size: 72px; line-height: 0.86; margin: 4px 0 8px; }
+    .tag { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 22px; }
+    .tag em { color: #c084fc; }
+    .metrics { display: flex; gap: 18px; margin-top: 18px; }
+    .metrics b { font-family: "Bebas Neue", sans-serif; font-size: 32px; display: block; line-height: 1; }
+    .metrics span { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #93a4bb; }
+    .purple { color: #c084fc; } .orange { color: #fb923c; } .cyan { color: #22d3ee; } .green { color: #34d399; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="bar"></div>
+    <div class="copy">
+      <div class="kicker">The Closer · AI Systems Engineer</div>
+      <h1>JEREMY PANASUK</h1>
+      <p class="tag">They parachute him into burning platforms. <em>Now he builds local AI that measures.</em></p>
+      <div class="metrics">
+        <div><b class="purple">27×</b><span>Local decode</span></div>
+        <div><b class="orange">8h → 1h</b><span>Dawn Foods</span></div>
+        <div><b class="cyan">$2.3M+</b><span>BNY Mellon</span></div>
+        <div><b class="green">19/20</b><span>Crisis solved</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

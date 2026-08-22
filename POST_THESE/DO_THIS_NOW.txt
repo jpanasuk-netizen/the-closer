@@ -1,0 +1,41 @@
+GET IT OUT THERE — 8 minutes
+
+Folder: POST_THESE
+Do these in order. Don't overthink it.
+
+1) COVER PHOTO (90 seconds)
+   LinkedIn → your profile → camera on the banner → Upload photo
+   Pick: 1-linkedin-cover-banner.png
+   Position it, Save.
+
+2) PROFILE PHOTO
+   Click your round photo → Update photo
+   Pick: 2-profile-photo.jpg
+
+3) HEADLINE
+   Pencil next to your name
+   Paste HEADLINE.txt
+
+4) THE POST (this is the one that travels)
+   Home → Start a post
+   Paste LINKEDIN_POST.txt
+   Click the video icon → upload 4-feed-video.mp4
+   ALSO attach 3-feed-poster.png if LinkedIn lets you do both
+   Post as Public.
+
+5) FEATURED (stays on your profile)
+   Profile → Featured → Add → Add a photo
+   Upload 3-feed-poster.png
+   After the site is live, Featured → Add a link → paste the GitHub Pages URL.
+
+6) OPEN TO WORK
+   Profile → Open to → Finding a new job
+   Titles: AI Systems Engineer, AI Engineer, Data Engineer, Integration Architect
+   Locations: United States · Remote
+   Visible to: All LinkedIn members
+
+HOST THE SITE (optional, 3 minutes)
+   Right-click PUBLISH-GITHUB-PAGES.ps1 in the parent folder → Run with PowerShell
+   Log into GitHub in the browser when it asks.
+   URL will be: https://jpanasuk-netizen.github.io/the-closer/
+   Put that URL in Featured, your About, and the post comments.
