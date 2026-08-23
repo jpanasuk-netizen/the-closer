@@ -8,6 +8,8 @@ Double-click `OPEN.bat` or open `index.html` in Chrome/Edge.
 
 That page is the campaign: cinematic 16:9 hero with live video, proof metrics, lab, legend reel, quotes, and contact.
 
+**Operator floor:** click **Enter the floor** or add `#floor` to the URL. Recruiter-clickable replay of the measured GPU routing bench (`data/runs.json`, from `local_grid_suite` sample telemetry), agent pipeline, and parachute tickets. It is a replay, not a live GPU attach.
+
 ## Files
 
 | File | Use |
