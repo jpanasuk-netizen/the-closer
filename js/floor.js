@@ -81,9 +81,10 @@
     { c: "",  t: "mercedes  Mercedes-Benz +200% rescue" },
     { c: "",  t: "mf        MF Global 20+ node Grid/HA + DR" },
     { c: "",  t: "micron    Micron 2,080h → 7,000h" },
+    { c: "",  t: "fireworks Secret Key Class B / Fireworks Forever 1996–2004" },
     { c: "",  t: "agents    multi-agent pipeline" },
     { c: "",  t: "clear     clear the log" },
-    { c: "dim", t: "Esc closes the floor. This page does not attach to a GPU." }
+    { c: "dim", t: "Esc closes the floor. Type any project name. This page does not attach to a GPU." }
   ];
 
   const floor = document.getElementById("floor");
@@ -313,14 +314,34 @@
     if (ticket) {
       setActive(kind);
       play([{ c: "gold", t: `TICKET    ·  ${ticket.who}  ·  ${ticket.num}` }, ...ticket.lines], { spark: false });
+      window.CLOSER_OPEN_PROJECT?.(kind, { exclusive: false, scroll: false, replay: false });
+      return;
+    }
+    const catalog = window.CLOSER_PROJECTS;
+    const list = catalog ? [...(catalog.lab || []), ...(catalog.legend || [])] : [];
+    const p = list.find((x) => x.id === kind) || list.find((x) => (x.who || "").toLowerCase().includes(kind));
+    if (p) {
+      setActive(p.id);
+      const lines = [
+        { c: "gold", t: `TICKET    ·  ${p.who}  ·  ${p.num}` },
+        { c: "dim", t: p.blurb },
+        ...p.bullets.map((b) => ({ c: "", t: "· " + b }))
+      ];
+      play(lines, { spark: false });
+      window.CLOSER_OPEN_PROJECT?.(p.id, { exclusive: false, scroll: false, replay: false });
     }
   }
 
   document.querySelectorAll("[data-run]").forEach((btn) => {
     btn.addEventListener("click", () => run(btn.dataset.run));
   });
-  document.querySelectorAll("[data-ticket]").forEach((btn) => {
-    btn.addEventListener("click", () => run(btn.dataset.ticket));
+  document.getElementById("floor-tickets")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-ticket]");
+    if (btn) run(btn.dataset.ticket);
+  });
+
+  window.addEventListener("closer:floor-project", (e) => {
+    if (e.detail && e.detail.id) run(e.detail.id);
   });
 
   document.getElementById("cmd-form").addEventListener("submit", (e) => {
@@ -328,7 +349,13 @@
     const v = (cmd.value || "").trim().toLowerCase();
     cmd.value = "";
     if (!v) return;
-    const aliases = { gpu: "bench", routing: "bench", "8h": "dawn", foods: "dawn", mellon: "bny", benz: "mercedes", grid: "mf", agent: "agents", pipeline: "agents", "?": "help" };
+    const aliases = {
+      gpu: "bench", routing: "bench", "8h": "dawn", foods: "dawn", mellon: "bny",
+      benz: "mercedes", grid: "mf", agent: "agents", pipeline: "agents", "?": "help",
+      fireworks: "fireworks", firework: "fireworks", secret: "fireworks",
+      secret_key: "fireworks", "secret key": "fireworks", classb: "fireworks",
+      shooter: "fireworks"
+    };
     run(aliases[v] || v);
   });
 

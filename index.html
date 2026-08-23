@@ -171,12 +171,23 @@
     }
     .lab-rows { margin-top: 28px; display: grid; gap: 0; }
     .lab-row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 18px;
-      padding: 18px 0;
+      display: block;
+      padding: 0;
       border-top: 1px solid rgba(148, 163, 184, 0.16);
     }
+    .lab-row summary {
+      display: grid;
+      grid-template-columns: 160px 1fr 18px;
+      gap: 18px;
+      align-items: start;
+      padding: 18px 0;
+      cursor: pointer;
+      list-style: none;
+    }
+    .lab-row summary::-webkit-details-marker,
+    .deal summary::-webkit-details-marker { display: none; }
+    .lab-row summary::marker,
+    .deal summary::marker { content: ""; }
     .lab-row b {
       font-family: "Bebas Neue", sans-serif;
       font-size: 28px;
@@ -184,6 +195,7 @@
     }
     .lab-row h3 { margin-bottom: 4px; }
     .lab-row p { font-size: 14px; }
+    .lab-row[open] { border-color: rgba(34, 211, 238, 0.35); }
 
     .legend {
       background:
@@ -191,19 +203,25 @@
         url("assets/flare.jpg") center/cover;
     }
     .deals {
-      margin-top: 28px;
+      margin-top: 18px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+      align-items: start;
     }
     .deal {
-      display: grid;
-      grid-template-columns: 110px 150px 1fr;
-      gap: 12px;
-      align-items: center;
+      display: block;
       background: rgba(11, 18, 32, 0.78);
       border: 1px solid rgba(34, 211, 238, 0.1);
+    }
+    .deal summary {
+      display: grid;
+      grid-template-columns: 110px 150px 1fr 18px;
+      gap: 12px;
+      align-items: center;
       padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
     }
     .deal .num {
       font-family: "Bebas Neue", sans-serif;
@@ -211,7 +229,72 @@
       color: var(--cyan);
     }
     .deal .who { font-weight: 700; }
-    .deal p { font-size: 13px; }
+    .deal summary p { font-size: 13px; }
+    .deal[open] { border-color: rgba(34, 211, 238, 0.45); grid-column: 1 / -1; }
+    .chev {
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--cyan);
+      border-bottom: 2px solid var(--cyan);
+      transform: rotate(45deg);
+      justify-self: end;
+      transition: transform 0.15s ease;
+    }
+    details[open] > summary .chev { transform: rotate(225deg); }
+    .proj-bullets {
+      margin: 0 16px 16px;
+      padding: 4px 0 4px 18px;
+      color: #c5d2e3;
+    }
+    .proj-bullets li {
+      margin: 0 0 8px;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+    .lab-row .proj-bullets { margin: 0 0 18px 178px; }
+    .ticket-detail {
+      padding: 14px 12px 16px;
+      border-top: 1px solid rgba(34, 211, 238, 0.28);
+      background: rgba(5, 8, 20, 0.55);
+    }
+    .ticket-detail.muted { color: var(--muted); font-size: 12px; }
+    .ticket-detail-h {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .ticket-detail-h .num {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      margin-right: 8px;
+    }
+    .ticket-blurb { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .ticket-detail .proj-bullets { margin: 8px 0 0; padding-left: 16px; }
+    .ticket-detail .proj-bullets li { font-size: 12px; }
+    .project-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .project-bar label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .project-bar select,
+    #floor-project-pick {
+      min-width: min(420px, 100%);
+      background: rgba(5, 8, 20, 0.85);
+      color: var(--text);
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      padding: 10px 12px;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 14px;
+    }
 
     .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     blockquote {
@@ -274,8 +357,14 @@
       }
       .hero-copy { width: 100%; padding: 90px 24px 36px; }
       .metrics, .split, .quotes, .deals { grid-template-columns: 1fr; }
-      .deal { grid-template-columns: 1fr; }
-      .lab-row { grid-template-columns: 1fr; }
+      .deal summary { grid-template-columns: 1fr 18px; }
+      .deal summary .num { grid-column: 1; }
+      .deal summary .who { grid-column: 1; }
+      .deal summary p { grid-column: 1; }
+      .deal summary .chev { grid-column: 2; grid-row: 1 / span 3; }
+      .lab-row summary { grid-template-columns: 1fr 18px; }
+      .lab-row summary b { grid-column: 1; }
+      .lab-row .proj-bullets { margin-left: 0; }
       header.nav nav { display: none; }
       .hero .veil { background: linear-gradient(180deg, rgba(5,8,20,0.2), rgba(5,8,20,0.88) 55%, rgba(5,8,20,0.96)); }
     }
@@ -290,6 +379,7 @@
         <a href="#proof">Proof</a>
         <a href="#lab">Lab</a>
         <a href="#legend">Legend Reel</a>
+        <a href="#proj-fireworks">Fireworks</a>
         <a href="#words">Quotes</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -350,36 +440,11 @@
         </div>
         <div class="kicker" style="color:var(--muted);align-self:flex-end;">Aug 2024 – Present</div>
       </div>
-      <div class="lab-rows">
-        <div class="lab-row">
-          <b class="c-cyan">4070 RTX</b>
-          <div>
-            <h3>Tabby Tavern Stack</h3>
-            <p>Single-GPU private inference lab: TabbyAPI EXL3, SillyTavern, Open WebUI, Ollama, SearXNG, GPU passthrough, flash attention, q8 KV cache, auth and SECURITY.md.</p>
-          </div>
-        </div>
-        <div class="lab-row">
-          <b class="c-purple">27×</b>
-          <div>
-            <h3>Local Grid Suite</h3>
-            <p>Operator telemetry for model discovery, decode and prefill benchmarks, GPU routing, SQLite logs, CLI reporting, and PDF output. Constant test loops, not one lucky run.</p>
-          </div>
-        </div>
-        <div class="lab-row">
-          <b class="c-orange">MCP</b>
-          <div>
-            <h3>Dockroot-MCP</h3>
-            <p>Published MCP image that gives agents bounded visibility into Docker services and network wiring without handing an agent host-root access.</p>
-          </div>
-        </div>
-        <div class="lab-row">
-          <b class="c-green">Agents</b>
-          <div>
-            <h3>Multi-agent pipeline + OpenClaw</h3>
-            <p>Systems agent to architect to validator: structured output, repair retries, collision checks, and regression checks over local inference. Production WhatsApp agent stacks with 10+ skills.</p>
-          </div>
-        </div>
+      <div class="project-bar">
+        <label for="project-pick">Select a project</label>
+        <select id="project-pick" aria-label="Select a project to expand full-detail bullets"></select>
       </div>
+      <div class="lab-rows" id="lab-rows"></div>
     </div>
   </section>
 
@@ -388,21 +453,12 @@
       <div class="kicker">The receipts</div>
       <div class="rule"></div>
       <h2>The Legend Reel</h2>
-      <p style="max-width:760px;margin:8px 0 0;">The role, the awards, the rescue record, and the enterprise outcomes behind the headline. Informatica SEAL team. Analyst to Consulting Manager. v7–v10 upgrade specialist. Parachute closer: 20 troubled accounts entered, 19 recovered.</p>
-      <div class="deals">
-        <div class="deal"><div class="num">$2.3M+</div><div class="who">BNY Mellon</div><p>Grid/HA architecture with senior VPs, support, and CEO Sohaib Abbasi. Strategic sales, services, and support outcome.</p></div>
-        <div class="deal"><div class="num c-orange">8h → 1h</div><div class="who">Dawn Foods</div><p>PowerExchange CDC on AS/400 remote journals. Type 2 DW standards, security, upgrades. Featured on informatica.com.</p></div>
-        <div class="deal"><div class="num">20+ nodes</div><div class="who">MF Global</div><p>World-first Informatica Grid/HA plus DR on RHEL GFS across India, UK, New York, and Chicago.</p></div>
-        <div class="deal"><div class="num c-gold">7,000h</div><div class="who">Micron</div><p>Teradata and Hadoop EDW. Program expanded from 2,080 to 7,000 hours. Extensions and Consultant of the Year runner-up.</p></div>
-        <div class="deal"><div class="num">$2M</div><div class="who">Kohl’s</div><p>Grid/HA capacity and upgrade roadmap. AIX to commodity hardware. Presented through senior leadership.</p></div>
-        <div class="deal"><div class="num c-orange">+200%</div><div class="who">Mercedes-Benz</div><p>Parachute performance rescue on longest-running workflows. Trained TCS on Grid/HA and tuning.</p></div>
-        <div class="deal"><div class="num">$800k</div><div class="who">Toyota</div><p>Engine Management product go-live. All consultants rated 5/5. Professional services and product outcome.</p></div>
-        <div class="deal"><div class="num">$600k</div><div class="who">Smith &amp; Nephew</div><p>FDA-validated Informatica platform. Licensing contention and platform risk resolved.</p></div>
-        <div class="deal"><div class="num">3,000h</div><div class="who">Navy Federal</div><p>Informatica and BIV1 resourcing plan from architecture through go-live training.</p></div>
-        <div class="deal"><div class="num c-orange">−50%</div><div class="who">West Bend Mutual</div><p>Real-time SOAP/XML runtime reduction and team enablement for Windows services.</p></div>
-        <div class="deal"><div class="num c-green">CFO Award</div><div class="who">Cargill</div><p>2005 CFO Award — six awarded per year. Quarterly Award for Excellence, 2006, Demantra forecasting.</p></div>
-        <div class="deal"><div class="num">$10M+</div><div class="who">JPMorgan Chase</div><p>Enterprise DW roadmaps and Center-of-Excellence evaluations presented to senior management.</p></div>
+      <p style="max-width:760px;margin:8px 0 0;">The role, the awards, the rescue record, and the enterprise outcomes behind the headline — full-detail bullets from the long-form resumes. Click any card or use the selector. Informatica SEAL team. Analyst to Consulting Manager. v7–v10 upgrade specialist. Parachute closer: 20 troubled accounts entered, 19 recovered.</p>
+      <div class="project-bar">
+        <label for="legend-pick">Select a project</label>
+        <select id="legend-pick" aria-label="Select a receipt to expand full-detail bullets"></select>
       </div>
+      <div class="deals" id="deals"></div>
     </div>
   </section>
 
@@ -529,20 +585,17 @@
         </div>
         <pre class="log" id="log" aria-live="polite"></pre>
         <form class="cmd" id="cmd-form">
-          <input id="cmd-input" type="text" autocomplete="off" spellcheck="false" placeholder="bench · dawn · bny · agents · help" aria-label="Operator command" />
+          <input id="cmd-input" type="text" autocomplete="off" spellcheck="false" placeholder="bench · dawn · fireworks · agents · help" aria-label="Operator command" />
           <button class="cmd-go" type="submit">Run</button>
         </form>
       </main>
 
       <aside class="panel">
-        <div class="panel-h">Tickets <em>parachute record</em></div>
-        <div class="tickets">
-          <button class="ticket" type="button" data-ticket="dawn"><div class="num">8h → 1h</div><div class="who">Dawn Foods</div><p>AS/400 remote journals. Featured on informatica.com.</p></button>
-          <button class="ticket" type="button" data-ticket="bny"><div class="num">$2.3M+</div><div class="who">BNY Mellon</div><p>Grid/HA with senior VPs and CEO Sohaib Abbasi.</p></button>
-          <button class="ticket" type="button" data-ticket="mercedes"><div class="num">+200%</div><div class="who">Mercedes-Benz</div><p>Longest workflows rescued. TCS trained on the path.</p></button>
-          <button class="ticket" type="button" data-ticket="mf"><div class="num">20+ nodes</div><div class="who">MF Global</div><p>World-first Grid/HA + DR. India, UK, New York, Chicago.</p></button>
-          <button class="ticket" type="button" data-ticket="micron"><div class="num">7,000h</div><div class="who">Micron</div><p>2,080 → 7,000 hours. Zero downtime.</p></button>
+        <div class="panel-h">Tickets <em>select any project</em></div>
+        <div style="padding:10px 12px 0;">
+          <select id="floor-project-pick" aria-label="Select a project on the floor"></select>
         </div>
+        <div class="tickets" id="floor-tickets"></div>
       </aside>
     </div>
 
@@ -556,6 +609,8 @@
       </div>
     </div>
   </div>
+  <script src="js/projects-data.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/floor.js"></script>
 </body>
 </html>
