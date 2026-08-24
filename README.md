@@ -8,13 +8,16 @@ Double-click `OPEN.bat` or open `index.html` in Chrome/Edge.
 
 That page is the campaign: cinematic 16:9 hero with live video, proof metrics, lab, legend reel, quotes, and contact.
 
-**Operator floor:** click **Enter the floor** or add `#floor` to the URL. Recruiter-clickable replay of the measured GPU routing bench (`data/runs.json`, from `local_grid_suite` sample telemetry), agent pipeline, and parachute tickets. It is a replay, not a live GPU attach.
+**Operator floor:** click **Enter the floor** or add `#floor` to the URL. Recruiter-clickable replay of the measured GPU routing bench (`data/runs.json`, from `local_grid_suite` sample telemetry), agent pipeline, parachute tickets, and the IPS playbook. It is a replay, not a live GPU attach.
+
+**Playbook:** open `playbook.html` or [github.io/the-closer/playbook.html](https://jpanasuk-netizen.github.io/the-closer/playbook.html). Distilled from real IPS artifacts (Environment Summary, Upgrade Roadmap v3, Farmers Phase 2, PowerCenter 10 Upgrade Overview): documentation standards, performance methodology, customer coaching. Hostnames stay off the public site.
 
 ## Files
 
 | File | Use |
 |------|-----|
 | `index.html` | Full cinematic site. Share the folder, host on GitHub Pages, or present on a call. |
+| `playbook.html` | Documentation standards, performance cheat sheet, customer coaching, and the four IPS engagements. |
 | `billboard.html` | Locked **1920×1080** operator poster. Screenshot this for LinkedIn posts, X, email, Zoom. |
 | `linkedin-banner.html` | Locked **1584×396** LinkedIn cover. |
 | `video/closer-bumper.mp4` | 6s 720p datacenter push-in. LinkedIn/X native video. |

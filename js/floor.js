@@ -59,6 +59,95 @@
         { c: "",    t: "PowerExchange · Grid/HA · Fast Clone · Big Data" },
         { c: "ok",  t: "RESULT    · extensions, zero downtime, Consultant of the Year runner-up" }
       ]
+    },
+    playbook: {
+      num: "IPS",
+      who: "The Playbook",
+      lines: [
+        { c: "dim", t: "STANDARD  · Environment Summary · Upgrade Roadmap · Phase review · v10 deck" },
+        { c: "hi",  t: "LOOP      · baseline → goal → bottleneck → eliminate → repeat" },
+        { c: "",    t: "thread statistics before folklore · do not partition a mystery" },
+        { c: "",    t: "knowledge transfer is a deliverable · skill-up is named in the review" },
+        { c: "ok",  t: "COACH     · whole stack + GCS in one room · team praised in writing" },
+        { c: "gold",t: "public site carries the operating path · hostnames stay in the customer copy" }
+      ]
+    },
+    docs: {
+      num: "IPS",
+      who: "Documentation standards",
+      lines: [
+        { c: "dim", t: "COVER     · author + owner + date · not a logo slide" },
+        { c: "hi",  t: "SUMMARY  · what is running · what was changed · what is still on fire" },
+        { c: "",    t: "ROADMAP   · CPU/RAM/disk/DB graphs · filesystem matrix · HA internals" },
+        { c: "",    t: "PHASE     · next increment named · topology risk · outstanding demos" },
+        { c: "ok",  t: "v10 DECK  · in-place / parallel / clone · six-class test · DVO" }
+      ]
+    },
+    perf: {
+      num: "Tune",
+      who: "Performance methodology",
+      lines: [
+        { c: "dim", t: "RULE 1    · establish baseline or you do not know faster from slower" },
+        { c: "hi",  t: "RULE 2    · set a goal or you are done when the clock runs out" },
+        { c: "warn",t: "DO NOT PARTITION until a single partition is understood" },
+        { c: "",    t: "thread stats first · isolation tests when threads lie" },
+        { c: "ok",  t: "MBFS      · cache RAM · 20–30% off job runtime" }
+      ]
+    },
+    coach: {
+      num: "Coach",
+      who: "Customer coaching",
+      lines: [
+        { c: "dim", t: "LOYALTY   · customer satisfaction is worthless" },
+        { c: "hi",  t: "TRANSFER · walk the loads · name the skill-up · leave the cheat sheet" },
+        { c: "",    t: "one room: OS + DB + Informatica + GCS" },
+        { c: "ok",  t: "WRITE IT  · praise the team in the deliverable" },
+        { c: "gold",t: "the closer leaves a QA twin of production" }
+      ]
+    },
+    farmers: {
+      num: "Phase 2",
+      who: "Farmers Insurance",
+      lines: [
+        { c: "dim", t: "PHASE 2  · Guidewire advanced XML · real-time web-service consumers" },
+        { c: "hi",  t: "RISK      · 30+ repos / 30+ integration services · domain TCP overhead" },
+        { c: "warn",t: "NFS on NAS is the least-recommended HA/performance filesystem" },
+        { c: "",    t: "skill-up named: Developer tool + Advanced XML" },
+        { c: "ok",  t: "TEAM      · knowledgeable, open, could explain the current architecture" }
+      ]
+    },
+    mbfs: {
+      num: "20–30%",
+      who: "Mercedes-Benz Financial",
+      lines: [
+        { c: "dim", t: "LOAD      · ALFA→ODS at 100% CPU · DB2 loader path ~50%" },
+        { c: "hi",  t: "FIX       · sorter/lookup/aggregator/joiner cache in RAM" },
+        { c: "",    t: "PWX CDC POC vs bulk load · GFS2 flock gap · VCFS recommended" },
+        { c: "ok",  t: "RESULT    · 20–30% decrease in job runtime" },
+        { c: "gold",t: "cheat sheet and load walkthroughs left with the team" }
+      ]
+    },
+    nwm: {
+      num: "P1",
+      who: "Northwestern Mutual",
+      lines: [
+        { c: "dim", t: "CONFIG    · QA/prod domains to best practice" },
+        { c: "hi",  t: "APPLIED   · ulimit 64k · concurrent jobs 500 · heap · stale NFS logs" },
+        { c: "warn",t: "P1        · workflow start delay connecting to DB2" },
+        { c: "",    t: "GCS escalation · DB2 semaphore on the Informatica client" },
+        { c: "ok",  t: "PATH      · Grid/HA TCO · QA twin of production" }
+      ]
+    },
+    wr: {
+      num: "v9→v10",
+      who: "Waddell & Reed",
+      lines: [
+        { c: "dim", t: "MEASURED  · 2-node 9.1.0 grid · month of CPU/RAM/disk" },
+        { c: "hi",  t: "FINDING   · 80–90% CPU · RAM idle · disk wait 30–90 ms" },
+        { c: "warn",t: "UNC share is not an HA filesystem · Session on Grid disabled" },
+        { c: "",    t: "SQL disk wait >200 ms with RAM sitting unused" },
+        { c: "ok",  t: "ROADMAP   · Linux CFS · adaptive dispatch · in-place/parallel/clone" }
+      ]
     }
   };
 
@@ -82,6 +171,14 @@
     { c: "",  t: "mf        MF Global 20+ node Grid/HA + DR" },
     { c: "",  t: "micron    Micron 2,080h → 7,000h" },
     { c: "",  t: "fireworks Secret Key Class B / Fireworks Forever 1996–2004" },
+    { c: "",  t: "playbook  documentation standards · performance · coaching" },
+    { c: "",  t: "docs      environment summary / roadmap / phase / v10 deck" },
+    { c: "",  t: "perf      bottleneck loop and cheat sheet" },
+    { c: "",  t: "coach     customer coaching doctrine" },
+    { c: "",  t: "farmers   Farmers Insurance Phase 2" },
+    { c: "",  t: "mbfs      Mercedes-Benz Financial 20–30%" },
+    { c: "",  t: "nwm       Northwestern Mutual P1" },
+    { c: "",  t: "wr        Waddell & Reed v9→v10 roadmap" },
     { c: "",  t: "agents    multi-agent pipeline" },
     { c: "",  t: "clear     clear the log" },
     { c: "dim", t: "Esc closes the floor. Type any project name. This page does not attach to a GPU." }
@@ -157,7 +254,7 @@
       { c: "",    t: "baseline   ·  qwen3:8b            decode 1.39 tok/s" },
       { c: "ok",  t: "routed     ·  qwen-gpu:latest     decode 37.47 tok/s" },
       { c: "gold",t: "UPLIFT     ·  27× after GPU routing/tuning" },
-      { c: "dim", t: "type  bench  |  dawn  |  agents  |  help" }
+      { c: "dim", t: "type  bench  |  dawn  |  playbook  |  agents  |  help" }
     ];
   }
 
@@ -318,7 +415,7 @@
       return;
     }
     const catalog = window.CLOSER_PROJECTS;
-    const list = catalog ? [...(catalog.lab || []), ...(catalog.legend || [])] : [];
+    const list = catalog ? [...(catalog.lab || []), ...(catalog.playbook || []), ...(catalog.legend || [])] : [];
     const p = list.find((x) => x.id === kind) || list.find((x) => (x.who || "").toLowerCase().includes(kind));
     if (p) {
       setActive(p.id);
@@ -354,7 +451,14 @@
       benz: "mercedes", grid: "mf", agent: "agents", pipeline: "agents", "?": "help",
       fireworks: "fireworks", firework: "fireworks", secret: "fireworks",
       secret_key: "fireworks", "secret key": "fireworks", classb: "fireworks",
-      shooter: "fireworks"
+      shooter: "fireworks",
+      playbook: "playbook", docs: "docs", doc: "docs", standard: "docs",
+      standards: "docs", perf: "perf", tune: "perf", performance: "perf",
+      coach: "coach", coaching: "coach",
+      farmers: "farmers", farmer: "farmers", guidewire: "farmers",
+      mbfs: "mbfs", "mercedes-benz financial": "mbfs", financial: "mbfs",
+      nwm: "nwm", northwestern: "nwm", mutual: "nwm",
+      wr: "wr", waddell: "wr", "waddell & reed": "wr", roadmap: "wr"
     };
     run(aliases[v] || v);
   });

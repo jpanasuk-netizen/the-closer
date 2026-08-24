@@ -4,5 +4,8 @@ _pw_chrome/
 _lin_shots/
 _verify/
 _verify_floor.py
+_verify_playbook.py
+_verify_http.py
 _linkedin_*.py
 _hf_space/
+_extract/

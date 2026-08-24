@@ -1,5 +1,5 @@
 (() => {
-  const FEATURED = ["dawn", "bny", "mercedes", "mf", "micron", "fireworks"];
+  const FEATURED = ["playbook", "dawn", "bny", "mbfs", "farmers", "fireworks"];
   let DATA = null;
 
   function loadProjects() {
@@ -16,7 +16,7 @@
   }
 
   function allProjects(data) {
-    return [...(data.lab || []), ...(data.legend || [])];
+    return [...(data.lab || []), ...(data.playbook || []), ...(data.legend || [])];
   }
 
   function findProject(id) {
@@ -73,6 +73,7 @@
     sel.innerHTML = `<option value="">Select a project — bullets drop down</option>`;
     [
       ["Independent lab", DATA.lab],
+      ["The playbook", DATA.playbook],
       ["The receipts", DATA.legend]
     ].forEach(([label, items]) => {
       const og = document.createElement("optgroup");
@@ -113,7 +114,7 @@
   }
 
   function syncSelects(id) {
-    document.querySelectorAll("#project-pick, #legend-pick, #floor-project-pick").forEach((sel) => {
+    document.querySelectorAll("#project-pick, #legend-pick, #playbook-pick, #floor-project-pick").forEach((sel) => {
       if (sel && sel.value !== id) sel.value = id || "";
     });
     document.querySelectorAll("[data-open-project]").forEach((el) => {
@@ -151,12 +152,15 @@
   function wire(data) {
     DATA = data;
     const labMount = document.getElementById("lab-rows");
+    const playbookMount = document.getElementById("playbook-rows");
     const dealMount = document.getElementById("deals");
-    if (labMount) labMount.innerHTML = data.lab.map(labRow).join("");
-    if (dealMount) dealMount.innerHTML = data.legend.map(dealCard).join("");
+    if (labMount) labMount.innerHTML = (data.lab || []).map(labRow).join("");
+    if (playbookMount) playbookMount.innerHTML = (data.playbook || []).map(labRow).join("");
+    if (dealMount) dealMount.innerHTML = (data.legend || []).map(dealCard).join("");
 
     fillSelect(document.getElementById("project-pick"));
     fillSelect(document.getElementById("legend-pick"));
+    fillSelect(document.getElementById("playbook-pick"));
     fillSelect(document.getElementById("floor-project-pick"));
     renderFloorTickets("");
 
@@ -165,6 +169,7 @@
     };
     document.getElementById("project-pick")?.addEventListener("change", onPick(false, true, true));
     document.getElementById("legend-pick")?.addEventListener("change", onPick(false, true, true));
+    document.getElementById("playbook-pick")?.addEventListener("change", onPick(false, true, true));
     document.getElementById("floor-project-pick")?.addEventListener("change", onPick(true, false, false));
 
     document.addEventListener("toggle", (e) => {

@@ -52,6 +52,65 @@
       ]
     }
   ],
+  "playbook": [
+    {
+      "id": "playbook",
+      "num": "IPS",
+      "tone": "gold",
+      "who": "The Playbook",
+      "blurb": "Documentation standards. Real-world performance. Customer coaching. The operating path left on the table.",
+      "bullets": [
+        "Three artifacts before anyone touched config: Environment Summary, Upgrade Roadmap, Phase / architecture review — plus the v10 Upgrade Overview that taught the room how to choose an upgrade type and how to test it.",
+        "Performance loop left with the team: baseline, goal, bottleneck, eliminate, repeat. Thread statistics before folklore. Do not partition until a single partition is understood.",
+        "Customer coaching is a deliverable: named skill-up, walked loads, whole stack plus GCS in one room, the team praised in writing, a QA twin of production so the parachute is not required twice.",
+        "Engagements in the source files: Northwestern Mutual, Mercedes-Benz Financial, Waddell & Reed, Farmers Insurance. Public site carries the operating findings. Hostnames stay in the customer copy.",
+        "Same loop now pointed at the RTX lab: measure, isolate, document, hand off the boundary."
+      ]
+    },
+    {
+      "id": "docs",
+      "num": "IPS",
+      "tone": "cyan",
+      "who": "Documentation standards",
+      "blurb": "The three artifacts every burning platform got before anyone touched config.",
+      "bullets": [
+        "Environment Summary: who owns the platform, what is actually running, what was changed, what is still on fire, and the Grid/HA recommendation with evidence.",
+        "Upgrade Roadmap: current utilization (CPU, RAM, disk, database), supported shared filesystems, HA internals, in-place vs parallel vs clone, and the testing plan that makes go-live honest.",
+        "Phase / architecture review: what the next product increment actually requires (cores, services, skills), what the current topology will not survive, and outstanding demos so the customer can see the path.",
+        "v10 Upgrade Overview: PAM, edition value, upgrade-type selection, and the six-class test strategy (operability, same-data, security, performance, 3rd-party, HA/DR).",
+        "Public site carries the operating standard. Hostnames, credentials, and raw capacity tables stay in the customer copy."
+      ]
+    },
+    {
+      "id": "perf",
+      "num": "Tune",
+      "tone": "orange",
+      "who": "Performance methodology",
+      "blurb": "Baseline. Goal. Bottleneck. Eliminate. Repeat. Thread statistics before folklore.",
+      "bullets": [
+        "Establish baseline. Set a goal. Find the bottleneck. Eliminate it. Repeat until the goal is met or the bottleneck cannot be moved.",
+        "Do not add partitions until you understand a single partition. Multiple partitions are harder to diagnose and can make source, target, or system bottlenecks worse.",
+        "Thread statistics in the session log first. Transformation ~100% busy → repartition point. Reader/writer ~100% busy → maybe the thread, maybe the system.",
+        "Isolation tests when threads lie: filter FALSE before target; source-only mapping; write to flat file vs bulk loader. Change one thing between runs.",
+        "Dos: cache in memory, spread I/O, round-robin a single file until it is the bottleneck. Don’ts: partition a constrained session, partition when %idle is already under ~5%.",
+        "Knuth on the floor: premature optimization is the root of all evil. Big problems before small. Simple before complex."
+      ]
+    },
+    {
+      "id": "coach",
+      "num": "Coach",
+      "tone": "green",
+      "who": "Customer coaching",
+      "blurb": "Leave the runbook and the team. Loyalty is the team that can run it after you leave.",
+      "bullets": [
+        "Knowledge transfer is a deliverable, not a slide. MBFS: ALFA→ODS, ODS→flat file, ODS→warehouse walked with the team. Mercedes: TCS kept the tuning docs.",
+        "Skill-up is named in the architecture review. Farmers: Developer tool + Advanced XML for Guidewire. Navy Federal: install, services, naming standards, go-live tests.",
+        "Bring the whole stack into the room with Global Customer Support. MBFS recommendation when production would not dispatch: architecture, OS, database, Informatica — one room.",
+        "Praise the team in writing. Farmers: ‘very knowledgeable… openness to new suggestions… explanation of why they chose their current architecture.’",
+        "The closer leaves a QA twin of production, a Grid/HA TCO path, and a performance cheat sheet — so the customer does not need the parachute twice."
+      ]
+    }
+  ],
   "legend": [
     {
       "id": "bny",
@@ -292,6 +351,64 @@
         "Sr. Integration Engineer, January 2007 – June 2008.",
         "Delivered assigned integration work at a grade-level that management said he exceeded.",
         "Client: “I trusted that Jeremy would deliver, with quality, on the project he was assigned. Jeremy has exceeded the expectations at someone of his grade level.”"
+      ]
+    },
+    {
+      "id": "farmers",
+      "num": "Phase 2",
+      "tone": "cyan",
+      "who": "Farmers Insurance",
+      "blurb": "Guidewire XML, 30+ repositories, NFS vs CFS. Phase 2 architecture review plus team coaching.",
+      "bullets": [
+        "Architecture review (Oct 2017) for Farmers Phase 2: consume advanced Guidewire XML on the Mercury platform.",
+        "Recommended Model Repository Service and Data Integration Service in dev and production, plus cores/nodes for real-time web-service consumers.",
+        "Flagged 30+ repositories and 30+ integration services as TCP/IP overhead that hangs domains and makes upgrades expensive.",
+        "File-system coaching: NFS on NAS is Informatica’s least-recommended HA/performance path; Veritas CFS or GPFS with host-side striping is the Grid/HA baseline.",
+        "Skill-up the team on Developer tool + Advanced XML. Outstanding demos: Proactive Monitoring / Operational Insight and Advanced XML on Farmers Guidewire XML.",
+        "On the floor: the team was knowledgeable and open. They explained why they chose the current architecture and where it had to improve."
+      ]
+    },
+    {
+      "id": "mbfs",
+      "num": "20–30%",
+      "tone": "orange",
+      "who": "Mercedes-Benz Financial",
+      "blurb": "Environment summary plus the performance cheat sheet left with the team. Cache memory, not more hardware.",
+      "bullets": [
+        "PowerCenter Environment Recommendations (Jun 2017). Author and owner: Jeremy Panasuk.",
+        "Peak ALFA→ODS loads sat at 100% CPU; DB2 loader path ~50%. Repository recommended off the shared DB host so purchased cores stay on Informatica.",
+        "Raised RAM for sorters, aggregators, lookups, and joiners so large transformations stop spilling cache to disk — 20–30% decrease in job runtime.",
+        "Knowledge transfer on ALFA→ODS, ODS→flat file, and ODS→data warehouse. POC recommended: PowerExchange for DB2 CDC/batch vs bulk load.",
+        "File system: GFS2 lacks flock; DB persistence for split-brain costs performance. Recommended Veritas Cluster File System.",
+        "Left the performance cheat sheet: baseline, goal, bottleneck, eliminate, repeat. Do not partition until a single partition is understood."
+      ]
+    },
+    {
+      "id": "nwm",
+      "num": "P1",
+      "tone": "green",
+      "who": "Northwestern Mutual",
+      "blurb": "Domain best-practice config, P1 DB2 start delay, Grid/HA TCO path, QA twin of production.",
+      "bullets": [
+        "PowerCenter Environment Recommendations (Apr 2017). PWX CDC and DB2 loads were inside resource limits; the work was configuration and operating path.",
+        "Configured QA and production domains to best practices: ulimit open files to 64k, DB2 repo/domain settings, concurrent jobs to 500 on measured low utilization, Java heap, stale log cleanup on NFS.",
+        "Resolved P1: workflows delayed connecting to DB2. Escalated with Informatica support. DB2 semaphore required when starting the DB2 client on Informatica.",
+        "Reviewed Tidal scheduling and PowerCenter Proactive Monitoring. In-place vs dual-system upgrade, batch/CR consolidation, v10 features.",
+        "TCO path: Grid/HA so batch and continuous-run live in one domain with Gold/Platinum SLA tiers. QA domain identical to production so troubleshooting does not take prod down."
+      ]
+    },
+    {
+      "id": "wr",
+      "num": "v9→v10",
+      "tone": "purple",
+      "who": "Waddell & Reed",
+      "blurb": "Upgrade roadmap v3: measured I/O wait, UNC is not HA, in-place vs parallel vs clone.",
+      "bullets": [
+        "Informatica Upgrade Roadmap v3 (Jun 2017) for a 2-node PowerCenter 9.1.0 grid plus 9.6.1 Data Quality on Windows.",
+        "Measured the platform: round-robin dispatch left both nodes at 80–90% CPU in peak; RAM under-used while cache spilled to disk; disk wait 30 ms typical, month-end spikes above 90 ms.",
+        "SQL Server disk wait spiked past 200 ms with RAM sitting idle — the bottleneck was I/O, not ‘need more ETL boxes.’",
+        "UNC share as the shared filesystem: no simultaneous read, not a POSIX HA CFS. Session on Grid disabled; DB persistence tax. Recommendation: Linux + Veritas CFS or GPFS.",
+        "Upgrade types taught: in-place vs parallel vs clone, with the testing taxonomy — operability, same-data, security, performance, 3rd-party, HA/DR — accelerated with Data Validation Option."
       ]
     },
     {
