@@ -12,6 +12,8 @@ That page is the campaign: cinematic 16:9 hero with live video, proof metrics, l
 
 **Playbook:** open `playbook.html` or [github.io/the-closer/playbook.html](https://jpanasuk-netizen.github.io/the-closer/playbook.html). Distilled from real IPS artifacts (Environment Summary, Upgrade Roadmap v3, Farmers Phase 2, PowerCenter 10 Upgrade Overview): documentation standards, performance methodology, customer coaching. Hostnames stay off the public site.
 
+**Loyalty talk:** open `loyalty.html` or [github.io/the-closer/loyalty.html](https://jpanasuk-netizen.github.io/the-closer/loyalty.html). The Dawn Foods IPS talk — customer satisfaction is worthless; customer loyalty is priceless.
+
 ## Files
 
 | File | Use |
