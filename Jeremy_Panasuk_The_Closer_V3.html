@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeremy Panasuk · THE CLOSER V3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,23 +11,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { background: #050814; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    @media screen {
-      html, body { width: 100%; min-height: 0; background: #050814; }
-      body { padding: 0 16px 88px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-      .packet-bar { align-self: stretch; width: 100%; box-sizing: border-box; }
-      .sheet {
-        width: min(1040px, 100%);
-        max-width: 1040px;
-        height: auto;
-        min-height: 0;
-        overflow: visible;
-        flex-shrink: 0;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.22);
-      }
-      .pad { padding: 28px 36px 32px; }
-      .foot { position: relative; left: auto; right: auto; bottom: auto; margin-top: 12px; }
-    }
-    @media print { .packet-bar { display: none !important; } }
     .sheet {
       width: 8.5in;
       height: 11in;
@@ -225,31 +207,9 @@
     .c3 { background: #fb923c; color: #050814; }
     .c4 { background: #34d399; }
     .c5 { background: #fbbf24; }
-  
-    .packet-bar {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 18px; min-height: 56px; position: sticky; top: 0; z-index: 50;
-      background: #050814; color: #e8eef7;
-      border-bottom: 1px solid rgba(34,211,238,0.28); font-size: 13px; font-family: system-ui, sans-serif;
-    }
-    .packet-bar a { color: #e8eef7; text-decoration: none; }
-    .packet-bar a:hover { color: #22d3ee; }
-    .packet-bar .role { letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; opacity: 0.8; }
-    .packet-bar .btn {
-      display: inline-block; background: #22d3ee; color: #050814;
-      text-decoration: none; padding: 10px 14px; font-size: 12px;
-      letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
-    }
-    </style>
+  </style>
 </head>
 <body>
-
-<header class="packet-bar">
-  <a href="./">← Packet</a>
-  <span class="role">THE CLOSER</span>
-  <a class="btn" href="Jeremy_Panasuk_The_Closer.pdf" download>Download PDF</a>
-</header>
-
   <div class="sheet">
     <div class="pad">
       <div class="hero">
