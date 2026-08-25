@@ -4,7 +4,7 @@ Landscape promotional kit built from Jeremy’s Google Drive resumes plus `C:\Us
 
 ## Open this first
 
-Double-click `OPEN.bat` or open `index.html` in Chrome/Edge.
+Double-click `OPEN.bat` or open `index.html` in Chrome/Edge. The campaign hub now includes the Canonical Stack / Packet bridge; from there, open `canonical-stack-packet.html` for the unified stack, 3-day stand-up, 21-day arc, packet registry, hunt status, and LinkedIn reference corpus.
 
 That page is the campaign: cinematic 16:9 hero with live video, proof metrics, lab, legend reel, quotes, and contact.
 

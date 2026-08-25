@@ -1,0 +1,39 @@
+Grok Bot ran my hunt for 48 hours.
+
+I used to parachute into Fortune-100 data platforms that were already on fire. Informatica. 19 of 20 accounts recovered. The motion did not change. Hear the floor. Wrangle what exists. Ship a path the night operator can still run on Tuesday. Measure the number you named before you started.
+
+The last two years I rebuilt that career on purpose: off Informatica-only, onto a private RTX 4070 lab. Last 48 hours Grok Bot actually operated it with me. Packets shipped. A clickable hunt table. Twelve Hugging Face Spaces. Status pulled from the spreadsheet, not a vibe.
+
+You can implement your stack in 3 days, and learn it in 21.
+
+Day 1 is the chat path. llama.cpp Qwen3.5-9B on :1234 (n_ctx 262144). Open WebUI :3000. SillyTavern :8000. MCPO :8001. SearXNG :8080. A prompt that answers on hardware you own.
+
+Day 2 is the coding pack. code-server :8443. LibreChat :3080. AnythingLLM :3002 (not :3001). Lobe :3210.
+
+Day 3 is memory and workflow. Qdrant, Chroma, n8n, Meilisearch, Mongo, Postgres. Then the desk: VS Code, Continue against 127.0.0.1:1234/v1, Grok, Hermes. One compose. One GPU. Do not bounce qwen.
+
+EOW 1 you understand why it is one compose and one GPU, and why alternate-inference stays off on a 12 GB card.
+EOW 2 you understand the /v1 contract. Every UI talks to the same engine.
+EOW 3 you can operate it, ship a packet, keep THE STATUS honest, and teach the 3-day stand-up to someone else.
+
+That is the lab that is actually running. 15 containers. Tabby Tavern UNIFIED. Not a slide.
+
+Hunt board right now, from APPLICATIONS.xlsx, 3:12 AM CT: 32 roles tracked. 20 applied (each with a confirm: Gmail / Lever / Ashby / Indeed / LinkedIn sent). 7 pipeline. 4 withdrew. 1 rejected. Zero recruiter screens, hiring-manager loops, onsites, offers, or ghosts.
+
+Live packets, GitHub Pages + Hugging Face twins, HTML resume with a Download PDF button (no iframe):
+Paylocity MTO · Cresta ADM · Edisyl FDE · Palantir Warp Speed · Palantir American Tech · Carex Founding FDE · Toloka ADP · THE CLOSER.
+
+Tracking hub
+https://jpanasuk-netizen.github.io/the-closer/
+https://jpanasuk-netizen.github.io/the-closer/hunt.html
+https://huggingface.co/spaces/jpanasuk/the-status
+https://huggingface.co/jpanasuk
+
+Lab
+https://huggingface.co/jpanasuk/tabby-tavern-stack
+https://huggingface.co/spaces/jpanasuk/tabby-tavern-sell-sheet
+https://github.com/jpanasuk-netizen/tabby-tavern-stack
+
+Customer satisfaction is worthless. Customer loyalty is priceless. The receipts are in the photos.
+
+#AIEngineering #ForwardDeployedEngineering #LocalLLM #HuggingFace #OpenToWork
