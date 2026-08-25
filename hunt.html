@@ -140,27 +140,72 @@
     font-size: 12px;
     margin: 0 0 10px;
   }
-  .arc {
-    margin: 20px 0 0;
-    padding: 16px 0 0;
-    border-top: 1px solid var(--line);
-    list-style: none;
-  }
-  .arc li {
-    margin: 0 0 7px;
-    font-size: 14.5px;
-    color: var(--ink);
-  }
-  .arc b {
-    color: var(--gold);
-    font-weight: 600;
-    letter-spacing: .04em;
-  }
   footer {
     color: var(--muted);
     font-size: 12px;
     padding: 8px 4px;
   }
+
+  .learn p { margin: 0 0 10px; max-width: 52em; }
+  .learn .card p { margin: 0; }
+  .learn .card { margin: 0; }
+  .learn h3 { margin: 0 0 8px; }
+  .daygrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 14px 0 8px;
+  }
+  @media (min-width: 840px) {
+    .daygrid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .weekgrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  @media (min-width: 840px) {
+    .weekgrid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .gantt-wrap { overflow-x: auto; }
+  .gantt {
+    min-width: 720px;
+    display: grid;
+    grid-template-columns: 200px repeat(21, 1fr);
+    gap: 3px 2px;
+    font-size: 11px;
+    align-items: center;
+  }
+  .gantt .lab {
+    color: var(--muted);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding-right: 8px;
+  }
+  .gantt .tick {
+    text-align: center;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 10px;
+  }
+  .gantt .bar {
+    background: #2a2416;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    padding: 6px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gantt .bar.opt {
+    border-style: dashed;
+    color: var(--muted);
+    background: transparent;
+  }
+  .addins li { margin: 0 0 8px; max-width: 52em; }
+  .addins { margin: 0; padding-left: 1.15em; color: var(--ink); }
+
 </style>
 </head>
 <body>
@@ -168,29 +213,102 @@
   <header class="hero">
     <p class="eyebrow">Jeremy Panasuk · Hunt board · 25 Aug 2026</p>
     <h1>You can implement your stack in 3 days, and learn it in 21.</h1>
-    <p class="sub">Live packets on GitHub + Hugging Face. Applications from the tracker. One lab, not a product zoo.</p>
-    <ul class="arc">
-      <li><b>Day 1</b> Chat path. tabby-tavern-qwen :1234, Open WebUI :3000, SillyTavern :8000, MCPO :8001, SearXNG :8080.</li>
-      <li><b>Day 2</b> Coding pack. code-server :8443, LibreChat :3080, AnythingLLM :3002 (not 3001), Lobe :3210.</li>
-      <li><b>Day 3</b> Memory and workflow. Qdrant :6333-6334, Chroma :8005, n8n :5678, Meilisearch :7700, Mongo :27017, Postgres :5432. Desk: Continue, Hermes, Grok. Do not bounce qwen.</li>
-      <li><b>EOW 1</b> One compose. One network. One GPU. Alternate-inference profile stays off.</li>
-      <li><b>EOW 2</b> /v1 to qwen. UIs share the engine. Why AnythingLLM is :3002.</li>
-      <li><b>EOW 3</b> Operate. Ship hunt and packets. Teach the 3-day stand-up.</li>
-    </ul>
+    <p class="sub">Live packets on GitHub + Hugging Face. Applications from the tracker. One lab, not a product zoo. UNIFIED compose. One GPU. qwen is the engine.</p>
   </header>
+
+  <section class="learn">
+    <h2>What you learn · day by day</h2>
+    <p>Days 1–3 are the stand-up. You implement the stack. The next 18 days are how you learn it: same compose, same network, same GPU, until you can teach the stand-up without notes.</p>
+    <div class="daygrid">
+      <div class="card">
+        <h3>Day 1 · Chat path</h3>
+        <p>Bring UNIFIED up as chat. <code>tabby-tavern-qwen</code> on <code>:1234</code> is the engine. Open WebUI <code>:3000</code> is daily chat. SillyTavern <code>:8000</code> is the tavern. MCPO <code>:8001</code> is the tool bridge. SearXNG <code>:8080</code> is search. You learn the path a prompt takes from a UI to qwen and back. You do not stand up a second engine.</p>
+      </div>
+      <div class="card">
+        <h3>Day 2 · Coding pack</h3>
+        <p>Add the desk on the same engine. code-server <code>:8443</code>, LibreChat <code>:3080</code>, AnythingLLM <code>:3002</code> (not <code>:3001</code>), Lobe <code>:3210</code>. You learn how a coding UI talks <code>/v1</code> at qwen. AnythingLLM sits on <code>:3002</code> so it does not collide with a reserved port. Continue uses the same contract later.</p>
+      </div>
+      <div class="card">
+        <h3>Day 3 · Memory and workflow</h3>
+        <p>Hang state off the stack. Qdrant <code>:6333–6334</code>, Chroma <code>:8005</code>, n8n <code>:5678</code>, Meilisearch <code>:7700</code>, Mongo <code>:27017</code>, Postgres <code>:5432</code>. Desk: Continue, Hermes, Grok against local qwen. You learn where memory lives. You do not bounce qwen to “fix” a UI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="learn">
+    <h2>What you learn · week by week</h2>
+    <div class="weekgrid">
+      <div class="card">
+        <h3>Week 1 · EOW 1</h3>
+        <p>One compose. One network. One GPU. Alternate-inference profile stays off. You learn why a second compose fights for VRAM, and you keep UNIFIED as the live stack. Days 4–7 are reps on the chat path with the engine left running.</p>
+      </div>
+      <div class="card">
+        <h3>Week 2 · EOW 2</h3>
+        <p>Every UI shares <code>/v1</code> to qwen. You can name the contract. You can explain why AnythingLLM is <code>:3002</code>. You do not add a second model server to make a UI “feel faster.”</p>
+      </div>
+      <div class="card">
+        <h3>Week 3 · EOW 3</h3>
+        <p>Operate. Ship hunt and packets. Keep STATUS honest. Teach the 3-day stand-up. You learn to run it, not just boot it. If you cannot teach Day 1–3, you are not done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>21-day Gantt · projected tasks</h2>
+    <p class="sub" style="margin-bottom:14px">Bars are the work. Optional add-ins sit after day 21. They are not in the critical path.</p>
+    <div class="gantt-wrap">
+      <div class="gantt">
+        <div style="grid-row:1;grid-column:1"></div>
+        <div class="tick" style="grid-row:1;grid-column:2">1</div>
+        <div class="tick" style="grid-row:1;grid-column:3">2</div>
+        <div class="tick" style="grid-row:1;grid-column:4">3</div>
+        <div class="tick" style="grid-row:1;grid-column:5">4</div>
+        <div class="tick" style="grid-row:1;grid-column:6">5</div>
+        <div class="tick" style="grid-row:1;grid-column:7">6</div>
+        <div class="tick" style="grid-row:1;grid-column:8">7</div>
+        <div class="tick" style="grid-row:1;grid-column:9">8</div>
+        <div class="tick" style="grid-row:1;grid-column:10">9</div>
+        <div class="tick" style="grid-row:1;grid-column:11">10</div>
+        <div class="tick" style="grid-row:1;grid-column:12">11</div>
+        <div class="tick" style="grid-row:1;grid-column:13">12</div>
+        <div class="tick" style="grid-row:1;grid-column:14">13</div>
+        <div class="tick" style="grid-row:1;grid-column:15">14</div>
+        <div class="tick" style="grid-row:1;grid-column:16">15</div>
+        <div class="tick" style="grid-row:1;grid-column:17">16</div>
+        <div class="tick" style="grid-row:1;grid-column:18">17</div>
+        <div class="tick" style="grid-row:1;grid-column:19">18</div>
+        <div class="tick" style="grid-row:1;grid-column:20">19</div>
+        <div class="tick" style="grid-row:1;grid-column:21">20</div>
+        <div class="tick" style="grid-row:1;grid-column:22">21</div>
+        <div class="lab" style="grid-row:2;grid-column:1">Chat path</div>
+        <div class="bar" style="grid-row:2;grid-column:2 / 3">Day 1 · chat path</div>
+        <div class="lab" style="grid-row:3;grid-column:1">Coding pack</div>
+        <div class="bar" style="grid-row:3;grid-column:3 / 4">Day 2 · coding pack</div>
+        <div class="lab" style="grid-row:4;grid-column:1">Memory / workflow</div>
+        <div class="bar" style="grid-row:4;grid-column:4 / 5">Day 3 · memory</div>
+        <div class="lab" style="grid-row:5;grid-column:1">EOW 1 · one GPU</div>
+        <div class="bar" style="grid-row:5;grid-column:2 / 9">Days 1–7 · one compose · one network · alt-inference off</div>
+        <div class="lab" style="grid-row:6;grid-column:1">EOW 2 · /v1</div>
+        <div class="bar" style="grid-row:6;grid-column:9 / 16">Days 8–14 · UIs share qwen · AnythingLLM :3002</div>
+        <div class="lab" style="grid-row:7;grid-column:1">EOW 3 · operate</div>
+        <div class="bar" style="grid-row:7;grid-column:16 / 23">Days 15–21 · ship hunt/packets · teach stand-up</div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:12px">Projected, not a status log. A bar is the plan. STATUS stays honest.</p>
+  </section>
 
   <section class="lab">
     <h2>The lab</h2>
-    <p class="lab-lede">Tabby Tavern then Taproot — one lab sharing GitHub and Hugging Face. Not two products.</p>
+    <p class="lab-lede">Tabby Tavern then Taproot — one lab sharing GitHub and Hugging Face. Not two products. UNIFIED is the live compose.</p>
     <div class="split">
       <div class="card">
         <h3>Tabby Tavern</h3>
-        <p>Local AI you can use. The compose stack on the box: chat, models, the tavern. Use it.</p>
+        <p>Local AI you can use. Chat, models, the tavern. Open WebUI, SillyTavern, SearXNG, MCPO on one GPU against qwen.</p>
       </div>
       <div class="card">
         <h3>Taproot</h3>
-        <p>Next step. Coding at home, no internet. Continue + VS Code + Grok + Hermes against the local stack.</p>
-        <p class="ports">UNIFIED ? qwen :1234 ? Open WebUI :3000 ? AnythingLLM :3002</p>
+        <p>Next step. Coding at home, no internet. Continue + VS Code + Grok + Hermes against the same qwen. code-server, LibreChat, AnythingLLM, Lobe on the same <code>/v1</code>.</p>
+        <p class="ports">UNIFIED · qwen :1234 · Open WebUI :3000 · AnythingLLM :3002</p>
       </div>
     </div>
     <p class="lab-links">
@@ -198,6 +316,17 @@
       <a href="https://huggingface.co/jpanasuk/tabby-tavern-stack">huggingface.co/jpanasuk/tabby-tavern-stack</a>
       <a href="https://huggingface.co/spaces/jpanasuk/tabby-tavern-sell-sheet">spaces/jpanasuk/tabby-tavern-sell-sheet</a>
     </p>
+  </section>
+
+  <section>
+    <h2>Optional add-ins · after day 21</h2>
+    <p>Not in the 21. Do these only after you can teach the 3-day stand-up with UNIFIED still up and qwen not bounced.</p>
+    <ul class="addins">
+      <li><b>Alternate-inference profile.</b> Stays off for the 21. After that you can turn it on as an add-in. It is not a second live stack during the learn.</li>
+      <li><b>More UIs on the same /v1.</b> Hang another client on qwen. Do not stand up another model server to make it feel faster.</li>
+      <li><b>Deeper memory.</b> More n8n / Qdrant / Chroma work once Day 3 is boring. Still do not bounce qwen.</li>
+      <li><b>Second operator.</b> Teach someone else Days 1–3. If they need a second compose, you taught it wrong.</li>
+    </ul>
   </section>
 
   <section>
