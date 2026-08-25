@@ -403,5 +403,5 @@ body.floor-open .floor { display: flex; }
 @media (max-width: 640px) {
   .ops-metrics { grid-template-columns: 1fr 1fr; }
   .floor-pills { display: none; }
-  .hero .btn-ghost { display: none; }
+  .hero .btn-ghost:not([download]) { display: none; }
 }
