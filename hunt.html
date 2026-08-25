@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hunt · Jeremy Panasuk</title>
+<style>
+  :root {
+    --bg: #07080b;
+    --ink: #e8e6dc;
+    --muted: #9a9586;
+    --line: #2a2c33;
+    --gold: #e6c15a;
+    --gold-dim: #8a7030;
+    --panel: #101218;
+    --applied: #7dcea0;
+    --pipeline: #7eb6d9;
+    --withdrew: #8b8794;
+    --rejected: #e07a7a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+  }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+  a:hover { color: #ffe38a; border-bottom-color: #ffe38a; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 22px 80px; }
+  header.hero {
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(900px 240px at 10% -10%, rgba(230,193,90,.12), transparent 60%),
+      var(--panel);
+    padding: 42px 36px 36px;
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4.2vw, 46px);
+    line-height: 1.12;
+    margin: 0 0 10px;
+    color: #f4f1e6;
+  }
+  .sub { color: var(--muted); margin: 0; max-width: 46em; }
+  section {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 26px 28px 30px;
+    margin-bottom: 22px;
+  }
+  h2 {
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .lab-lede {
+    font-size: 18px;
+    margin: 0 0 18px;
+    color: #f0eee4;
+  }
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+  .card {
+    border: 1px solid var(--line);
+    padding: 16px 18px 18px;
+    background: #0c0e14;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .card p, .lab p { margin: 0; color: var(--ink); }
+  .ports {
+    font-family: "IBM Plex Mono", "Consolas", monospace;
+    font-size: 13px;
+    color: #cfc8b0;
+    margin-top: 8px;
+  }
+  .lab-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 10px 8px 0;
+    white-space: nowrap;
+  }
+  td {
+    border-bottom: 1px solid #1b1d24;
+    padding: 9px 12px 9px 0;
+    vertical-align: top;
+  }
+  td.url, td.pkt { word-break: break-all; }
+  code {
+    font-family: "IBM Plex Mono", "Consolas", monospace;
+    font-size: 12.5px;
+    color: #f0ead2;
+  }
+  .st { font-weight: 600; }
+  tr[data-status="applied"] .st { color: var(--applied); }
+  tr[data-status="pipeline"] .st { color: var(--pipeline); }
+  tr[data-status="withdrew"] .st { color: var(--withdrew); }
+  tr[data-status="rejected"] .st { color: var(--rejected); }
+  caption {
+    caption-side: top;
+    text-align: left;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 0 0 10px;
+  }
+  footer {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Jeremy Panasuk · Hunt board · 25 Aug 2026</p>
+    <h1>Basically, you can learn AI Infrastructure in 21 days too!</h1>
+    <p class="sub">Live packets on GitHub + Hugging Face. Applications from the tracker. One lab, not a product zoo.</p>
+  </header>
+
+  <section class="lab">
+    <h2>The lab</h2>
+    <p class="lab-lede">Tabby Tavern then Taproot — one lab sharing GitHub and Hugging Face. Not two products.</p>
+    <div class="split">
+      <div class="card">
+        <h3>Tabby Tavern</h3>
+        <p>Local AI you can use. The compose stack on the box: chat, models, the tavern. Use it.</p>
+      </div>
+      <div class="card">
+        <h3>Taproot</h3>
+        <p>Next step. Coding at home, no internet. Continue + VS Code + Grok + Hermes against the local stack.</p>
+        <p class="ports">llama.cpp 262k → :1234 · webui → :3001</p>
+      </div>
+    </div>
+    <p class="lab-links">
+      <a href="https://github.com/jpanasuk-netizen/tabby-tavern-stack">github.com/jpanasuk-netizen/tabby-tavern-stack</a>
+      <a href="https://huggingface.co/jpanasuk/tabby-tavern-stack">huggingface.co/jpanasuk/tabby-tavern-stack</a>
+      <a href="https://huggingface.co/spaces/jpanasuk/tabby-tavern-sell-sheet">spaces/jpanasuk/tabby-tavern-sell-sheet</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Live packets</h2>
+    <table>
+      <caption>GitHub repo + Hugging Face Space for each live packet.</caption>
+      <thead>
+        <tr>
+          <th>Packet</th>
+          <th>Role</th>
+          <th>GitHub</th>
+          <th>Hugging Face</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>for-paylocity</code></td><td>Paylocity MTO</td><td><a href="https://github.com/jpanasuk-netizen/for-paylocity">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">Hugging Face</a></td></tr><tr><td><code>for-cresta</code></td><td>Cresta ADM</td><td><a href="https://github.com/jpanasuk-netizen/for-cresta">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-cresta">Hugging Face</a></td></tr><tr><td><code>for-edisyl</code></td><td>Edisyl FDE</td><td><a href="https://github.com/jpanasuk-netizen/for-edisyl">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">Hugging Face</a></td></tr><tr><td><code>for-warp-speed</code></td><td>Palantir Warp Speed</td><td><a href="https://github.com/jpanasuk-netizen/for-warp-speed">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">Hugging Face</a></td></tr><tr><td><code>for-american-tech</code></td><td>Palantir American Tech</td><td><a href="https://github.com/jpanasuk-netizen/for-american-tech">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">Hugging Face</a></td></tr><tr><td><code>for-carex-fde</code></td><td>Carex Founding FDE</td><td><a href="https://github.com/jpanasuk-netizen/for-carex-fde">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">Hugging Face</a></td></tr><tr><td><code>for-carex-fde-role</code></td><td>Carex FDE Role</td><td><a href="https://github.com/jpanasuk-netizen/for-carex-fde-role">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde-role">Hugging Face</a></td></tr><tr><td><code>for-toloka</code></td><td>Toloka ADP</td><td><a href="https://github.com/jpanasuk-netizen/for-toloka">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-toloka">Hugging Face</a></td></tr><tr><td><code>the-closer</code></td><td>THE CLOSER</td><td><a href="https://github.com/jpanasuk-netizen/the-closer">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/the-closer">Hugging Face</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Applications</h2>
+    <table>
+      <caption>From APPLICATIONS.xlsx. Packet URL only for Edisyl, Warp Speed, and American Tech. No private notes.</caption>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Job URL</th>
+          <th>Packet URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-status="applied"><td>Redapt</td><td>Forward Deployed Engineer, Agentic AI</td><td>Remote US</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://job-boards.greenhouse.io/redapt/jobs/5396488008">https://job-boards.greenhouse.io/redapt/jobs/5396488008</a></td><td class="pkt">—</td></tr><tr data-status="withdrew"><td>Optum</td><td>Lead AI/ML Engineer, Sales Engineering</td><td>US remote (MSP/DC: 4 days office)</td><td><span class="st">Withdrew</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/lead-ai-ml-engineer-sales-engineering-remote-at-optum-4434209526">https://www.linkedin.com/jobs/view/lead-ai-ml-engineer-sales-engineering-remote-at-optum-4434209526</a></td><td class="pkt">—</td></tr><tr data-status="withdrew"><td>Turnberry Solutions</td><td>Senior AI/ML Full Stack Engineer</td><td>Rochester MN · 100% remote · 12+ mo</td><td><span class="st">Withdrew</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/senior-ai-ml-full-stack-engineer-at-turnberry-solutions-4433501891">https://www.linkedin.com/jobs/view/senior-ai-ml-full-stack-engineer-at-turnberry-solutions-4433501891</a></td><td class="pkt">—</td></tr><tr data-status="withdrew"><td>Target</td><td>Principal Engineer, Secure AI</td><td>Remote eligible / Brooklyn Park</td><td><span class="st">Withdrew</span></td><td>2026-08-23</td><td class="url"><a href="https://corporate.target.com/jobs/w07/39/principal-engineer-secure-ai-remote-eligible">https://corporate.target.com/jobs/w07/39/principal-engineer-secure-ai-remote-eligible</a></td><td class="pkt">—</td></tr><tr data-status="withdrew"><td>Optum</td><td>Data Engineer with AI/ML</td><td>Minnetonka / US remote (MSP office rule)</td><td><span class="st">Withdrew</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/data-engineer-with-ai-ml-at-optum-4438521259">https://www.linkedin.com/jobs/view/data-engineer-with-ai-ml-at-optum-4438521259</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>EPAM</td><td>Senior AI Engineer, MCP</td><td>Remote</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://careers.epam.com/en/vacancy/senior-ai-engineer-mcp-blt1u396qfrbfp59bza_en">https://careers.epam.com/en/vacancy/senior-ai-engineer-mcp-blt1u396qfrbfp59bza_en</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>EPAM</td><td>Senior AI Native Developer, MCP</td><td>Remote</td><td><span class="st">Pipeline</span></td><td>2026-08-23</td><td class="url"><a href="https://careers.epam.com/en/vacancy/senior-ai-native-developer-mcp-blt26u1gf5ja4qr1lgd_en">https://careers.epam.com/en/vacancy/senior-ai-native-developer-mcp-blt26u1gf5ja4qr1lgd_en</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>AvantStay</td><td>AI Engineer</td><td>100% remote worldwide</td><td><span class="st">Pipeline</span></td><td>2026-08-23</td><td class="url"><a href="https://careers.kula.ai/avantstay/32322">https://careers.kula.ai/avantstay/32322</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>HavocAI</td><td>AI Infrastructure Engineer – Agents &amp; ML Systems</td><td>Remote US</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://jobs.ashbyhq.com/havocai/69843537-34f3-41e3-a69b-0ce11259d121">https://jobs.ashbyhq.com/havocai/69843537-34f3-41e3-a69b-0ce11259d121</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>Realityworks</td><td>Head of Software Development, Realityworks AI</td><td>—</td><td><span class="st">Applied</span></td><td>2026-08-19</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>AHEAD</td><td>(unspecified — Lever confirm)</td><td>—</td><td><span class="st">Applied</span></td><td>2026-08-02</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>Okta</td><td>Architect / Solutions Architect, People Technology</td><td>—</td><td><span class="st">Applied</span></td><td>2026-07-26</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>ServiceNow</td><td>Solution Architect - AI &amp; Data</td><td>—</td><td><span class="st">Applied</span></td><td>2026-07-26</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>ServiceNow</td><td>Partner Technical Architect</td><td>—</td><td><span class="st">Applied</span></td><td>2026-07-26</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>Vanta</td><td>Engineering Manager - Reporting</td><td>—</td><td><span class="st">Applied</span></td><td>2026-07-25</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>Edisyl</td><td>Forward-Deployed AI Data Engineer</td><td>Boston / Remote</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://jobs.ashbyhq.com/edisyl/a96cc9c6-0873-41a4-9731-6c8691332bd0">https://jobs.ashbyhq.com/edisyl/a96cc9c6-0873-41a4-9731-6c8691332bd0</a></td><td class="pkt"><a href="https://github.com/jpanasuk-netizen/for-edisyl">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">HF</a></td></tr><tr data-status="applied"><td>Answer Financial</td><td>AI Solutions Specialist-Remote Opportunity</td><td>United States / Remote</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/4415392215">https://www.linkedin.com/jobs/view/4415392215</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>Arcovo AI</td><td>AI Solutions Manager (Technical Delivery)</td><td>Remote</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>IntegriChain</td><td>AI Data Engineer</td><td>—</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="applied"><td>Gravity IT Resources</td><td>AI Solutions Engineer</td><td>United States</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/4450263901">https://www.linkedin.com/jobs/view/4450263901</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>People In AI</td><td>Senior AI Engineer</td><td>United States</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/4454314099">https://www.linkedin.com/jobs/view/4454314099</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>Conquer AI</td><td>Artificial Intelligence Engineer</td><td>United States</td><td><span class="st">Applied</span></td><td>2026-08-23</td><td class="url"><a href="https://www.linkedin.com/jobs/view/4453484191">https://www.linkedin.com/jobs/view/4453484191</a></td><td class="pkt">—</td></tr><tr data-status="rejected"><td>Recruitics</td><td>Director of Applied AI</td><td>—</td><td><span class="st">Rejected</span></td><td>2026-07-26</td><td class="url">—</td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>Smartsheet</td><td>Senior Principal Forward Deployed AI Engineer</td><td>Remote USA (25–50% travel)</td><td><span class="st">Pipeline</span></td><td>2026-08-24</td><td class="url"><a href="https://job-boards.greenhouse.io/smartsheet/jobs/7798778">https://job-boards.greenhouse.io/smartsheet/jobs/7798778</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>Glean</td><td>Founding Forward Deployed Engineer</td><td>Remote US (NOT MV hybrid)</td><td><span class="st">Pipeline</span></td><td>2026-08-24</td><td class="url"><a href="https://job-boards.greenhouse.io/gleanwork/jobs/4651991005">https://job-boards.greenhouse.io/gleanwork/jobs/4651991005</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>Aimpoint Digital</td><td>Forward Deployed AI Engineer – Claude</td><td>Remote US (Atlanta optional)</td><td><span class="st">Pipeline</span></td><td>2026-08-24</td><td class="url"><a href="https://aimpoint-digital.breezy.hr/p/6845c658955b-forward-deployed-ai-engineer-claude-2026--us">https://aimpoint-digital.breezy.hr/p/6845c658955b-forward-deployed-ai-engineer-claude-2026--us</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>Dscout</td><td>AI Data Engineer</td><td>Remote US (WI ok)</td><td><span class="st">Pipeline</span></td><td>2026-08-24</td><td class="url"><a href="https://job-boards.greenhouse.io/dscout/jobs/4324769009">https://job-boards.greenhouse.io/dscout/jobs/4324769009</a></td><td class="pkt">—</td></tr><tr data-status="pipeline"><td>WorkOS</td><td>Applied AI Engineer</td><td>Remote US/Canada</td><td><span class="st">Pipeline</span></td><td>2026-08-24</td><td class="url"><a href="https://jobs.ashbyhq.com/workos/5e650527-d8dd-413a-9cfb-d7d68143274b">https://jobs.ashbyhq.com/workos/5e650527-d8dd-413a-9cfb-d7d68143274b</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>Palantir</td><td>Forward Deployed Software Engineer - Warp Speed</td><td>New York, NY · Hybrid</td><td><span class="st">Applied</span></td><td>2026-08-24</td><td class="url"><a href="https://jobs.lever.co/palantir/13f99633-43b5-4459-8e84-25073f257c18">https://jobs.lever.co/palantir/13f99633-43b5-4459-8e84-25073f257c18</a></td><td class="pkt"><a href="https://github.com/jpanasuk-netizen/for-warp-speed">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">HF</a></td></tr><tr data-status="applied"><td>Palantir</td><td>American Tech Fellowship</td><td>—</td><td><span class="st">Applied</span></td><td>2026-08-24</td><td class="url">—</td><td class="pkt"><a href="https://github.com/jpanasuk-netizen/for-american-tech">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">HF</a></td></tr><tr data-status="applied"><td>Lila Sciences</td><td>Senior Software Engineer, Data</td><td>Cambridge MA / San Francisco · office posting, Jeremy overrode</td><td><span class="st">Applied</span></td><td>2026-08-24</td><td class="url"><a href="https://job-boards.greenhouse.io/lilasciences/jobs/4250077009">https://job-boards.greenhouse.io/lilasciences/jobs/4250077009</a></td><td class="pkt">—</td></tr><tr data-status="applied"><td>Symmetry Lending</td><td>Data Engineering &amp; Reporting Manager</td><td>Remote</td><td><span class="st">Applied</span></td><td>2026-08-24</td><td class="url"><a href="https://www.indeed.com/viewjob?jk=a622b6b0c2bd71a3">https://www.indeed.com/viewjob?jk=a622b6b0c2bd71a3</a></td><td class="pkt">—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>Tracker: APPLICATIONS.xlsx · Packets: github.com/jpanasuk-netizen + huggingface.co/spaces/jpanasuk</footer>
+</div>
+</body>
+</html>
