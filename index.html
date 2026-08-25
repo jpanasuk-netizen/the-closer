@@ -58,9 +58,7 @@
 
     .hero {
       position: relative;
-      height: 100vh;
-      min-height: 720px;
-      max-height: 1080px;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -79,7 +77,7 @@
     .hero-copy {
       position: relative; z-index: 2;
       margin-left: auto;
-      width: min(640px, 48vw);
+      width: min(760px, 58vw);
       padding: 8vh 48px 8vh 0;
     }
     .hero h1 {
@@ -90,11 +88,13 @@
       margin: 10px 0 18px;
     }
     .hero .tag {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: clamp(22px, 2.2vw, 30px);
-      line-height: 1.25;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.5;
       color: #d7e6f5;
+      max-width: 62ch;
+      margin: 0 0 12px;
     }
     .hero .tag em { color: var(--purple); font-style: italic; }
     .hero .meta {
@@ -112,7 +112,7 @@
     }
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-top: 28px;
     }
@@ -131,10 +131,11 @@
     .metric span {
       display: block;
       margin-top: 6px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.4;
       color: var(--muted);
     }
     .c-purple { color: var(--purple); }
@@ -399,14 +400,15 @@
     <div class="hero-copy">
       <div class="kicker">Available · AI Systems Engineer · AI Data Engineer</div>
       <h1>JEREMY<br>PANASUK</h1>
-      <p class="tag">The closer they parachute into burning data platforms.<br><em>Now he builds local AI stacks that measure.</em></p>
+      <p class="tag">Informatica used to parachute me into Fortune-100 data platforms that were already on fire. I recovered 19 of 20 of those accounts. The last two years I rebuilt that career on purpose: off Informatica-only, onto a private RTX 4070 lab that measures decode, routes GPUs, and runs four isolated Python agents against local Ollama. The motion did not change. Hear the floor. Wrangle what exists. Ship a path the night operator can still run on Tuesday. Measure the number you named before you started.</p>
+      <p class="tag">Customer satisfaction is worthless. Customer loyalty is priceless. That is not a tagline. It is the talk I gave at Informatica while I was still embedded at Dawn Foods. Satisfaction is a survey they forget. Loyalty is the warehouse load that went from eight hours to under one and stayed there because they used it.</p>
       <p class="meta">AI Systems Engineer · Enterprise Data Architect · 22 Years Fortune-100 · Private RTX Lab</p>
-      <p class="contact">Sand Creek, WI · 715-970-0204 · jpanasuk@yahoo.com · jpanasuk@gmail.com</p>
+      <p class="contact">Sand Creek, WI · 715-970-0204 · jpanasuk@gmail.com</p>
       <div class="metrics">
-        <div class="metric"><b class="c-purple">27×</b><span>Local LLM decode after GPU routing</span></div>
-        <div class="metric"><b class="c-orange">8h → 1h</b><span>Dawn Foods warehouse load</span></div>
-        <div class="metric"><b class="c-cyan">$2.3M+</b><span>BNY Mellon Grid/HA close</span></div>
-        <div class="metric"><b class="c-green">19/20</b><span>Crisis accounts solved</span></div>
+        <div class="metric"><b class="c-purple">27×</b><span>Local decode after GPU routing: 1.39 tok/s CPU baseline to 37.47 on the RTX 4070, logged in SQLite. Not a lucky run.</span></div>
+        <div class="metric"><b class="c-orange">8h → 1h</b><span>Dawn Foods warehouse load on PowerExchange CDC against AS/400 remote journals. Featured on informatica.com because it got used.</span></div>
+        <div class="metric"><b class="c-cyan">$2.3M+</b><span>Bank of New York Mellon Grid/HA with senior VPs and Informatica CEO Sohaib Abbasi in the room. Sales, services, support, growing.</span></div>
+        <div class="metric"><b class="c-green">19/20</b><span>Troubled accounts entered. Nineteen recovered. Milwaukee insurer: three-month pile-up closed in two days — one buried IBM DB2 driver.</span></div>
       </div>
       <a class="btn-floor" href="#floor" data-open-floor>Enter the floor</a>
       <a class="btn-ghost" href="playbook.html">The playbook</a>
@@ -423,7 +425,7 @@
       <article class="card">
         <div class="kicker">Who I am</div>
         <div class="rule"></div>
-        <p>I build systems that stay alive under pressure. Twenty-two years of Fortune-100 integration work taught me to read the evidence before touching the config, find the bottleneck beneath the symptom, and leave the customer with a platform and a team that can run it. I influenced $10M+ in enterprise sales and services, led teams of 7–14, and still parachute toward the fire.</p>
+        <p>I build systems that stay alive under pressure. Twenty-two years of Fortune-100 integration work taught me to read the evidence before touching the config, find the bottleneck beneath the symptom, and leave the customer with a platform and a team that can run it. Consulting Manager: teams of 7–14, analyst through principal. About fifteen percent of IPS time was writing statements of work with regional managers — full contract wording, resource levels, estimates and assumptions — Micron 2,080 hours grown to 7,000, Navy Federal 3,000 hours, Harvard through hypercare. At JPMorgan Chase I sat sales, regional managers, and IPS VPs on enterprise data-warehouse and Center of Excellence roadmaps. We reached the final two proposals. We did not close. I will not write that as a $10 million win. I still parachute toward the fire.</p>
       </article>
       <article class="card">
         <div class="kicker">The operating line</div>
@@ -440,7 +442,7 @@
       <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;">
         <div>
           <h2>AI Systems Engineer · Local AI Lab</h2>
-          <p style="max-width:820px;margin-top:8px;">A private RTX 4070 lab built with Docker Compose, CUDA, TabbyAPI/EXL3, Ollama, MCP, SQLite telemetry, and RAG. The point is not a demo: every claim gets a benchmark, a regression check, and a documented operating path.</p>
+          <p style="max-width:820px;margin-top:8px;">A private RTX 4070 lab built with Docker Compose, CUDA, TabbyAPI/EXL3, Ollama, MCP, SQLite telemetry, and RAG. The point is not a demo. Every claim gets a benchmark, a regression check, and a documented operating path — the same loop I used on Grid/HA. Four agents run as four isolated Python processes, each with its own virtual environment, handing Pydantic JSON instead of free text: Systems names the constraints, Architect writes the contract, Synthesis generates against local Ollama, Validator checks schema and graph and self-heals until it passes. If one agent crashes, the other three keep running. n8n RAG pulls live competitive telemetry, writes a Discord briefing every run, and only fires WhatsApp when the score hits a threshold or Rank 1 territory. Use the selector below. The full-detail bullets are the receipts, not the chips.</p>
         </div>
         <div class="kicker" style="color:var(--muted);align-self:flex-end;">Aug 2024 – Present</div>
       </div>
@@ -459,7 +461,7 @@
       <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;">
         <div>
           <h2>The Playbook</h2>
-          <p style="max-width:820px;margin-top:8px;">The parachute left documents, not folklore. Environment summaries, upgrade roadmaps, phase reviews, and a v10 testing deck — the same loop now running on the RTX lab: measure, isolate, write the standard, coach the team.</p>
+          <p style="max-width:820px;margin-top:8px;">The parachute left documents, not folklore. Every IPS engagement opened with an Environment Summary — owner and date on the cover, utilization first, what was already changed, what is still on fire. Close included a named skill-up and, where it mattered, a QA twin of production. The public artifacts: Northwestern Mutual Environment Summary, Mercedes-Benz Financial performance cheat sheet, Waddell &amp; Reed Upgrade Roadmap v3, Farmers Phase 2 architecture review, PowerCenter 10.0.0 upgrade overview. Internal hostnames and credentials stay off this site. The same loop now runs on the RTX lab: measure, isolate, write the standard, coach the team. Volkswagen Group of America wanted the complete Grid/HA stack in two weeks — bonded dual NIC, Oracle RAC on InfiniBand, three 8-core PowerCenter servers. Live demo a day early. Four of their consultants shadowed and took notes. An unnamed customer would not buy PowerCenter and Data Quality from a vendor VM, so I installed it on their metal, smoked it, ran their use cases, and the deal closed immediately after. That is the playbook. Select a surface below for the full-detail bullets.</p>
         </div>
         <div class="kicker" style="color:var(--muted);align-self:flex-end;">IPS artifacts · 2017 floor</div>
       </div>
@@ -467,17 +469,17 @@
         <article class="pillar">
           <div class="kicker">01 · Docs</div>
           <h3 class="c-cyan">Documentation standards</h3>
-          <p>Owner on the cover. Utilization graphs. What was changed. What is still on fire. Grid/HA and filesystem called by name. The customer can execute without you in the building.</p>
+          <p>Owner and date on the cover. Utilization graphs before folklore. What was changed. What is still on fire. Grid/HA and the filesystem called by name — UNC is not high availability. The customer can execute the next change without you in the building. If the next engineer cannot run it, I wrote a diary, not a standard.</p>
         </article>
         <article class="pillar">
           <div class="kicker">02 · Perf</div>
           <h3 class="c-orange">Real-world performance</h3>
-          <p>Baseline → goal → bottleneck → eliminate → repeat. Thread statistics before folklore. Do not partition a single-partition mystery. Cache in RAM. MBFS: 20–30% off job runtime.</p>
+          <p>Baseline, then a named goal, then the bottleneck, then eliminate it, then repeat. Thread statistics before folklore. Do not partition a single-partition mystery. Cache large transformations in RAM so they stop spilling to disk — Mercedes-Benz Financial took 20–30% off job runtime that way and kept the cheat sheet. Isolation tests before you add another box.</p>
         </article>
         <article class="pillar">
           <div class="kicker">03 · Coach</div>
           <h3 class="c-green">Customer coaching</h3>
-          <p>Knowledge transfer is a deliverable. Skill-up is named. Whole stack plus GCS in one room. The team is praised in the write-up. Loyalty is the runbook they keep.</p>
+          <p>Knowledge transfer is a deliverable, not a courtesy. Skill-up is named in the write-up — Farmers called Developer tool and Advanced XML. Whole stack plus GCS in one room so the next incident is not a mystery. The team is praised in the document they keep. Loyalty is the runbook they still run on Tuesday. Satisfaction is a survey they forget.</p>
         </article>
       </div>
       <div class="project-bar">
@@ -494,7 +496,7 @@
       <div class="kicker">The receipts</div>
       <div class="rule"></div>
       <h2>The Legend Reel</h2>
-      <p style="max-width:760px;margin:8px 0 0;">The role, the awards, the rescue record, and the enterprise outcomes behind the headline — full-detail bullets from the long-form resumes. Click any card or use the selector. Informatica SEAL team. Analyst to Consulting Manager. v7–v10 upgrade specialist. Parachute closer: 20 troubled accounts entered, 19 recovered. New receipts from the IPS artifacts: Farmers Phase 2, Mercedes-Benz Financial 20–30%, Northwestern Mutual P1, Waddell &amp; Reed v9→v10 roadmap.</p>
+      <p style="max-width:820px;margin:8px 0 0;">The role, the awards, the rescue record, and the enterprise outcomes behind the headline — full-detail bullets from the long-form resumes, not dollar chips. Click any card or use the selector. Informatica SEAL: analyst to Consulting Manager, v7–v10 upgrade specialist, parachute closer. Twenty troubled accounts entered, nineteen recovered. Kohl’s is not a logo: Informatica v9 Grid/HA capacity and upgrade, target architecture on commodity (Cisco or IBM) and the cutover off AIX, current volumes plus a three-year growth curve, briefed through Senior VPs, about $2 million in software, proofs of concept on their data when the vendor VMs were not enough. New receipts from the IPS artifacts: Farmers Phase 2, Mercedes-Benz Financial 20–30%, Northwestern Mutual P1, Waddell &amp; Reed v9→v10 roadmap. Volkswagen two-week complete Grid/HA. Micron 2,080→7,000 hours, zero downtime. The selector expands every named floor the way a hiring manager should read it: what was broken, what was built, who was briefed, what moved.</p>
       <div class="project-bar">
         <label for="legend-pick">Select a project</label>
         <select id="legend-pick" aria-label="Select a receipt to expand full-detail bullets"></select>
@@ -543,7 +545,7 @@
   <section class="cta" id="contact">
     <div class="kicker">Now available</div>
     <h2>SEND THE CLOSER</h2>
-    <p>Remote AI Systems Engineer · Agent Architect · Local LLM infrastructure. High-autonomy teams that want production discipline, not a demo reel.</p>
+    <p>Remote AI Systems Engineer · Agent Architect · Local LLM infrastructure. High-autonomy teams that want production discipline, not a demo reel. I will sit on the floor, write the standard, and leave a team that can run the next wave without me in the chair.</p>
     <a class="btn-floor" href="#floor" data-open-floor>Open the operator floor</a>
     <div class="contact-block">
       <div><strong>715-970-0204</strong></div>
