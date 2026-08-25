@@ -20,6 +20,7 @@ That page is the campaign: cinematic 16:9 hero with live video, proof metrics, l
 |------|-----|
 | `index.html` | Full cinematic site. Share the folder, host on GitHub Pages, or present on a call. |
 | `playbook.html` | Documentation standards, performance cheat sheet, customer coaching, and the four IPS engagements. |
+| `canonical-stack-packet.html` | Unified stack + 3-day stand-up + 21-day arc + packet registry + hunt status + all LinkedIn reference screenshots. |
 | `billboard.html` | Locked **1920×1080** operator poster. Screenshot this for LinkedIn posts, X, email, Zoom. |
 | `linkedin-banner.html` | Locked **1584×396** LinkedIn cover. |
 | `video/closer-bumper.mp4` | 6s 720p datacenter push-in. LinkedIn/X native video. |
