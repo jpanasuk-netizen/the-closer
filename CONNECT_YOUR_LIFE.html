@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Jeremy Panasuk · Connect Your Life to the Agents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  @page { size: 11in 17in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #0a1018; }
+  @media screen {
+    html, body { background: #0a1018; min-height: 0; }
+    body { padding: 28px 16px 88px; display: flex; justify-content: center; }
+    .poster { box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+  }
+  .poster {
+    width: 11in; height: 17in; overflow: hidden; position: relative;
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(184,134,11,.22), transparent 55%),
+      linear-gradient(180deg, #0d1828 0%, #0a1018 38%, #152033 100%);
+    color: #f4efe4;
+    font-family: "Source Sans 3", Arial, sans-serif;
+  }
+  .goldline { height: 10px; background: linear-gradient(90deg, #1e3a5f, #b8860b 40%, #e6c15a 50%, #b8860b 60%, #1e3a5f); }
+  .goldline.thin { height: 4px; }
+  .pad { padding: 0.28in 0.42in 0.32in; }
+  .kicker {
+    font-family: Oswald, sans-serif; letter-spacing: .28em; text-transform: uppercase;
+    color: #b8860b; font-size: 11pt; text-align: center; margin-bottom: 6px;
+  }
+  h1 {
+    font-family: Oswald, sans-serif; font-weight: 700; text-transform: uppercase;
+    text-align: center; letter-spacing: .04em; line-height: .88;
+    font-size: 52pt; color: #f4efe4;
+  }
+  h1 em {
+    font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600;
+    text-transform: none; color: #e6c15a; display: block; font-size: 28pt; letter-spacing: 0;
+    margin-top: 8px;
+  }
+  .tag {
+    font-family: "Playfair Display", Georgia, serif; font-style: italic; text-align: center;
+    font-size: 15pt; color: #e6dfd0; max-width: 28ch; margin: 10px auto 12px; line-height: 1.25;
+  }
+  .hero {
+    display: grid; grid-template-columns: 1.4fr .85in 1.4fr; gap: 14px; align-items: center;
+    margin: 8px 0 14px;
+  }
+  .hero p { font-size: 10pt; line-height: 1.32; color: #c9c0ae; }
+  .shot {
+    width: .85in; height: 1.08in; object-fit: cover; object-position: 50% 18%;
+    border: 3px solid #b8860b; display: block; margin: 0 auto;
+  }
+  .contact {
+    text-align: center; font-family: Oswald, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    font-size: 8pt; color: #b8860b; margin-bottom: 12px;
+  }
+  .contact a { color: #e6c15a; text-decoration: none; }
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 8px 0 12px; }
+  .card {
+    background: rgba(244,239,228,.04); border: 1px solid rgba(184,134,11,.45);
+    padding: 12px 12px 14px; min-height: 3.6in;
+  }
+  .card .n {
+    font-family: Oswald, sans-serif; font-size: 22pt; letter-spacing: .04em; text-transform: uppercase;
+    color: #e6c15a; line-height: .9; margin-bottom: 4px;
+  }
+  .card .sub {
+    font-family: Oswald, sans-serif; font-size: 8pt; letter-spacing: .16em; text-transform: uppercase;
+    color: #8a93a0; margin-bottom: 8px;
+  }
+  .card h3 {
+    font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 13pt;
+    color: #f4efe4; margin-bottom: 8px; line-height: 1.15;
+  }
+  .card p { font-size: 9.2pt; line-height: 1.32; color: #d8d0c0; margin: 0 0 8px; }
+  .card ul { margin: 0; padding-left: 14px; color: #c9c0ae; font-size: 8.8pt; line-height: 1.35; }
+  .banner {
+    background: #1e3a5f; color: #f4efe4; padding: 12px 16px; text-align: center;
+    font-family: Oswald, sans-serif; letter-spacing: .12em; text-transform: uppercase;
+    font-size: 13pt; margin: 4px 0 12px;
+  }
+  .banner span { color: #e6c15a; }
+  .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  .m { background: #152033; border-top: 3px solid #b8860b; padding: 10px 8px; text-align: center; }
+  .m b { display: block; font-family: Oswald, sans-serif; font-size: 18pt; color: #e6c15a; line-height: .95; }
+  .m span { display: block; font-size: 7.2pt; letter-spacing: .06em; text-transform: uppercase; color: #c9c0ae; margin-top: 4px; }
+  .floor {
+    border: 2px solid #b8860b; padding: 12px 14px; margin-bottom: 10px;
+    background: rgba(184,134,11,.06);
+  }
+  .floor h2 {
+    font-family: Oswald, sans-serif; font-size: 11pt; letter-spacing: .18em; text-transform: uppercase;
+    color: #b8860b; margin-bottom: 6px;
+  }
+  .floor p { font-size: 10pt; line-height: 1.35; color: #e6dfd0; }
+  .loyal {
+    font-family: "Playfair Display", Georgia, serif; font-style: italic; text-align: center;
+    font-size: 16pt; color: #e6c15a; margin: 8px 0 4px;
+  }
+  .foot {
+    font-family: Oswald, sans-serif; letter-spacing: .14em; text-transform: uppercase;
+    font-size: 7.5pt; color: #8a93a0; text-align: center; margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="goldline"></div>
+    <div class="goldline thin"></div>
+    <div class="pad">
+      <div class="kicker">A Wisconsin closer · available remote · Fall 2026</div>
+      <h1>Connect your life<br>to the agents<em>Three stacks. One operator. The house stays yours.</em></h1>
+      <p class="tag">Not a chatbot in a tab. A desk, a local stack, and a wire into the world — measured, bounded, loyal.</p>
+
+      <div class="hero">
+        <p>They used to parachute me into burning Fortune-100 data platforms. Nineteen of twenty crisis accounts came back. Dawn Foods warehouse load: eight hours to one. Then I spent two years wiring the same diagnostic instinct into agents that live on the metal.</p>
+        <img class="shot" src="headshot.png" alt="Jeremy Panasuk" />
+        <p>I do not sell a smarter mapping. I sell the layer around the job: Grok Bot on the desk, Hermes on the house stack, OpenClaw on the wire. You keep the keys. The agents keep the watch.</p>
+      </div>
+      <div class="contact">
+        Jeremy Panasuk · New Auburn, WI · 715-970-0204 · jpanasuk@gmail.com<br />
+        <a href="https://github.com/jpanasuk-netizen">github.com/jpanasuk-netizen</a>
+        · <a href="https://huggingface.co/jpanasuk">huggingface.co/jpanasuk</a>
+        · <a href="https://jpanasuk-netizen.github.io/the-closer/">github.io/the-closer</a>
+      </div>
+
+      <div class="three">
+        <div class="card">
+          <div class="n">01 · Grok Bot</div>
+          <div class="sub">The desk that never sleeps</div>
+          <h3>Your life, dispatched.</h3>
+          <p>Routines that hunt, stamp, and brief. Packets that go live on GitHub Pages and Hugging Face the same morning. Inbox scanned. Covers drafted. The closer still clicks Apply — the desk never drops the thread.</p>
+          <ul>
+            <li>Weekday hunt cadence, true-remote keepers, V3 closer-voice covers</li>
+            <li>Multi-agent dispatch: Leo, GadDesk, Hermes, TapRoot, Headshot</li>
+            <li>Campaign sites, camera packets, tracker stamps after you send</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="n">02 · Hermes</div>
+          <div class="sub">The house stack · WSL</div>
+          <h3>Continuity on your metal.</h3>
+          <p>When the cloud tab dies, Hermes still talks to the local stack. Camera cut, CLI, the floor that stays up because it lives in the house — not a rented dashboard they clap for once.</p>
+          <ul>
+            <li>WSL Ubuntu operator for the Grok Build / local-AI lab</li>
+            <li>Holds continuity for the Hermes stack when GrokBot access is gone</li>
+            <li>Same plant instinct: measure the boundary, then hand the agent the boundary</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="n">03 · OpenClaw</div>
+          <div class="sub">The wire into the world</div>
+          <h3>Agents that leave the notes.</h3>
+          <p>WhatsApp agents. Ten-plus skills. Systems → architect → validator on local Ollama: structured output, repair retries, collision and regression. Multi-provider routing with cloud failover when the house needs a second engine.</p>
+          <ul>
+            <li>OpenClaw production agents, not a demo reel</li>
+            <li>Bounded MCP: agents see Docker/network, not host-root</li>
+            <li>Tabby Tavern / Dockroot-MCP published: HF + Docker Hub</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner">This is the Iron Man suit for a life, not a slide. <span>You stay. The agents keep the watch.</span></div>
+
+      <div class="proof">
+        <div class="m"><b>19/20</b><span>Crisis accounts recovered</span></div>
+        <div class="m"><b>8h → 1h</b><span>Dawn Foods warehouse load</span></div>
+        <div class="m"><b>20 yr</b><span>Floor + field · Informatica to agents</span></div>
+        <div class="m"><b>Loyalty</b><span>Priceless. Satisfaction is worthless.</span></div>
+      </div>
+
+      <div class="floor">
+        <h2>The floor this was built on</h2>
+        <p>Cargill oils. Horizon. Micron fabs connected with PowerExchange CDC off SQL Server, Fast Clone, Big Data Edition into Teradata and Hadoop. Volkswagen Grid/HA in two weeks. On-their-metal PowerCenter and Data Quality. Teams of 7–14 from analyst to principal. Cargill CFO Award. Micron runner-up Consultant of the Year. Then the lab year: Docker, WSL, Python, MCP, OpenClaw, a campaign that ships packets instead of PDFs in a drawer.</p>
+      </div>
+
+      <p class="loyal">Customer satisfaction is worthless. Customer loyalty is priceless.</p>
+      <p class="foot">Jeremy Panasuk · Connect your life to the agents · Grok Bot · Hermes · OpenClaw · High-autonomy only · The Closer V3</p>
+    </div>
+  </div>
+</body>
+</html>
