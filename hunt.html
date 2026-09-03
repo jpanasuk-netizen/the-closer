@@ -226,10 +226,49 @@
   .addins li { margin: 0 0 8px; max-width: 52em; }
   .addins { margin: 0; padding-left: 1.15em; color: var(--ink); }
 
+  .catalog-bar {
+    position: sticky; top: 0; z-index: 20;
+    border: 1px solid var(--line);
+    background: rgba(16,18,24,.94);
+    padding: 12px 16px 14px;
+    margin-bottom: 16px;
+  }
+  .catalog-bar nav {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .catalog-bar nav + nav { margin-top: 8px; }
+  .catalog-bar .pair { color: var(--muted); white-space: nowrap; }
+  .catalog-bar a { border-bottom: 0; }
+
 </style>
 </head>
 <body>
 <div class="wrap">
+  <nav class="catalog-bar" aria-label="Closer catalog">
+    <nav class="catalog">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="playbook.html">Playbook</a>
+      <a href="loyalty.html">Loyalty</a>
+      <a href="canonical-stack-packet.html">Packet</a>
+      <a href="hunt.html">Hunt</a>
+      <a href="skill-matrix.html">Matrix</a>
+      <a href="billboard.html">Billboard</a>
+      <a href="linkedin-banner.html">Banner</a>
+      <a href="CONNECT_YOUR_LIFE.html">Agents</a>
+    </nav>
+    <nav class="packets" aria-label="Live packets">
+      <span class="pair">Closer <a href="https://jpanasuk-netizen.github.io/the-closer/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/the-closer">HF</a></span>
+      <span class="pair">American Tech <a href="https://jpanasuk-netizen.github.io/for-american-tech/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">HF</a></span>
+      <span class="pair">Paylocity <a href="https://jpanasuk-netizen.github.io/for-paylocity/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">HF</a></span>
+      <span class="pair">Carex <a href="https://jpanasuk-netizen.github.io/for-carex-fde/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">HF</a></span>
+      <span class="pair">Cresta <a href="https://jpanasuk-netizen.github.io/for-cresta/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-cresta">HF</a></span>
+      <span class="pair">Edisyl <a href="https://jpanasuk-netizen.github.io/for-edisyl/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">HF</a></span>
+      <span class="pair">Toloka <a href="https://jpanasuk-netizen.github.io/for-toloka/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-toloka">HF</a></span>
+      <span class="pair">Warp Speed <a href="https://jpanasuk-netizen.github.io/for-warp-speed/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">HF</a></span>
+    </nav>
+  </nav>
   <header class="hero">
     <div class="hero-row">
       <img class="hero-portrait" src="assets/hunt-portrait.jpg" alt="Jeremy Panasuk" width="108" height="108">
@@ -355,9 +394,35 @@
   </section>
 
   <section>
+    <h2>Closer catalog</h2>
+    <table>
+      <caption>Hub pages on this site. Relative links on the hub itself.</caption>
+      <thead>
+        <tr>
+          <th>Hub page</th>
+          <th>Role</th>
+          <th>On this hub</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>index.html</code></td><td>Home / THE CLOSER</td><td><a href="index.html">index.html</a></td></tr>
+        <tr><td><code>resume.html</code></td><td>Resume viewer</td><td><a href="resume.html">resume.html</a></td></tr>
+        <tr><td><code>playbook.html</code></td><td>IPS playbook</td><td><a href="playbook.html">playbook.html</a></td></tr>
+        <tr><td><code>loyalty.html</code></td><td>Loyalty talk</td><td><a href="loyalty.html">loyalty.html</a></td></tr>
+        <tr><td><code>canonical-stack-packet.html</code></td><td>Canonical stack packet</td><td><a href="canonical-stack-packet.html">canonical-stack-packet.html</a></td></tr>
+        <tr><td><code>hunt.html</code></td><td>Local hunt board</td><td><a href="hunt.html">hunt.html</a></td></tr>
+        <tr><td><code>skill-matrix.html</code></td><td>Skill matrix</td><td><a href="skill-matrix.html">skill-matrix.html</a></td></tr>
+        <tr><td><code>billboard.html</code></td><td>1920×1080 poster</td><td><a href="billboard.html">billboard.html</a></td></tr>
+        <tr><td><code>linkedin-banner.html</code></td><td>LinkedIn cover</td><td><a href="linkedin-banner.html">linkedin-banner.html</a></td></tr>
+        <tr><td><code>CONNECT_YOUR_LIFE.html</code></td><td>Connect Your Life flier</td><td><a href="CONNECT_YOUR_LIFE.html">CONNECT_YOUR_LIFE.html</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
     <h2>Live packets</h2>
     <table>
-      <caption>GitHub repo + Hugging Face Space for each live packet.</caption>
+      <caption>GitHub Pages + Hugging Face Space for each live packet. Lab twins stay repo/HF — no dead github.io slugs.</caption>
       <thead>
         <tr>
           <th>Packet</th>
@@ -367,7 +432,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td><code>for-paylocity</code></td><td>Paylocity MTO</td><td><a href="https://github.com/jpanasuk-netizen/for-paylocity">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">Hugging Face</a></td></tr><tr><td><code>for-cresta</code></td><td>Cresta ADM</td><td><a href="https://github.com/jpanasuk-netizen/for-cresta">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-cresta">Hugging Face</a></td></tr><tr><td><code>for-edisyl</code></td><td>Edisyl FDE</td><td><a href="https://github.com/jpanasuk-netizen/for-edisyl">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">Hugging Face</a></td></tr><tr><td><code>for-warp-speed</code></td><td>Palantir Warp Speed</td><td><a href="https://github.com/jpanasuk-netizen/for-warp-speed">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">Hugging Face</a></td></tr><tr><td><code>for-american-tech</code></td><td>Palantir American Tech</td><td><a href="https://github.com/jpanasuk-netizen/for-american-tech">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">Hugging Face</a></td></tr><tr><td><code>for-carex-fde</code></td><td>Carex Founding FDE</td><td><a href="https://github.com/jpanasuk-netizen/for-carex-fde">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">Hugging Face</a></td></tr><tr><td><code>for-toloka</code></td><td>Toloka ADP</td><td><a href="https://github.com/jpanasuk-netizen/for-toloka">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-toloka">Hugging Face</a></td></tr><tr><td><code>the-closer</code></td><td>THE CLOSER</td><td><a href="https://github.com/jpanasuk-netizen/the-closer">GitHub</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/the-closer">Hugging Face</a></td></tr>
+        <tr><td><code>the-closer</code></td><td>THE CLOSER</td><td><a href="https://jpanasuk-netizen.github.io/the-closer/">github.io/the-closer</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/the-closer">Hugging Face</a></td></tr>
+        <tr><td><code>for-american-tech</code></td><td>Palantir American Tech</td><td><a href="https://jpanasuk-netizen.github.io/for-american-tech/">github.io/for-american-tech</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">Hugging Face</a></td></tr>
+        <tr><td><code>for-paylocity</code></td><td>Paylocity MTO</td><td><a href="https://jpanasuk-netizen.github.io/for-paylocity/">github.io/for-paylocity</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">Hugging Face</a></td></tr>
+        <tr><td><code>for-carex-fde</code></td><td>Carex Founding FDE</td><td><a href="https://jpanasuk-netizen.github.io/for-carex-fde/">github.io/for-carex-fde</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">Hugging Face</a></td></tr>
+        <tr><td><code>for-cresta</code></td><td>Cresta ADM</td><td><a href="https://jpanasuk-netizen.github.io/for-cresta/">github.io/for-cresta</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-cresta">Hugging Face</a></td></tr>
+        <tr><td><code>for-edisyl</code></td><td>Edisyl FDE</td><td><a href="https://jpanasuk-netizen.github.io/for-edisyl/">github.io/for-edisyl</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">Hugging Face</a></td></tr>
+        <tr><td><code>for-toloka</code></td><td>Toloka ADP</td><td><a href="https://jpanasuk-netizen.github.io/for-toloka/">github.io/for-toloka</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-toloka">Hugging Face</a></td></tr>
+        <tr><td><code>for-warp-speed</code></td><td>Palantir Warp Speed</td><td><a href="https://jpanasuk-netizen.github.io/for-warp-speed/">github.io/for-warp-speed</a></td><td><a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">Hugging Face</a></td></tr>
+        <tr><td><code>tabby-tavern-stack</code></td><td>Lab stack</td><td><a href="https://github.com/jpanasuk-netizen/tabby-tavern-stack">repo</a></td><td><a href="https://huggingface.co/jpanasuk/tabby-tavern-stack">Hugging Face</a></td></tr>
+        <tr><td><code>tabby-tavern-sell-sheet</code></td><td>Sell sheet</td><td>—</td><td><a href="https://huggingface.co/spaces/jpanasuk/tabby-tavern-sell-sheet">Hugging Face</a></td></tr>
+        <tr><td><code>local_grid_suite</code></td><td>Measure / route</td><td><a href="https://github.com/jpanasuk-netizen/local_grid_suite">repo</a></td><td>—</td></tr>
       </tbody>
     </table>
   </section>

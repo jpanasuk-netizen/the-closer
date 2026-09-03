@@ -397,7 +397,7 @@ body.floor-open .floor { display: flex; }
   .tickets { max-height: none; overflow: visible; }
   .ops-metrics { grid-template-columns: 1fr 1fr; }
   .pipeline { grid-template-columns: 1fr; }
-  header.nav nav { display: none; }
+  header.nav nav.jumps { display: none; }
   header.nav .nav-ops { display: inline-flex; }
 }
 @media (max-width: 640px) {

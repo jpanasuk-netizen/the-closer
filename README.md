@@ -1,3 +1,14 @@
+---
+title: The Closer
+emoji: 🎯
+colorFrom: blue
+colorTo: yellow
+sdk: static
+app_file: index.html
+pinned: false
+short_description: Jeremy Panasuk campaign hub. Informatica closer, local RTX lab, packet registry.
+---
+
 # THE CLOSER — Jeremy Panasuk campaign kit
 
 Landscape promotional kit built from Jeremy’s Google Drive resumes plus `C:\Users\jpana\Documents\Resumes`. James O’Shea files were excluded.
