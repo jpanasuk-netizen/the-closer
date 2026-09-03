@@ -54,12 +54,8 @@
     header.nav .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.18em; font-size: 22px; }
     header.nav .brand span { color: var(--cyan); }
     header.nav nav.jumps { display: flex; flex-wrap: wrap; gap: 12px 18px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-    header.nav nav.catalog,
-    header.nav nav.packets { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
     header.nav nav a { color: var(--muted); }
     header.nav nav a:hover { color: var(--text); text-decoration: none; }
-    header.nav nav.catalog a { color: var(--cyan); }
-    header.nav nav.packets .pair { color: var(--muted); white-space: nowrap; }
 
     .hero {
       position: relative;
@@ -376,6 +372,7 @@
       .hero .veil { background: linear-gradient(180deg, rgba(5,8,20,0.2), rgba(5,8,20,0.88) 55%, rgba(5,8,20,0.96)); }
     }
   </style>
+  <link rel="stylesheet" href="css/catalog.css" />
   <link rel="stylesheet" href="css/floor.css" />
   <link rel="stylesheet" href="css/playbook.css" />
 </head>
@@ -395,28 +392,8 @@
         <a class="ops-link" href="#floor" data-open-floor>Operator</a>
       </div>
     </div>
-    <nav class="catalog" aria-label="Closer catalog">
-      <a href="index.html">Home</a>
-      <a href="resume.html">Resume</a>
-      <a href="playbook.html">Playbook</a>
-      <a href="loyalty.html">Loyalty</a>
-      <a href="canonical-stack-packet.html">Packet</a>
-      <a href="hunt.html">Hunt</a>
-      <a href="skill-matrix.html">Matrix</a>
-      <a href="billboard.html">Billboard</a>
-      <a href="linkedin-banner.html">Banner</a>
-      <a href="CONNECT_YOUR_LIFE.html">Agents</a>
-    </nav>
-    <nav class="packets" aria-label="Live packets">
-      <span class="pair">Closer <a href="https://jpanasuk-netizen.github.io/the-closer/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/the-closer">HF</a></span>
-      <span class="pair">American Tech <a href="https://jpanasuk-netizen.github.io/for-american-tech/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">HF</a></span>
-      <span class="pair">Paylocity <a href="https://jpanasuk-netizen.github.io/for-paylocity/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">HF</a></span>
-      <span class="pair">Carex <a href="https://jpanasuk-netizen.github.io/for-carex-fde/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">HF</a></span>
-      <span class="pair">Cresta <a href="https://jpanasuk-netizen.github.io/for-cresta/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-cresta">HF</a></span>
-      <span class="pair">Edisyl <a href="https://jpanasuk-netizen.github.io/for-edisyl/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">HF</a></span>
-      <span class="pair">Toloka <a href="https://jpanasuk-netizen.github.io/for-toloka/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-toloka">HF</a></span>
-      <span class="pair">Warp Speed <a href="https://jpanasuk-netizen.github.io/for-warp-speed/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">HF</a></span>
-    </nav>
+    <div data-closer-chrome></div>
+    <script src="js/catalog.js"></script>
   </header>
 
   <section class="hero">

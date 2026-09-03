@@ -54,11 +54,18 @@ header.nav .nav-ops a.ops-link:hover { text-decoration: none; filter: brightness
 }
 
 body.floor-open { overflow: hidden; }
+body.floor-open header.nav,
+body.floor-open .closer-chrome,
+body.floor-open [data-closer-chrome] {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 .floor {
   position: fixed;
   inset: 0;
-  z-index: 40;
+  z-index: 100;
   display: none;
   flex-direction: column;
   background:

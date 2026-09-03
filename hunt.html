@@ -226,49 +226,13 @@
   .addins li { margin: 0 0 8px; max-width: 52em; }
   .addins { margin: 0; padding-left: 1.15em; color: var(--ink); }
 
-  .catalog-bar {
-    position: sticky; top: 0; z-index: 20;
-    border: 1px solid var(--line);
-    background: rgba(16,18,24,.94);
-    padding: 12px 16px 14px;
-    margin-bottom: 16px;
-  }
-  .catalog-bar nav {
-    display: flex; flex-wrap: wrap; gap: 6px 14px;
-    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-  }
-  .catalog-bar nav + nav { margin-top: 8px; }
-  .catalog-bar .pair { color: var(--muted); white-space: nowrap; }
-  .catalog-bar a { border-bottom: 0; }
-
 </style>
+<link rel="stylesheet" href="css/catalog.css" />
 </head>
 <body>
+<div data-closer-chrome></div>
+<script src="js/catalog.js"></script>
 <div class="wrap">
-  <nav class="catalog-bar" aria-label="Closer catalog">
-    <nav class="catalog">
-      <a href="index.html">Home</a>
-      <a href="resume.html">Resume</a>
-      <a href="playbook.html">Playbook</a>
-      <a href="loyalty.html">Loyalty</a>
-      <a href="canonical-stack-packet.html">Packet</a>
-      <a href="hunt.html">Hunt</a>
-      <a href="skill-matrix.html">Matrix</a>
-      <a href="billboard.html">Billboard</a>
-      <a href="linkedin-banner.html">Banner</a>
-      <a href="CONNECT_YOUR_LIFE.html">Agents</a>
-    </nav>
-    <nav class="packets" aria-label="Live packets">
-      <span class="pair">Closer <a href="https://jpanasuk-netizen.github.io/the-closer/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/the-closer">HF</a></span>
-      <span class="pair">American Tech <a href="https://jpanasuk-netizen.github.io/for-american-tech/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-american-tech">HF</a></span>
-      <span class="pair">Paylocity <a href="https://jpanasuk-netizen.github.io/for-paylocity/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-paylocity">HF</a></span>
-      <span class="pair">Carex <a href="https://jpanasuk-netizen.github.io/for-carex-fde/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-carex-fde">HF</a></span>
-      <span class="pair">Cresta <a href="https://jpanasuk-netizen.github.io/for-cresta/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-cresta">HF</a></span>
-      <span class="pair">Edisyl <a href="https://jpanasuk-netizen.github.io/for-edisyl/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-edisyl">HF</a></span>
-      <span class="pair">Toloka <a href="https://jpanasuk-netizen.github.io/for-toloka/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-toloka">HF</a></span>
-      <span class="pair">Warp Speed <a href="https://jpanasuk-netizen.github.io/for-warp-speed/">GH</a> · <a href="https://huggingface.co/spaces/jpanasuk/for-warp-speed">HF</a></span>
-    </nav>
-  </nav>
   <header class="hero">
     <div class="hero-row">
       <img class="hero-portrait" src="assets/hunt-portrait.jpg" alt="Jeremy Panasuk" width="108" height="108">
@@ -412,8 +376,6 @@
         <tr><td><code>canonical-stack-packet.html</code></td><td>Canonical stack packet</td><td><a href="canonical-stack-packet.html">canonical-stack-packet.html</a></td></tr>
         <tr><td><code>hunt.html</code></td><td>Local hunt board</td><td><a href="hunt.html">hunt.html</a></td></tr>
         <tr><td><code>skill-matrix.html</code></td><td>Skill matrix</td><td><a href="skill-matrix.html">skill-matrix.html</a></td></tr>
-        <tr><td><code>billboard.html</code></td><td>1920×1080 poster</td><td><a href="billboard.html">billboard.html</a></td></tr>
-        <tr><td><code>linkedin-banner.html</code></td><td>LinkedIn cover</td><td><a href="linkedin-banner.html">linkedin-banner.html</a></td></tr>
         <tr><td><code>CONNECT_YOUR_LIFE.html</code></td><td>Connect Your Life flier</td><td><a href="CONNECT_YOUR_LIFE.html">CONNECT_YOUR_LIFE.html</a></td></tr>
       </tbody>
     </table>
