@@ -44,18 +44,15 @@
     .rule.green { background: linear-gradient(90deg, var(--green), var(--cyan)); }
     header.nav {
       position: sticky; top: 0; z-index: 20;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 36px;
+      display: flex; flex-direction: column; align-items: stretch; gap: 8px;
+      padding: 10px 36px 12px;
       background: rgba(5, 8, 20, 0.78);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(34, 211, 238, 0.15);
     }
+    header.nav .nav-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     header.nav .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.18em; font-size: 22px; color: var(--text); text-decoration: none; }
     header.nav .brand span { color: var(--cyan); }
-    header.nav nav { display: flex; gap: 22px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-    header.nav nav a { color: var(--muted); }
-    header.nav nav a:hover { color: var(--text); text-decoration: none; }
-    header.nav nav a.on { color: var(--cyan); }
     section { padding: 72px 0; }
     h1, h2 { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.04em; }
     h1 { font-size: clamp(48px, 8vw, 92px); line-height: 0.92; }
@@ -243,7 +240,7 @@
       border-top: 1px solid rgba(34, 211, 238, 0.12);
     }
     @media (max-width: 980px) {
-      header.nav nav { display: none; }
+      header.nav { padding: 10px 16px 12px; }
       .deals, .metrics, .hero-grid, .offer-grid { grid-template-columns: 1fr; }
       .wrap { padding: 0 24px; }
       .shot { width: 160px; height: 204px; }
@@ -251,18 +248,15 @@
       .price { font-size: 64px; }
     }
   </style>
+  <link rel="stylesheet" href="css/catalog.css" />
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="./">JEREMY <span>PANASUK</span></a>
-    <nav>
-      <a href="./">Campaign</a>
-      <a href="playbook.html">Playbook</a>
-      <a href="canonical-stack-packet.html">Packet</a>
-      <a href="hunt.html">Hunt</a>
-      <a href="resume.html">Resume</a>
-      <a class="on" href="CONNECT_YOUR_LIFE.html">Agents</a>
-    </nav>
+    <div class="nav-top">
+      <a class="brand" href="index.html">JEREMY <span>PANASUK</span></a>
+    </div>
+    <div data-closer-chrome></div>
+    <script src="js/catalog.js"></script>
   </header>
 
   <section>

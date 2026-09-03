@@ -15,7 +15,8 @@
     @media screen {
       html, body { width: 100%; min-height: 0; background: #050814; }
       body { padding: 0 16px 88px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-      .packet-bar { align-self: stretch; width: 100%; box-sizing: border-box; }
+      .packet-bar { align-self: stretch; width: 100%; box-sizing: border-box; position: relative; top: auto; z-index: 1; }
+      .closer-chrome { align-self: stretch; width: calc(100% + 32px); margin: 0 -16px; }
       .sheet {
         width: min(1040px, 100%);
         max-width: 1040px;
@@ -28,7 +29,7 @@
       .pad { padding: 28px 36px 32px; }
       .foot { position: relative; left: auto; right: auto; bottom: auto; margin-top: 12px; }
     }
-    @media print { .packet-bar { display: none !important; } }
+    @media print { .packet-bar, .closer-chrome { display: none !important; } }
     .sheet {
       width: 8.5in;
       height: 11in;
@@ -228,7 +229,7 @@
   
     .packet-bar {
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 18px; min-height: 56px; position: sticky; top: 0; z-index: 50;
+      padding: 12px 18px; min-height: 56px; position: relative; z-index: 1;
       background: #050814; color: #e8eef7;
       border-bottom: 1px solid rgba(34,211,238,0.28); font-size: 13px; font-family: system-ui, sans-serif;
     }
@@ -241,8 +242,11 @@
       letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
     }
     </style>
+  <link rel="stylesheet" href="css/catalog.css" />
 </head>
 <body>
+<div data-closer-chrome></div>
+<script src="js/catalog.js"></script>
 
 <header class="packet-bar">
   <a href="./">← Packet</a>
