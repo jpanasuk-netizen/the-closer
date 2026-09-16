@@ -224,6 +224,14 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+
+    .tldr-box { margin-top: 18px; padding: 16px 18px; border: 1px solid var(--line, #2a3340); border-radius: 10px; background: rgba(126,184,255,0.06); }
+    .tldr-box h2 { font-size: 22px; margin: 0 0 10px; }
+    .tldr-box p { margin: 0 0 8px; font-size: 16px; line-height: 1.45; color: var(--muted, #b8c0cc); }
+    .tldr-box p:last-child { margin-bottom: 0; }
+    .cmp-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 15px; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line, #2a3340); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .cmp-table th { color: var(--cyan, #7eb8ff); font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
     .offer {
       background: var(--navy);
       border: 1px solid var(--line);
@@ -378,6 +386,11 @@
         <h1>Connect your life to the agents</h1>
         <p class="subline">Named desk. Local stack. Wire into the world.</p>
         <p class="lead" style="margin-top:18px;font-size:18px;">Not another chatbot tab. A desk that drafts with receipts, a house stack that stays up when the cloud dies, and a bounded wire out — measured, loyal, yours.</p>
+        <aside class="tldr-box" id="connect-tldr" aria-label="Quick answer">
+          <h2>Quick answer</h2>
+          <p><strong>$99.99 to start</strong> includes your first agent pick (Grok Bot, Hermes, or OpenClaw) and all connections in the start package. <strong>Future wires are $1</strong> each.</p>
+          <p>You keep the gate on <strong>send, spend, and public</strong> — agents draft; you still click yes. Not another chatbot tab.</p>
+        </aside>
         <p class="contact">
           Jeremy Panasuk · New Auburn, WI · <a href="tel:7159700204">715-970-0204</a> · <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a><br />
           <a href="https://github.com/jpanasuk-netizen">github.com/jpanasuk-netizen</a>
@@ -393,7 +406,7 @@
     <div class="wrap">
       <div class="kicker">The outcome</div>
       <div class="rule"></div>
-      <h2>Drafts land. You still click yes.</h2>
+      <h2>Do agents send without me?</h2>
       <p class="lead" style="font-size:18px;">Pick a named agent desk — Grok Bot, Hermes, or OpenClaw — wired into your life with a human gate on send, spend, and public. Work keeps moving. Receipts stay. The house stays yours.</p>
     </div>
   </section>
@@ -403,7 +416,7 @@
     <div class="wrap">
       <div class="kicker">What you get</div>
       <div class="rule orange"></div>
-      <h2>One start. The wires ride with it.</h2>
+      <h2>What do I get for $99.99?</h2>
       <ul class="get-list">
         <li><strong>Pick first agent:</strong> Grok Bot (desk) · Hermes (house WSL stack) · OpenClaw (wire / bounded MCP)</li>
         <li><strong>All connections included</strong> in the start price — not nickel-and-dime add-ons</li>
@@ -459,8 +472,18 @@
     <div class="wrap">
       <div class="kicker">Pricing</div>
       <div class="rule"></div>
-      <h2>$99.99 to start</h2>
+      <h2>How does $99.99 vs $1 work?</h2>
       <p class="lead">All connections included. Future connections $1. One price. No tiers.</p>
+      <table class="cmp-table" id="cmp-pricing">
+        <thead>
+          <tr><th>Lane</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Start $99.99</strong></td><td>Includes first agent pick + all connections in the start package</td></tr>
+          <tr><td><strong>You keep the gate</strong></td><td>Send / spend / public stay yours — agents draft; you still click yes</td></tr>
+          <tr><td><strong>Future wires $1</strong></td><td>Each additional connection after start is $1 (loyalty runbook, not a survey)</td></tr>
+        </tbody>
+      </table>
       <div class="offer">
         <div class="price">$99.99 <small>to start</small></div>
         <div class="offer-grid">
@@ -511,8 +534,8 @@
   <div class="cta" id="start">
     <div class="kicker">Start the wire</div>
     <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
-    <h2>$99.99 to start</h2>
-    <p>All connections included. Future wires $1. Pick Grok Bot, Hermes, or OpenClaw above. Then send the closer the line.</p>
+    <h2>Ready to start the wire?</h2>
+    <p>$99.99 to start · all connections included · future wires $1. Pick Grok Bot, Hermes, or OpenClaw above. Then send the closer the line.</p>
     <p class="cta-line" id="picked-line">No agent picked yet — choose Grok Bot, Hermes, or OpenClaw.</p>
     <a class="btn" id="primary-cta" href="mailto:jpanasuk@gmail.com?subject=Connect%20your%20life%20%E2%80%94%20%2499.99">Email jpanasuk@gmail.com</a>
     <div>
