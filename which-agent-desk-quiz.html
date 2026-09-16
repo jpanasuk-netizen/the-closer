@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Which Agent Desk Fits You? | Connect Your Life</title>
+  <meta name="description" content="A short house quiz — Grok Bot, Hermes, or OpenClaw — then a waitlist email and the $99.99 CONNECT offer if you’re ready." />
+  <link rel="canonical" href="https://jpanasuk-netizen.github.io/the-closer/which-agent-desk-quiz.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jpanasuk-netizen.github.io/the-closer/which-agent-desk-quiz.html" />
+  <meta property="og:title" content="Which Agent Desk Fits You? | Connect Your Life" />
+  <meta property="og:description" content="A short house quiz — Grok Bot, Hermes, or OpenClaw — then a waitlist email and the $99.99 CONNECT offer if you’re ready." />
+  <meta property="og:image" content="https://jpanasuk-netizen.github.io/the-closer/headshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Which Agent Desk Fits You? | Connect Your Life" />
+  <meta name="twitter:description" content="A short house quiz — Grok Bot, Hermes, or OpenClaw — then a waitlist email and the $99.99 CONNECT offer if you’re ready." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050814; --navy: #0b1220; --panel: #10192c; --cyan: #22d3ee;
+      --purple: #c084fc; --green: #34d399; --gold: #fbbf24;
+      --text: #e8eef7; --muted: #93a4bb; --line: rgba(34, 211, 238, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); color: var(--text); font-family: "IBM Plex Sans", sans-serif; }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+    .kicker { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cyan); }
+    .rule { height: 2px; width: 88px; background: linear-gradient(90deg, var(--cyan), var(--purple)); margin: 10px 0 16px; }
+    header.nav {
+      position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 28px; background: rgba(5, 8, 20, 0.78); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(34, 211, 238, 0.15);
+    }
+    header.nav .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.18em; font-size: 20px; color: var(--text); text-decoration: none; }
+    header.nav .brand span { color: var(--cyan); }
+    header.nav .nav-links { display: flex; gap: 14px; flex-wrap: wrap; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+    section { padding: 56px 0; }
+    h1, h2 { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.04em; }
+    h1 { font-size: clamp(36px, 7vw, 64px); line-height: 0.95; }
+    h2 { font-size: 28px; margin-bottom: 10px; }
+    p { color: #c5d2e3; line-height: 1.55; }
+    .subline { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 22px; color: var(--purple); line-height: 1.3; margin-top: 10px; }
+    .lead { max-width: 720px; margin-top: 12px; }
+    .q {
+      background: rgba(11, 18, 32, 0.78); border: 1px solid rgba(34, 211, 238, 0.12);
+      padding: 18px 20px; margin-top: 14px;
+    }
+    .q h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+    .q label {
+      display: block; padding: 10px 12px; margin-top: 6px; cursor: pointer;
+      border: 1px solid rgba(34, 211, 238, 0.1); background: var(--navy); color: #c5d2e3; font-size: 14px;
+    }
+    .q label:hover { border-color: var(--line); }
+    .q input { margin-right: 10px; accent-color: var(--cyan); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    a.btn, button.btn {
+      display: inline-block; padding: 14px 24px; border: 1px solid var(--cyan); color: var(--text);
+      font-family: "IBM Plex Mono", monospace; letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px;
+      background: transparent; cursor: pointer;
+    }
+    a.btn:hover, button.btn:hover { background: rgba(34, 211, 238, 0.12); text-decoration: none; }
+    a.btn-secondary {
+      display: inline-block; padding: 12px 20px; border: 1px solid rgba(34, 211, 238, 0.35); color: var(--muted);
+      font-family: "IBM Plex Mono", monospace; letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px;
+    }
+    a.btn-secondary:hover { color: var(--cyan); text-decoration: none; }
+    #result {
+      display: none; margin-top: 28px; padding: 22px 24px;
+      background: var(--panel); border: 1px solid var(--line);
+    }
+    #result.show { display: block; }
+    #result .who { font-family: "Bebas Neue", sans-serif; font-size: 36px; color: var(--gold); letter-spacing: 0.04em; }
+    #result .blurb { margin-top: 8px; color: #c5d2e3; }
+    .rail { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 20px; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.06em; }
+    .rail a { border: 1px solid rgba(34, 211, 238, 0.2); padding: 8px 12px; color: var(--muted); }
+    .rail a:hover { color: var(--cyan); border-color: var(--line); text-decoration: none; }
+    .disclose {
+      margin-top: 28px; padding: 14px 16px; border: 1px solid rgba(34, 211, 238, 0.12);
+      background: var(--panel); color: var(--muted); font-size: 13px; line-height: 1.5;
+    }
+    footer.page {
+      padding: 20px 28px 28px; color: var(--muted); font-size: 12px;
+      border-top: 1px solid rgba(34, 211, 238, 0.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html">CONNECT <span>YOUR LIFE</span></a>
+    <div class="nav-links">
+      <a href="https://jpanasuk-netizen.github.io/house-hub/">Hub</a>
+      <a href="https://generator-sizer.com/">Flagship calc</a>
+      <a href="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html">$99.99</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <p class="kicker">Free lead magnet · Soft match</p>
+      <div class="rule"></div>
+      <h1>Which agent desk fits you?</h1>
+      <p class="subline">Five questions. Soft result. You still keep the gate.</p>
+      <p class="lead">A short house quiz — Grok Bot, Hermes, or OpenClaw — then a waitlist email and the $99.99 CONNECT offer if you’re ready. No fake percentiles. No maturity score.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <form id="quiz" onsubmit="return false;">
+        <div class="q">
+          <h3>1. Where should the work live?</h3>
+          <label><input type="radio" name="q1" value="grok" required> Browser desk</label>
+          <label><input type="radio" name="q1" value="hermes"> WSL house metal</label>
+          <label><input type="radio" name="q1" value="openclaw"> Bounded wire + MCP</label>
+        </div>
+        <div class="q">
+          <h3>2. What’s your first win this week?</h3>
+          <label><input type="radio" name="q2" value="grok" required> Drafts + receipts</label>
+          <label><input type="radio" name="q2" value="hermes"> Stack ops / HTML ship</label>
+          <label><input type="radio" name="q2" value="openclaw"> Outbound wire</label>
+        </div>
+        <div class="q">
+          <h3>3. How hard is your gate?</h3>
+          <label><input type="radio" name="q3" value="grok" required> I approve every send</label>
+          <label><input type="radio" name="q3" value="hermes"> I batch approve</label>
+          <label><input type="radio" name="q3" value="openclaw"> Still figuring it out</label>
+        </div>
+        <div class="q">
+          <h3>4. Do you already use a house calc?</h3>
+          <label><input type="radio" name="q4" value="hermes" required> generator-sizer</label>
+          <label><input type="radio" name="q4" value="openclaw"> Other sister calc</label>
+          <label><input type="radio" name="q4" value="grok"> Not yet → hub</label>
+        </div>
+        <div class="q">
+          <h3>5. Ready to pay for a named desk?</h3>
+          <label><input type="radio" name="q5" value="grok" required> Exploring free</label>
+          <label><input type="radio" name="q5" value="hermes"> Ready for $99.99</label>
+          <label><input type="radio" name="q5" value="openclaw"> Not now — waitlist</label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn" id="see-result">See soft result</button>
+        </div>
+      </form>
+
+      <div id="result" aria-live="polite">
+        <p class="kicker">Soft match</p>
+        <p class="who" id="result-who">Grok Bot</p>
+        <p class="blurb" id="result-blurb"></p>
+        <div class="actions">
+          <a class="btn" id="waitlist-link" href="mailto:jpanasuk@gmail.com?subject=CONNECT%20waitlist%20%E2%80%94%20Which%20agent%20desk%20quiz&body=Name%20(optional)%3A%0A%0AQuiz%20result%3A%20%0A%0ANotes%3A%0A">Email waitlist</a>
+          <a class="btn" href="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html">Start CONNECT $99.99</a>
+          <a class="btn-secondary" href="https://jpanasuk-netizen.github.io/house-hub/">Hub / calcs</a>
+          <a class="btn-secondary" href="https://generator-sizer.com/">generator-sizer.com</a>
+        </div>
+      </div>
+
+      <div class="rail" aria-label="House rail">
+        <a href="https://jpanasuk-netizen.github.io/house-hub/">House hub</a>
+        <a href="https://generator-sizer.com/">generator-sizer.com</a>
+        <a href="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html">CONNECT $99.99</a>
+        <a href="https://www.youtube.com/@themachineroomtoday">Machine Room YT</a>
+        <a href="https://www.youtube.com/@3jsa7">@3jsa7</a>
+        <a href="https://jpanasuk-netizen.github.io/the-closer/agent-desk-wire-checklist.html">Checklist</a>
+        <a href="https://jpanasuk-netizen.github.io/the-closer/connect-one-pager.html">One-pager</a>
+      </div>
+
+      <p class="disclose"><strong style="color:var(--text)">Disclosure:</strong> This freebie is not the paid desk. Soft match only — no scored maturity clone, no fake percentiles. CONNECT at $99.99 is the named-desk offer.</p>
+    </div>
+  </section>
+
+  <footer class="page">
+    <span>Jeremy Panasuk · New Auburn, WI · jpanasuk@gmail.com</span>
+    <span><a href="https://jpanasuk-netizen.github.io/the-closer/">the-closer</a> · GitHub Pages</span>
+  </footer>
+
+  <script>
+    (function () {
+      var desks = {
+        grok: {
+          who: "Grok Bot",
+          blurb: "Desk drafts + receipts. Hunt, stamp, brief — you still click yes on send, spend, and public."
+        },
+        hermes: {
+          who: "Hermes",
+          blurb: "House WSL / HTML ship lane. Continuity on the metal when the cloud tab dies."
+        },
+        openclaw: {
+          who: "OpenClaw",
+          blurb: "Bounded wire / MCP. Outbound into the world with a surface, not host-root."
+        }
+      };
+
+      document.getElementById("see-result").addEventListener("click", function () {
+        var scores = { grok: 0, hermes: 0, openclaw: 0 };
+        var keys = ["q1", "q2", "q3", "q4", "q5"];
+        for (var i = 0; i < keys.length; i++) {
+          var el = document.querySelector('input[name="' + keys[i] + '"]:checked');
+          if (!el) {
+            alert("Answer all five questions first.");
+            return;
+          }
+          scores[el.value] += 1;
+        }
+        var winner = "grok";
+        if (scores.hermes > scores[winner]) winner = "hermes";
+        if (scores.openclaw > scores[winner]) winner = "openclaw";
+        var d = desks[winner];
+        document.getElementById("result-who").textContent = d.who;
+        document.getElementById("result-blurb").textContent = d.blurb;
+        var sub = encodeURIComponent("CONNECT waitlist — Which agent desk quiz");
+        var body = encodeURIComponent("Name (optional):\n\nQuiz result: " + d.who + "\n\nNotes:\n");
+        document.getElementById("waitlist-link").href = "mailto:jpanasuk@gmail.com?subject=" + sub + "&body=" + body;
+        document.getElementById("result").classList.add("show");
+        document.getElementById("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    })();
+  </script>
+</body>
+</html>
