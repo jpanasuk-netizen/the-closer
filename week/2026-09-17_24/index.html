@@ -496,6 +496,100 @@
       color: var(--muted);
       opacity: 0.7;
     }
+
+    /* All-time archive */
+    #archive .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    @media (min-width: 1800px) {
+      #archive .arch-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    }
+    .arch-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      border: 1px solid rgba(147, 164, 187, 0.22);
+      border-radius: 4px;
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.2s ease;
+    }
+    .arch-card:hover { border-color: var(--cyan); text-decoration: none; }
+    .arch-thumb {
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+    .arch-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .arch-body { padding: 12px 14px 14px; }
+    .arch-body h4 {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .arch-when {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 6px;
+    }
+    .arch-meta { margin: 0; font-size: 12px; color: var(--muted); }
+    .arch-receipt { margin: 6px 0 0; font-size: 11px; color: var(--cyan); }
+    .arch-group { margin-bottom: clamp(28px, 4vh, 48px); }
+    .arch-group h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(26px, 2.4vw, 34px);
+      letter-spacing: 0.06em;
+      margin: 0 0 8px;
+      color: var(--cyan);
+    }
+    .arch-group .sub {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 70ch;
+    }
+    .arch-rows {
+      display: grid;
+      gap: 12px;
+      background: var(--navy);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+    .arch-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(147, 164, 187, 0.16);
+    }
+    .arch-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .arch-row p { margin: 0 0 4px; color: var(--soft); font-size: 14px; }
+    .arch-row strong.mono { color: var(--text); }
+    @media (max-width: 700px) {
+      .arch-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+    .arch-count {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 28px;
+    }
+
   </style>
 </head>
 <body>
@@ -506,6 +600,7 @@
       <a href="#seats-week">Seats week</a>
       <a href="#shorts">Shorts</a>
       <a href="#next">Next up</a>
+      <a href="#archive">Archive</a>
       <a href="#receipts">Receipts</a>
       <a href="#prior">Earlier</a>
       <a href="#seats">Roster</a>
@@ -778,6 +873,649 @@
             <p>Replace the template writer once free-model chat works.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <section class="block" id="archive">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Archive: every Muse video + Hermes / MiMo work</h2>
+          <p>All-time, not just this week. Grouped by seat, newest first. Every row has a receipt. No view counts. No invented numbers.</p>
+        </div>
+        <div class="rule" style="background:linear-gradient(90deg,var(--purple),var(--gold))"></div>
+        <div class="arch-count">
+          <span class="chip"><strong>50</strong> published videos</span>
+          <span class="chip"><strong>3</strong> unpublished renders</span>
+          <span class="chip"><strong>6</strong> Hermes Bot items</span>
+          <span class="chip"><strong>2</strong> MiMo items</span>
+          <span class="chip">Machine Room + @3jsa7</span>
+        </div>
+
+        <div class="arch-group">
+          <h3>Muse · published · Machine Room</h3>
+          <p class="sub">@themachineroomtoday. Thumbnails only (no autoplay). Live links confirmed via oEmbed / HTTP.</p>
+          <div class="arch-grid">
+
+            <a class="arch-card" href="https://youtube.com/shorts/Ayo4y-btzak" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Ayo4y-btzak/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>SoftBank&#x27;s $11 Billion AI Gamble</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">Ayo4y-btzak</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/ChQby4WkI7A" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/ChQby4WkI7A/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Bitcoin Breaks $85K</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">ChQby4WkI7A</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/jJdAbNCuBis" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/jJdAbNCuBis/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>The KOSPI Crash</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">jJdAbNCuBis</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/3rqwO4rRW64" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/3rqwO4rRW64/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Don&#x27;t Fight the Fed</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">3rqwO4rRW64</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/bnG4T8qFtUw" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/bnG4T8qFtUw/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>The PsAI-Op</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">bnG4T8qFtUw</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/dZabQ3-Uszc" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/dZabQ3-Uszc/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>The AI Debt Bomb</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">dZabQ3-Uszc</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/3ZIigDK-no8" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/3ZIigDK-no8/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Bonds&#x27; Worst Run in 120 Years</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">3ZIigDK-no8</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/l-Hai0ozhX0" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/l-Hai0ozhX0/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Big Tech Is Carrying the Whole Market</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">l-Hai0ozhX0</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/B_awYujMsIk" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/B_awYujMsIk/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Jobless Claims Just Hit Rock Bottom</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">B_awYujMsIk</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/DkM5OWLQSX0" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/DkM5OWLQSX0/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>The Fed Started Hiking Again</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">DkM5OWLQSX0</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/RpAkjwoAcMk" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/RpAkjwoAcMk/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Japan Just Hiked Rates to a 30-Year High</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">RpAkjwoAcMk</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/ix16V8j2sH4" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/ix16V8j2sH4/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-22 · Short</p>
+                <h4>Mike Wilson Warns of a 10% S&amp;P Drop</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">ix16V8j2sH4</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/_r53R5pnnqk" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/_r53R5pnnqk/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-19 · Short</p>
+                <h4>Fed Increases Rates. What it means for the economy!</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">_r53R5pnnqk</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/1crW-P_ne2g" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/1crW-P_ne2g/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-17 · Short</p>
+                <h4>ONE GPU. WHOLE OFFICE.</h4>
+                <p class="arch-meta">Machine Room · Flow</p>
+                <p class="arch-receipt mono">1crW-P_ne2g</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/igDaGidVM8Y" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/igDaGidVM8Y/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-17 · Short</p>
+                <h4>Wrong generator size costs you twice</h4>
+                <p class="arch-meta">Machine Room · Flow</p>
+                <p class="arch-receipt mono">igDaGidVM8Y</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/SD12veIFcKg" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/SD12veIFcKg/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-17 · Short</p>
+                <h4>Will the agent email or buy without me?</h4>
+                <p class="arch-meta">Machine Room · Flow</p>
+                <p class="arch-receipt mono">SD12veIFcKg</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=JSWnspqBc5M" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/JSWnspqBc5M/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-16 · Long</p>
+                <h4>How Silicon Valley Bank Actually Died in 48 Hours</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">JSWnspqBc5M</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/scLKmyvF2Y0" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/scLKmyvF2Y0/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>What Your $60 Video Earns You</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">scLKmyvF2Y0</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/lbb2pLNiW7k" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/lbb2pLNiW7k/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>How a $60 Faceless Video Gets Made</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">lbb2pLNiW7k</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/7JKD4lQLeEc" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/7JKD4lQLeEc/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>The $60 Video That Makes $700 While You Sleep</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">7JKD4lQLeEc</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/JwGCHVSxeDw" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/JwGCHVSxeDw/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>No Market Need Is What Actually Kills Startups</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">JwGCHVSxeDw</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/293qWwg9ftU" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/293qWwg9ftU/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>V3 short 3 payoff</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">293qWwg9ftU</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/mIDXUeZpva8" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/mIDXUeZpva8/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>V3 short 2 meat</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">mIDXUeZpva8</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/0nLdHZ4b8Hc" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/0nLdHZ4b8Hc/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>V3 short 1 hook</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">0nLdHZ4b8Hc</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/Tc2RW3lmKa8" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Tc2RW3lmKa8/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Short</p>
+                <h4>V2 short 2 meat</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">Tc2RW3lmKa8</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=QiQ0qcfM9y8" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/QiQ0qcfM9y8/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Long</p>
+                <h4>The 19 Containers and the $100,000: A Rebuild Story</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">QiQ0qcfM9y8</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=3dOFGLXhYPY" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/3dOFGLXhYPY/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-10 · Long</p>
+                <h4>The Man Who Lost $10 Billion Overnight - And Nobody Went to Jail</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">3dOFGLXhYPY</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/lQAiNFi_3cs" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/lQAiNFi_3cs/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-09 · Short</p>
+                <h4>One GPU. 21 days. Here&#x27;s the first container.</h4>
+                <p class="arch-meta">Machine Room · rebuild</p>
+                <p class="arch-receipt mono">lQAiNFi_3cs</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/AfKjhtR0KJg" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/AfKjhtR0KJg/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-09 · Short</p>
+                <h4>$100,000 rebuild — what the wreckage actually cost.</h4>
+                <p class="arch-meta">Machine Room · rebuild</p>
+                <p class="arch-receipt mono">AfKjhtR0KJg</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/XyFFdkYZKI8" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/XyFFdkYZKI8/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-09 · Short</p>
+                <h4>Still stuck after the wipe? He started with 19 containers.</h4>
+                <p class="arch-meta">Machine Room · rebuild</p>
+                <p class="arch-receipt mono">XyFFdkYZKI8</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/DuE8Bsp-_2M" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/DuE8Bsp-_2M/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-09 · Short</p>
+                <h4>Wiped out — then 19 containers. Rebuild story in 60s.</h4>
+                <p class="arch-meta">Machine Room · L74</p>
+                <p class="arch-receipt mono">DuE8Bsp-_2M</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/FzYHdh7zoi4" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/FzYHdh7zoi4/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-05 · Short</p>
+                <h4>He lost billions. Banks walked. Here&#x27;s the first crack.</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">FzYHdh7zoi4</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/9dfrji9zqwo" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/9dfrji9zqwo/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-05 · Short</p>
+                <h4>One week. One fortune gone. This is the setup.</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">9dfrji9zqwo</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/cMhk9W9NWGw" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/cMhk9W9NWGw/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-05 · Short</p>
+                <h4>Nobody went to jail. Watch why the machine didn&#x27;t care.</h4>
+                <p class="arch-meta">Machine Room</p>
+                <p class="arch-receipt mono">cMhk9W9NWGw</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="arch-group">
+          <h3>Muse · published · Big J Ret (@3jsa7)</h3>
+          <p class="sub">Ret Paladin channel. Includes Ret Shorts S1–S5 and keeper longs still public.</p>
+          <div class="arch-grid">
+
+            <a class="arch-card" href="https://youtube.com/shorts/o4af4agw6RU" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/o4af4agw6RU/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-07 · Short</p>
+                <h4>V2 Short 3: Payoff – Actionable Takeaways to Avoid Failure</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">o4af4agw6RU</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/uI2XCo5HXQI" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/uI2XCo5HXQI/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-07 · Short</p>
+                <h4>V2 Short 1: Hook – Why 90% of New Businesses Fail in Year One</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">uI2XCo5HXQI</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/6m4eveBxrF4" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/6m4eveBxrF4/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-05 · Short</p>
+                <h4>Still chasing the blink? One HoJ</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">6m4eveBxrF4</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/at1SWKQbxrY" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/at1SWKQbxrY/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-04 · Short</p>
+                <h4>Dawnlight isn&#x27;t optional</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">at1SWKQbxrY</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/nwiMUyjwkiw" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/nwiMUyjwkiw/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-04 · Short</p>
+                <h4>Warrior keyboard turns = free win</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">nwiMUyjwkiw</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/wa3zW5LUCMs" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/wa3zW5LUCMs/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-04 · Short</p>
+                <h4>Ret 6-0 — one rule</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">wa3zW5LUCMs</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/J31hDLmq8SI" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/J31hDLmq8SI/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-04 · Short</p>
+                <h4>This BoP + Sac saves the lobby</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">J31hDLmq8SI</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://youtube.com/shorts/qTjfp6CJRuY" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/qTjfp6CJRuY/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-09-04 · Short</p>
+                <h4>Stop chasing the blink (Ret vs Mage)</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">qTjfp6CJRuY</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=V_foK9wcd-Y" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/V_foK9wcd-Y/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>This BoP + Sac Wins Unwinnable Lobbies</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">V_foK9wcd-Y</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=KFRhSQiMdo4" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/KFRhSQiMdo4/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>Ret vs Rogue: The Stun Window They Want</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">KFRhSQiMdo4</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=zp9BPcL1d0s" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/zp9BPcL1d0s/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>How I 6-0 a Shuffle as Ret</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">zp9BPcL1d0s</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=Xcp8zZQOkqs" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Xcp8zZQOkqs/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>Ret vs DK: When to Hold Wings</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">Xcp8zZQOkqs</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=Dw1cDIpo3IA" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Dw1cDIpo3IA/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>Ret vs Warrior: Keyboard Turners Get Dismantled</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">Dw1cDIpo3IA</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=eDSP1AS9IjM" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/eDSP1AS9IjM/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>Molten Lava Holy Power — The Bar I Built</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">eDSP1AS9IjM</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=Llr7i_v4XNs" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Llr7i_v4XNs/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-25 · Long</p>
+                <h4>Ret Shuffle: Full Match, Every CD Called</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">Llr7i_v4XNs</p>
+              </div>
+            </a>
+
+            <a class="arch-card" href="https://www.youtube.com/watch?v=GhZyexLmXLs" rel="noopener" target="_blank">
+              <div class="arch-thumb"><img loading="lazy" src="https://i.ytimg.com/vi/GhZyexLmXLs/hqdefault.jpg" alt="" width="480" height="360" /></div>
+              <div class="arch-body">
+                <p class="arch-when">2026-07-23 · Long</p>
+                <h4>Herald Dawnlight Melts the Lobby</h4>
+                <p class="arch-meta">Big J Ret @3jsa7</p>
+                <p class="arch-receipt mono">GhZyexLmXLs</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="arch-group">
+          <h3>Muse · rendered, not published</h3>
+          <p class="sub">Finals / masters on disk without a live YouTube URL. Filenames only. Deduped 19 draft / intermediate mp4s (opens, sources, e902 combines, pre-sub encodes).</p>
+          <div class="arch-rows">
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-05</span>
+              <div>
+                <strong class="mono">V2_final-1.mp4</strong>
+                <p>Machine Room V2 long master (prior YouTube id 404) · rendered, not published</p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-04</span>
+              <div>
+                <strong class="mono">V3_final-1.mp4</strong>
+                <p>Machine Room V3 long master (prior YouTube id 404) · rendered, not published</p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-05</span>
+              <div>
+                <strong class="mono">S6_mage_motion.mp4</strong>
+                <p>Ret Short S6 render on disk; no live Short id confirmed · rendered, not published</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-group">
+          <h3>Hermes Bot · shipped work</h3>
+          <p class="sub">Verified receipts only. Disabled watchdog crons and unconfirmed X posts left out.</p>
+          <div class="arch-rows">
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-23</span>
+              <div>
+                <p>Cloudflare Workers AI provider on disk (no Worker deployed)</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · CLOUDFLARE-WORKERS-AI.md</span></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-23</span>
+              <div>
+                <p>FCC wired as Hermes model provider</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · config.yaml.bak-fcc-* / config.yaml</span></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-23</span>
+              <div>
+                <p>Machine Room publish clockwork dry run</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · CLOCKWORK_2026-09-23.md</span></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-17</span>
+              <div>
+                <p>Published 3 Machine Room Flow Shorts</p>
+                <p class="arch-receipt">Receipt: <span class="mono">FLOW_SHORTS_LIVE_2026-09-17.json · Hermes Studio</span></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-17</span>
+              <div>
+                <p>HermesVault 00-Continuity pack</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · LEO-TO-HERMES-FULL-CONTINUITY-2026-09-17.md</span></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-17</span>
+              <div>
+                <p>Machine Room publish clockwork dry run</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · CLOCKWORK_2026-09-17.md</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-group" style="margin-bottom:0">
+          <h3>MiMo · shipped work</h3>
+          <p class="sub">Hermes file-bus render lane. Machine Room masters are listed under Muse videos above. Batch2 FTX documentary and SVB Short still open on clockwork.</p>
+          <div class="arch-rows">
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-20</span>
+              <div>
+                <p>Jev-X-S Kalshi bot session → public repo jaspers-trade-bot (build only)</p>
+                <p class="arch-receipt">Receipt: <span class="mono">commit 297fb857</span> · <a href="https://github.com/jpanasuk-netizen/jaspers-trade-bot" rel="noopener">github.com/jpanasuk-netizen/jaspers-trade-bot</a></p>
+              </div>
+            </div>
+
+            <div class="arch-row">
+              <span class="arch-when">2026-09-18</span>
+              <div>
+                <p>MiMo seat page in house BRAIN</p>
+                <p class="arch-receipt">Receipt: <span class="mono">on disk · mimo.md</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="note">Sources: FLOW_SHORTS_LIVE / MR_LONGS_PUBLISH_STATUS / MR_FLIP_PUBLIC / MR_REBUILD_SHORTS_LIVE / SVB_LONG_LIVE · YouTube RSS channel_id UCNuGgmF_NyIP5VueVxfaEVQ + UCbzEjdrkX5RrzTVanWYucCg · D: HermesVideosPull finals · RECEIPTS-2026-09-17_24-muse-mimo-hermes.md. V2/V3 long ids 1VY4eLYhoH8 and GARw7kLqL-A returned 404 on 2026-09-24 — masters kept under unpublished. Connecture stays private (no public link). Replaced Short ids (ZL7 / 4bA7 / wm3a / Bex) omitted in favor of captionfixed live ids.</p>
       </div>
     </section>
 
