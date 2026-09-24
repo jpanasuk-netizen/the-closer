@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent House Week · Sep 17–24, 2026 · Jeremy Panasuk</title>
+  <meta name="description" content="What the agent house shipped Sep 17–24, 2026: Machine Room Flow Shorts, CorrectionBot, HermesVault continuity, TRENCHNET." />
+  <meta name="theme-color" content="#050814" />
+  <link rel="canonical" href="https://jpanasuk-netizen.github.io/the-closer/week/2026-09-17_24/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Agent House Week · Sep 17–24, 2026" />
+  <meta property="og:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET." />
+  <meta property="og:url" content="https://jpanasuk-netizen.github.io/the-closer/week/2026-09-17_24/" />
+  <meta property="og:site_name" content="The Closer · Jeremy Panasuk" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agent House Week · Sep 17–24, 2026" />
+  <meta name="twitter:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+
+  <style>
+    :root {
+      --bg: #050814;
+      --navy: #0b1220;
+      --panel: #10192c;
+      --cyan: #22d3ee;
+      --purple: #c084fc;
+      --orange: #fb923c;
+      --green: #34d399;
+      --gold: #fbbf24;
+      --text: #e8eef7;
+      --muted: #93a4bb;
+      --line: rgba(34, 211, 238, 0.35);
+      --soft: #c5d2e3;
+      --max: min(1680px, 96vw);
+      --uw: min(2200px, 94vw);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .clip, .frame-in, .hero-stage * { animation: none !important; transition: none !important; }
+      .hero-stage .clip { opacity: 1 !important; transform: none !important; }
+      .ship.frame-in { opacity: 1 !important; transform: none !important; }
+    }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img, iframe { max-width: 100%; border: 0; }
+
+    /* HyperFrames-style stage grid: composition timed clips */
+    .hf-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px clamp(16px, 3vw, 40px);
+      background: rgba(5, 8, 20, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.nav .brand {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.18em;
+      font-size: 22px;
+      color: var(--text);
+    }
+    header.nav .brand span { color: var(--cyan); }
+    header.nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    header.nav nav a { color: var(--muted); }
+    header.nav nav a:hover { color: var(--text); text-decoration: none; }
+
+    .wrap {
+      width: var(--uw);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 2.5vw, 36px);
+    }
+    @media (max-width: 1280px) {
+      .wrap { width: var(--max); }
+    }
+
+    /* HERO composition — HyperFrames data-* timing */
+    .hero-stage {
+      position: relative;
+      min-height: min(78vh, 820px);
+      padding: clamp(48px, 8vh, 100px) 0 clamp(40px, 6vh, 72px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-stage::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto;
+      height: 70%;
+      background:
+        radial-gradient(ellipse 55% 50% at 18% 40%, rgba(34, 211, 238, 0.16), transparent 60%),
+        radial-gradient(ellipse 40% 45% at 78% 30%, rgba(192, 132, 252, 0.12), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: clamp(28px, 4vw, 64px);
+      align-items: end;
+      position: relative;
+    }
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: 0 0 18px;
+    }
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(56px, 8.2vw, 128px);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      margin: 0 0 18px;
+      max-width: 14ch;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--cyan);
+    }
+    .hero-lead {
+      font-size: clamp(17px, 1.35vw, 22px);
+      color: var(--soft);
+      max-width: 42ch;
+      margin: 0 0 28px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .hero-meta b { color: var(--text); font-weight: 500; }
+
+    .hero-rail {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 22px 22px 18px;
+    }
+    .hero-rail h2 {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.14em;
+      font-size: 22px;
+      margin: 0 0 14px;
+      color: var(--cyan);
+    }
+    .ship-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .ship-list li {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(147, 164, 187, 0.18);
+    }
+    .ship-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .ship-list .d {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .ship-list .t { font-size: 14px; color: var(--text); }
+
+    .rule {
+      height: 2px;
+      width: 100%;
+      margin: 8px 0 28px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+    }
+
+    section.block {
+      padding: clamp(48px, 7vh, 88px) 0;
+      border-bottom: 1px solid rgba(147, 164, 187, 0.14);
+    }
+    .sec-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 24px;
+      align-items: baseline;
+      margin-bottom: 28px;
+    }
+    .sec-head h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(36px, 4.5vw, 64px);
+      letter-spacing: 0.06em;
+      margin: 0;
+    }
+    .sec-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 48ch;
+      font-size: 15px;
+    }
+
+    /* Four ship cards — frame compositions */
+    .ships {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(16px, 1.8vw, 28px);
+    }
+    @media (max-width: 900px) {
+      .ships { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 1800px) {
+      .ships { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    .ship {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 22px 22px 20px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease, border-color 0.2s ease;
+    }
+    .ship.is-in {
+      opacity: 1;
+      transform: none;
+    }
+    .ship::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent, var(--cyan));
+    }
+    .ship[data-tone="cyan"] { --accent: var(--cyan); }
+    .ship[data-tone="purple"] { --accent: var(--purple); }
+    .ship[data-tone="orange"] { --accent: var(--orange); }
+    .ship[data-tone="green"] { --accent: var(--green); }
+    .ship:hover { border-color: var(--accent); }
+
+    .ship .stamp {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+    .ship h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(28px, 2.4vw, 36px);
+      letter-spacing: 0.05em;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+    .ship p {
+      margin: 0 0 14px;
+      color: var(--soft);
+      font-size: 15px;
+    }
+    .ship ul {
+      margin: 0 0 14px;
+      padding: 0 0 0 18px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+    .ship li { margin: 0 0 6px; }
+    .ship .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .chip {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      color: var(--muted);
+      background: rgba(5, 8, 20, 0.45);
+    }
+    .chip strong { color: var(--text); font-weight: 500; }
+
+    .yt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+    @media (max-width: 700px) {
+      .yt-grid { grid-template-columns: 1fr; }
+    }
+    .yt-card {
+      background: var(--navy);
+      border: 1px solid rgba(147, 164, 187, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .yt-card .ratio {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      max-height: 280px;
+      background: #000;
+    }
+    .yt-card iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .yt-card .cap {
+      padding: 10px 12px 12px;
+      font-size: 13px;
+      color: var(--soft);
+    }
+    .yt-card .cap a { font-family: "IBM Plex Mono", monospace; font-size: 11px; }
+
+    /* Full-bleed shorts row on ultrawide when ships are 2-col */
+    .shorts-row {
+      margin-top: 28px;
+      grid-column: 1 / -1;
+    }
+    .ships-wrap {
+      display: grid;
+      gap: clamp(16px, 1.8vw, 28px);
+    }
+
+    .receipts {
+      background: var(--navy);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: clamp(20px, 2.5vw, 32px);
+    }
+    .receipts ol {
+      margin: 0;
+      padding: 0 0 0 22px;
+      display: grid;
+      gap: 14px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+    .receipts code, .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--cyan);
+    }
+
+    .prior {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .prior { grid-template-columns: 1fr; }
+    }
+    .prior .tile {
+      background: var(--panel);
+      border: 1px solid rgba(147, 164, 187, 0.22);
+      border-radius: 4px;
+      padding: 18px 18px 16px;
+    }
+    .prior .tile .when {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 8px;
+    }
+    .prior .tile h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 26px;
+      letter-spacing: 0.05em;
+      margin: 0 0 8px;
+    }
+    .prior .tile p { margin: 0; color: var(--soft); font-size: 14px; }
+    .note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .seats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .seat {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(147, 164, 187, 0.22);
+      background: var(--panel);
+      color: var(--soft);
+    }
+    .seat b { color: var(--cyan); font-weight: 500; }
+
+    footer.foot {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      justify-content: space-between;
+    }
+    footer.foot .brand {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    /* HyperFrames clip initial state (GSAP drives) */
+    .clip { will-change: transform, opacity; }
+    .hero-stage .clip { opacity: 0; transform: translateY(24px); }
+    body.reduced .hero-stage .clip,
+    body.reduced .ship {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .frame-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="https://jpanasuk-netizen.github.io/the-closer/">THE <span>CLOSER</span></a>
+    <nav class="jumps" aria-label="Page sections">
+      <a href="#ships">Ships</a>
+      <a href="#shorts">Shorts</a>
+      <a href="#receipts">Receipts</a>
+      <a href="#prior">Earlier</a>
+      <a href="#seats">Seats</a>
+      <a href="https://jpanasuk-netizen.github.io/house-hub/">House Hub</a>
+    </nav>
+  </header>
+
+  <!-- HyperFrames-style composition: timed hero intro frames -->
+  <div
+    id="stage"
+    class="hero-stage"
+    data-composition-id="week-recap-hero"
+    data-start="0"
+    data-width="3440"
+    data-height="1440"
+  >
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker clip" data-start="0" data-duration="4" data-track-index="0" id="hf-kicker">
+            Agent house · America/Chicago
+          </p>
+          <h1 class="clip" data-start="0.2" data-duration="5" data-track-index="1" id="hf-title">
+            WEEK <em>SEP 17–24</em><br />2026
+          </h1>
+          <p class="hero-lead clip" data-start="0.55" data-duration="5" data-track-index="2" id="hf-lead">
+            What the agent house shipped. Everything on this page has a file or a link behind it.
+          </p>
+          <div class="hero-meta clip" data-start="0.9" data-duration="5" data-track-index="3" id="hf-meta">
+            <span><b>4</b> ships</span>
+            <span><b>3</b> Flow Shorts</span>
+            <span><b>6</b> CorrectionBot posts</span>
+            <span><b>1</b> continuity pack</span>
+            <span><b>TRENCHNET</b> watch-only</span>
+          </div>
+        </div>
+        <aside class="hero-rail clip" data-start="1.1" data-duration="5" data-track-index="4" id="hf-rail">
+          <h2>This window</h2>
+          <ul class="ship-list">
+            <li><span class="d">9/17</span><span class="t">Machine Room Flow Shorts live</span></li>
+            <li><span class="d">9/17</span><span class="t">CorrectionBot · 6 sourced corrections</span></li>
+            <li><span class="d">9/17</span><span class="t">HermesVault 00-Continuity packed</span></li>
+            <li><span class="d">9/24</span><span class="t">TRENCHNET shipped on LightBringer</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="block" id="ships">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Four ships</h2>
+          <p>Stamped work from Sep 17–24. Prior-window standing gear is listed separately below.</p>
+        </div>
+        <div class="rule"></div>
+
+        <div class="ships-wrap">
+          <div class="ships" id="ship-frames">
+            <!-- 1 Machine Room -->
+            <article class="ship frame-in" data-tone="cyan" data-start="0" data-duration="1" data-track-index="0">
+              <span class="frame-badge">FRAME 01</span>
+              <p class="stamp">9/17 · Machine Room</p>
+              <h3>Flow Shorts</h3>
+              <p>Three Flow Shorts published on @themachineroomtoday.</p>
+              <ul>
+                <li>“Will the agent email or buy without me?”</li>
+                <li>“Wrong generator size costs you twice”</li>
+                <li>“ONE GPU. WHOLE OFFICE.”</li>
+              </ul>
+              <div class="stats">
+                <span class="chip"><strong>3</strong> Shorts</span>
+                <span class="chip">youtube.com/shorts</span>
+              </div>
+            </article>
+
+            <!-- 2 CorrectionBot -->
+            <article class="ship frame-in" data-tone="purple" data-start="0.1" data-duration="1" data-track-index="1">
+              <span class="frame-badge">FRAME 02</span>
+              <p class="stamp">9/17 · CorrectionBot</p>
+              <h3>Six corrections</h3>
+              <p>Six sourced corrections posted on X. Jeremy approved each one before it went out.</p>
+              <div class="stats">
+                <span class="chip"><strong>6</strong> posted</span>
+                <span class="chip"><strong>4</strong> held</span>
+                <span class="chip"><strong>2</strong> skipped</span>
+              </div>
+            </article>
+
+            <!-- 3 HermesVault -->
+            <article class="ship frame-in" data-tone="orange" data-start="0.2" data-duration="1" data-track-index="2">
+              <span class="frame-badge">FRAME 03</span>
+              <p class="stamp">9/17 · HermesVault</p>
+              <h3>00-Continuity</h3>
+              <p>Leo packed a full handoff so Hermes on LightBringer (Windows/WSL) can run the house on its own.</p>
+              <div class="stats">
+                <span class="chip">HermesVault pack</span>
+                <span class="chip">LightBringer</span>
+              </div>
+            </article>
+
+            <!-- 4 TRENCHNET -->
+            <article class="ship frame-in" data-tone="green" data-start="0.3" data-duration="1" data-track-index="3">
+              <span class="frame-badge">FRAME 04</span>
+              <p class="stamp">9/24 · LightBringer</p>
+              <h3>TRENCHNET</h3>
+              <p>Watch-only Solana pump.fun wallet-graph analyst: profiles, graph, routes, timelines, reports. No orders. No signing.</p>
+              <div class="stats">
+                <span class="chip">replay ran</span>
+                <span class="chip"><strong>8</strong> tests passed</span>
+                <span class="chip">~1,071 FCC models</span>
+                <span class="chip">FreeBuff dashboard next</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="shorts-row" id="shorts">
+            <div class="sec-head" style="margin-bottom:16px">
+              <h2 style="font-size:clamp(28px,3vw,40px)">Shorts embeds</h2>
+              <p class="hf-meta">youtube-nocookie · 9/17</p>
+            </div>
+            <div class="yt-grid">
+              <div class="yt-card">
+                <div class="ratio">
+                  <iframe
+                    loading="lazy"
+                    title="Will the agent email or buy without me?"
+                    src="https://www.youtube-nocookie.com/embed/SD12veIFcKg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+                <div class="cap">
+                  Will the agent email or buy without me?<br />
+                  <a href="https://youtube.com/shorts/SD12veIFcKg" rel="noopener">youtube.com/shorts/SD12veIFcKg</a>
+                </div>
+              </div>
+              <div class="yt-card">
+                <div class="ratio">
+                  <iframe
+                    loading="lazy"
+                    title="Wrong generator size costs you twice"
+                    src="https://www.youtube-nocookie.com/embed/igDaGidVM8Y"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+                <div class="cap">
+                  Wrong generator size costs you twice<br />
+                  <a href="https://youtube.com/shorts/igDaGidVM8Y" rel="noopener">youtube.com/shorts/igDaGidVM8Y</a>
+                </div>
+              </div>
+              <div class="yt-card">
+                <div class="ratio">
+                  <iframe
+                    loading="lazy"
+                    title="ONE GPU. WHOLE OFFICE."
+                    src="https://www.youtube-nocookie.com/embed/1crW-P_ne2g"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+                <div class="cap">
+                  ONE GPU. WHOLE OFFICE.<br />
+                  <a href="https://youtube.com/shorts/1crW-P_ne2g" rel="noopener">youtube.com/shorts/1crW-P_ne2g</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="receipts">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Receipts</h2>
+          <p>Source list. File names only. No private absolute paths.</p>
+        </div>
+        <div class="rule"></div>
+        <div class="receipts">
+          <ol>
+            <li>
+              Machine Room Flow Shorts (3 titles + URLs, 2026-09-17) —
+              <code>FLOW_SHORTS_LIVE_2026-09-17.json</code>,
+              <code>PUBLISH-MR-BATCH-2026-09-17.json</code>, OPS-LOG 9/17; HTTP 200 on all three Shorts.
+            </li>
+            <li>
+              CorrectionBot 6 posts on X 9/17 —
+              <code>queue.jsonl</code> (status=posted), continuity dump URLs, OPS-LOG 9/17; HTTP 200 on all six.
+            </li>
+            <li>
+              HermesVault 00-Continuity —
+              <code>LEO-TO-HERMES-FULL-CONTINUITY-2026-09-17.md</code> (stamped 9/17 ~6:00pm CT) + box continuity mirror.
+            </li>
+            <li>
+              TRENCHNET watch-only build 9/24 —
+              <code>RECEIPT.md</code>, <code>README.md</code>, <code>out/index.html</code> (built 9/24 03:08 CT).
+            </li>
+            <li>
+              Free-coding-models / FCC lane —
+              RECEIPT §Models: <code>GET /v1/models</code> OK (~1071) at build time.
+            </li>
+            <li>
+              FreeBuff desk UI next —
+              <code>FREEBUFF_UPGRADE_PROMPT.txt</code> + addenda (9/24).
+            </li>
+            <li>
+              Prior window (not this week’s ship claim) —
+              <code>SEO-CALC-8DOMAIN-TRAFFIC-HYGIENE-2026-09-13.md</code>,
+              <code>SEO-DONE-LINKEDIN-POSTED-2026-09-16.md</code>,
+              <code>FREEBUFF_KALSHI_HANDOFF.md</code> (2026-09-16).
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="prior">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Earlier this month</h2>
+          <p>Standing work from 9/13–9/16. Still live. Not claimed as this week’s ships.</p>
+        </div>
+        <div class="rule" style="background:linear-gradient(90deg,var(--gold),var(--orange))"></div>
+        <div class="prior">
+          <div class="tile">
+            <p class="when">9/13</p>
+            <h3>Amazon on 8 calcs</h3>
+            <p>Associates tag live across eight calculator site homepages.</p>
+          </div>
+          <div class="tile">
+            <p class="when">9/16</p>
+            <h3>Generator-sizer LinkedIn</h3>
+            <p>LinkedIn text batch posted, including generator-sizer.</p>
+          </div>
+          <div class="tile">
+            <p class="when">9/16</p>
+            <h3>Kalshi → FreeBuff</h3>
+            <p>Kalshi live bot handed to FreeBuff.</p>
+          </div>
+        </div>
+        <p class="note">Labeled prior-window so it does not pad the Sep 17–24 ship list.</p>
+      </div>
+    </section>
+
+    <section class="block" id="seats" style="border-bottom:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>The seats</h2>
+          <p>House roster names and roles. Presence here is not a claim of week activity.</p>
+        </div>
+        <div class="rule" style="background:linear-gradient(90deg,var(--purple),var(--cyan))"></div>
+        <div class="seats" aria-label="Agent house seats">
+          <span class="seat"><b>Leo-Bot</b> · continuity</span>
+          <span class="seat"><b>OpsLog</b> · desk trail</span>
+          <span class="seat"><b>SEO Bot</b> · calc sites</span>
+          <span class="seat"><b>thetubebot</b> · Machine Room</span>
+          <span class="seat"><b>Grok Build</b> · cloud build</span>
+          <span class="seat"><b>FreeBuff</b> · desk UI / Kalshi</span>
+          <span class="seat"><b>CorrectionBot</b> · sourced X</span>
+          <span class="seat"><b>ProposalCloser</b> · CONNECT drafts</span>
+          <span class="seat"><b>Hermes Bot</b> · LightBringer</span>
+          <span class="seat"><b>TapRoot</b></span>
+          <span class="seat"><b>Eve</b></span>
+          <span class="seat"><b>GadDesk</b></span>
+          <span class="seat"><b>FreeModelsBot</b> · FCC lane</span>
+          <span class="seat"><b>Cynthia</b> · copy / slop pass</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <div>
+      <div class="brand">JEREMY PANASUK · AGENT HOUSE</div>
+      <div>Week recap Sep 17–24, 2026 · Sand Creek, WI</div>
+    </div>
+    <div>
+      <a href="https://jpanasuk-netizen.github.io/the-closer/">the-closer</a>
+      ·
+      <a href="https://jpanasuk-netizen.github.io/house-hub/">house-hub</a>
+      ·
+      HyperFrames-style frames (GSAP + data-* timing; no video render runtime)
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduced) {
+        document.body.classList.add("reduced");
+        document.querySelectorAll(".ship").forEach(function (el) { el.classList.add("is-in"); });
+        return;
+      }
+
+      function runHero() {
+        if (typeof gsap === "undefined") {
+          document.querySelectorAll(".hero-stage .clip").forEach(function (el) {
+            el.style.opacity = "1";
+            el.style.transform = "none";
+          });
+          return;
+        }
+        var tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        // HyperFrames seekable timeline registration pattern
+        tl.fromTo("#hf-kicker", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 }, 0)
+          .fromTo("#hf-title", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7 }, 0.15)
+          .fromTo("#hf-lead", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55 }, 0.4)
+          .fromTo("#hf-meta", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 0.6)
+          .fromTo("#hf-rail", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6 }, 0.75);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["week-recap-hero"] = tl;
+      }
+
+      function observeShips() {
+        var nodes = document.querySelectorAll(".ship.frame-in");
+        if (!("IntersectionObserver" in window)) {
+          nodes.forEach(function (n) { n.classList.add("is-in"); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-in");
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+        nodes.forEach(function (n, i) {
+          n.style.transitionDelay = (i * 0.08) + "s";
+          io.observe(n);
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          runHero();
+          observeShips();
+        });
+      } else {
+        runHero();
+        observeShips();
+      }
+      window.addEventListener("load", function () {
+        if (typeof gsap !== "undefined" && !window.__timelines) runHero();
+      });
+    })();
+  </script>
+</body>
+</html>
