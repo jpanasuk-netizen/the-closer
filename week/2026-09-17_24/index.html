@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agent House Week · Sep 17–24, 2026 · Jeremy Panasuk</title>
-  <meta name="description" content="What the agent house shipped Sep 17–24, 2026: Machine Room Flow Shorts, CorrectionBot, HermesVault continuity, TRENCHNET." />
+  <meta name="description" content="What the agent house shipped Sep 17–24, 2026: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET, plus FreeBuff, Muse, and MiMo seat notes." />
   <meta name="theme-color" content="#050814" />
   <link rel="canonical" href="https://jpanasuk-netizen.github.io/the-closer/week/2026-09-17_24/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Agent House Week · Sep 17–24, 2026" />
-  <meta property="og:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET." />
+  <meta property="og:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET, FreeBuff, Muse, MiMo." />
   <meta property="og:url" content="https://jpanasuk-netizen.github.io/the-closer/week/2026-09-17_24/" />
   <meta property="og:site_name" content="The Closer · Jeremy Panasuk" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Agent House Week · Sep 17–24, 2026" />
-  <meta name="twitter:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET." />
+  <meta name="twitter:description" content="What the agent house shipped: Machine Room Flow Shorts, CorrectionBot, HermesVault, TRENCHNET, FreeBuff, Muse, MiMo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -399,8 +399,20 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
+    #next .prior {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    @media (max-width: 1200px) {
+      #next .prior { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 900px) {
-      .prior { grid-template-columns: 1fr; }
+      .prior, #next .prior { grid-template-columns: 1fr; }
+    }
+    #seats-week .ships {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: 1100px) {
+      #seats-week .ships { grid-template-columns: 1fr; }
     }
     .prior .tile {
       background: var(--panel);
@@ -488,10 +500,12 @@
     <a class="brand" href="https://jpanasuk-netizen.github.io/the-closer/">THE <span>CLOSER</span></a>
     <nav class="jumps" aria-label="Page sections">
       <a href="#ships">Ships</a>
+      <a href="#seats-week">Seats week</a>
       <a href="#shorts">Shorts</a>
+      <a href="#next">Next up</a>
       <a href="#receipts">Receipts</a>
       <a href="#prior">Earlier</a>
-      <a href="#seats">Seats</a>
+      <a href="#seats">Roster</a>
       <a href="https://jpanasuk-netizen.github.io/house-hub/">House Hub</a>
     </nav>
   </header>
@@ -665,6 +679,89 @@
       </div>
     </section>
 
+
+    <section class="block" id="seats-week">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Seats this week</h2>
+          <p>FreeBuff, Muse, and MiMo. Facts from the receipts only.</p>
+        </div>
+        <div class="rule" style="background:linear-gradient(90deg,var(--green),var(--purple))"></div>
+        <div class="ships" id="seat-frames">
+          <article class="ship frame-in" data-tone="green" data-start="0" data-duration="1" data-track-index="0">
+            <span class="frame-badge">FRAME 05</span>
+            <p class="stamp">FreeBuff · Kalshi 15m live lead</p>
+            <h3>Overnight shift</h3>
+            <p>FreeBuff took the Kalshi 15m live lane from Hermes and Leo on the night of 9/16 and ran one overnight shift, about 10:42 PM CT on 9/16 through 1:26 AM CT on 9/17. Every entry went through the TypeSafe judge and the 0.70 probability and 0.80 price gates. The ledger has 17 entries: 9 trade or settle, 8 skips. Early on 9/17 Jeremy moved live trading to the Freebuff Desktop program, and the routine has stayed paused since. On 9/24 the TRENCHNET space-dashboard brief and its style addenda were written for FreeBuff.</p>
+            <div class="stats">
+              <span class="chip">TypeSafe gated</span>
+              <span class="chip"><strong>17</strong> ledger entries</span>
+              <span class="chip">paused since 9/17</span>
+            </div>
+          </article>
+
+          <article class="ship frame-in" data-tone="purple" data-start="0.1" data-duration="1" data-track-index="1">
+            <span class="frame-badge">FRAME 06</span>
+            <p class="stamp">Muse · Hermes video + Meta Muse lane</p>
+            <h3>muse-rig-hub</h3>
+            <p>On 9/18 Muse built muse-rig-hub, a Meta Muse connector hub with a catalog, Worker source, and tests. It is verified locally and has not been deployed. The same night it wrote MUSE-LANE.md and the Muse brain card, which lay out the local video gateway and the Meta Muse agent.</p>
+            <div class="stats">
+              <span class="chip">verified locally</span>
+              <span class="chip">not deployed</span>
+              <span class="chip">9/18</span>
+            </div>
+          </article>
+
+          <article class="ship frame-in" data-tone="orange" data-start="0.2" data-duration="1" data-track-index="2">
+            <span class="frame-badge">FRAME 07</span>
+            <p class="stamp">MiMo · Hermes file-bus render lane</p>
+            <h3>Still in the render queue</h3>
+            <p>No shipped render this week. Still open on the 9/23 clockwork:</p>
+            <ul>
+              <li>Batch2 FTX documentary</li>
+              <li>SVB Short</li>
+            </ul>
+            <div class="stats">
+              <span class="chip">CLOCKWORK 9/23</span>
+              <span class="chip">queue open</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="next">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Next up</h2>
+          <p>Open work after this window.</p>
+        </div>
+        <div class="rule" style="background:linear-gradient(90deg,var(--cyan),var(--gold))"></div>
+        <div class="prior">
+          <div class="tile">
+            <p class="when">FreeBuff</p>
+            <h3>TRENCHNET space dashboard</h3>
+            <p>Radar desk UI from the 9/24 brief and style addenda.</p>
+          </div>
+          <div class="tile">
+            <p class="when">Muse</p>
+            <h3>muse-rig-hub deploy</h3>
+            <p>Local build is verified. Cloudflare deploy still open.</p>
+          </div>
+          <div class="tile">
+            <p class="when">MiMo</p>
+            <h3>Batch2 FTX documentary</h3>
+            <p>Still open on the 9/23 clockwork with the SVB Short.</p>
+          </div>
+          <div class="tile">
+            <p class="when">TRENCHNET</p>
+            <h3>Reports by free models</h3>
+            <p>Replace the template writer once free-model chat works.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="receipts">
       <div class="wrap">
         <div class="sec-head">
@@ -692,14 +789,28 @@
               <code>RECEIPT.md</code>, <code>README.md</code>, <code>out/index.html</code> (built 9/24 03:08 CT).
             </li>
             <li>
-              Next up for TRENCHNET — space dashboard and reports written by free models
-              (<code>FREEBUFF_UPGRADE_PROMPT.txt</code> + addenda, 9/24). Current reports use a template writer; FCC chat completions returned 404; Jev ran as mock (no TypeSafe key yet).
+              FreeBuff Kalshi overnight shift (9/16 ~10:42pm–9/17 ~1:26am CT) —
+              <code>live_ledger.jsonl</code>, <code>FREEBUFF_KALSHI_HANDOFF.md</code>. Live routine paused after Jeremy moved trading to Freebuff Desktop early 9/17.
+            </li>
+            <li>
+              FreeBuff TRENCHNET brief 9/24 —
+              <code>FREEBUFF_UPGRADE_PROMPT.txt</code> + style addenda. Current TRENCHNET reports use a template writer; FCC chat completions returned 404; Jev ran as mock (no TypeSafe key yet).
+            </li>
+            <li>
+              Muse muse-rig-hub + lane docs 9/18 —
+              <code>muse-rig-hub/README.md</code> (Verified 2026-09-18; not deployed),
+              <code>MUSE-LANE.md</code>,
+              <code>BRAIN/bots/muse.md</code>.
+            </li>
+            <li>
+              MiMo render queue still open 9/23 —
+              <code>CLOCKWORK_2026-09-23.md</code> (Batch2 FTX documentary + SVB Short).
             </li>
             <li>
               Prior window (not this week’s ship claim) —
               <code>SEO-CALC-8DOMAIN-TRAFFIC-HYGIENE-2026-09-13.md</code>,
               <code>SEO-DONE-LINKEDIN-POSTED-2026-09-16.md</code>,
-              <code>FREEBUFF_KALSHI_HANDOFF.md</code> (2026-09-16).
+              <code>FREEBUFF_KALSHI_HANDOFF.md</code> (handoff written 2026-09-16).
             </li>
           </ol>
         </div>
@@ -727,7 +838,7 @@
           <div class="tile">
             <p class="when">9/16</p>
             <h3>Kalshi → FreeBuff</h3>
-            <p>Kalshi live bot handed to FreeBuff.</p>
+            <p>Live lane handed to FreeBuff the night before this window. Detail under Seats this week.</p>
           </div>
         </div>
         <p class="note">Labeled prior-window so it does not pad the Sep 17–24 ship list.</p>
