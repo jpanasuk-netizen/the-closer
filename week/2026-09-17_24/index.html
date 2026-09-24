@@ -409,9 +409,12 @@
       .prior, #next .prior { grid-template-columns: 1fr; }
     }
     #seats-week .ships {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    @media (max-width: 1100px) {
+    @media (min-width: 1800px) {
+      #seats-week .ships { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
       #seats-week .ships { grid-template-columns: 1fr; }
     }
     .prior .tile {
@@ -684,7 +687,7 @@
       <div class="wrap">
         <div class="sec-head">
           <h2>Seats this week</h2>
-          <p>FreeBuff, Muse, and MiMo. Facts from the receipts only.</p>
+          <p>FreeBuff, Muse, MiMo, and Hermes Bot. Facts from the receipts only.</p>
         </div>
         <div class="rule" style="background:linear-gradient(90deg,var(--green),var(--purple))"></div>
         <div class="ships" id="seat-frames">
@@ -703,12 +706,13 @@
           <article class="ship frame-in" data-tone="purple" data-start="0.1" data-duration="1" data-track-index="1">
             <span class="frame-badge">FRAME 06</span>
             <p class="stamp">Muse · Hermes video + Meta Muse lane</p>
-            <h3>muse-rig-hub</h3>
-            <p>On 9/18 Muse built muse-rig-hub, a Meta Muse connector hub with a catalog, Worker source, and tests. It is verified locally and has not been deployed. The same night it wrote MUSE-LANE.md and the Muse brain card, which lay out the local video gateway and the Meta Muse agent.</p>
+            <h3>muse-rig-hub + Connecture</h3>
+            <p>On 9/18 Muse built muse-rig-hub, a Meta Muse connector hub with a catalog, Worker source, and tests. It is verified locally and has not been deployed. The same night it wrote MUSE-LANE.md and the Muse brain card, which lay out the local video gateway and the Meta Muse agent. On 9/19 Connecture landed as a Muse MSP client with a connector hub (private repo; commits 066293f4, 7b31df6e).</p>
             <div class="stats">
               <span class="chip">verified locally</span>
               <span class="chip">not deployed</span>
-              <span class="chip">9/18</span>
+              <span class="chip">Connecture private</span>
+              <span class="chip">9/18–9/19</span>
             </div>
           </article>
 
@@ -721,9 +725,24 @@
               <li>Batch2 FTX documentary</li>
               <li>SVB Short</li>
             </ul>
+            <p>On 9/20 MiMo moved the Jev-X-S Kalshi bot session into a public repo as build work only: <a href="https://github.com/jpanasuk-netizen/jaspers-trade-bot" rel="noopener">jpanasuk-netizen/jaspers-trade-bot</a> (commit 297fb857).</p>
             <div class="stats">
               <span class="chip">CLOCKWORK 9/23</span>
               <span class="chip">queue open</span>
+              <span class="chip">jaspers-trade-bot</span>
+            </div>
+          </article>
+
+          <article class="ship frame-in" data-tone="cyan" data-start="0.3" data-duration="1" data-track-index="3">
+            <span class="frame-badge">FRAME 08</span>
+            <p class="stamp">Hermes Bot · LightBringer</p>
+            <h3>Continuity + wiring</h3>
+            <p>On 9/17 Hermes Bot published the three Machine Room Flow Shorts and the 00-Continuity pack landed so LightBringer can run the house. Clockwork dry runs hit on 9/17 and 9/23. On 9/23 free Claude Code was wired into the Hermes config through FCC, and a Cloudflare Workers AI provider was set up on disk with no Worker deployed yet.</p>
+            <div class="stats">
+              <span class="chip">Flow Shorts publish</span>
+              <span class="chip">00-Continuity</span>
+              <span class="chip">FCC wired 9/23</span>
+              <span class="chip">Workers AI on disk</span>
             </div>
           </article>
         </div>
@@ -803,8 +822,24 @@
               <code>BRAIN/bots/muse.md</code>.
             </li>
             <li>
+              Muse Connecture 9/19 (private repo) —
+              commits <code>066293f4</code>, <code>7b31df6e</code>. Muse MSP client with a connector hub. No public link.
+            </li>
+            <li>
               MiMo render queue still open 9/23 —
-              <code>CLOCKWORK_2026-09-23.md</code> (Batch2 FTX documentary + SVB Short).
+              <code>CLOCKWORK_2026-09-17.md</code>, <code>CLOCKWORK_2026-09-23.md</code> (Batch2 FTX documentary + SVB Short).
+            </li>
+            <li>
+              MiMo repo build 9/20 —
+              <a href="https://github.com/jpanasuk-netizen/jaspers-trade-bot" rel="noopener">jaspers-trade-bot</a> commit <code>297fb857</code> (Jev-X-S session takeover; build only).
+            </li>
+            <li>
+              Hermes Bot 9/17–9/23 —
+              Flow Shorts publish (<code>FLOW_SHORTS_LIVE_2026-09-17.json</code>, publisher Hermes Bot),
+              <code>LEO-TO-HERMES-FULL-CONTINUITY-2026-09-17.md</code>,
+              <code>CLOCKWORK_2026-09-17.md</code> + <code>CLOCKWORK_2026-09-23.md</code>,
+              FCC wired as Hermes model provider 9/23,
+              Cloudflare Workers AI provider on disk 9/23 (no Worker deployed).
             </li>
             <li>
               Prior window (not this week’s ship claim) —
