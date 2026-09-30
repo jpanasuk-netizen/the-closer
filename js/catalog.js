@@ -10,7 +10,9 @@
     ["canonical-stack-packet.html", "Packet"],
     ["hunt.html", "Hunt"],
     ["skill-matrix.html", "Matrix"],
-    ["CONNECT_YOUR_LIFE.html", "Agents"]
+    ["CONNECT_YOUR_LIFE.html", "Agents"],
+    ["week/2026-09-17_24/", "Sep 17–24"],
+    ["week/2026-09-22_28/", "Sep 22–28"]
   ];
 
   var packets = [
