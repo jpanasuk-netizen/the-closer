@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Connect Your Life to the Agents | $99.99 | Jeremy Panasuk</title>
-  <meta name="description" content="Connect your life to a named agent desk — the Desk, the House Stack, or the Wire. $99.99 to start, all connections included, future wires $1. You keep the gate on send, spend, and public." />
+  <title>Pick Your Path | Connect Your Life | $99.99 | Jeremy Panasuk</title>
+  <meta name="description" content="Pick your agent path: Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini. Pay the vendor their plan. Then $99.99 for Jeremy Panasuk to wire it into your life. Future wires $1. You keep the gate on send, spend, and public." />
   <link rel="canonical" href="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jpanasuk-netizen.github.io/the-closer/CONNECT_YOUR_LIFE.html" />
-  <meta property="og:title" content="Connect Your Life to the Agents | $99.99 | Jeremy Panasuk" />
-  <meta property="og:description" content="Connect your life to a named agent desk — the Desk, the House Stack, or the Wire. $99.99 to start, all connections included, future wires $1. You keep the gate on send, spend, and public." />
+  <meta property="og:title" content="Pick Your Path | Connect Your Life | $99.99 | Jeremy Panasuk" />
+  <meta property="og:description" content="Pick Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini. You pay that path’s vendor. On top of that, $99.99 to wire it into your life. Future wires $1." />
   <meta property="og:image" content="https://jpanasuk-netizen.github.io/the-closer/headshot.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Connect Your Life to the Agents | $99.99 | Jeremy Panasuk" />
-  <meta name="twitter:description" content="Connect your life to a named agent desk — the Desk, the House Stack, or the Wire. $99.99 to start, all connections included, future wires $1. You keep the gate on send, spend, and public." />
+  <meta name="twitter:title" content="Pick Your Path | Connect Your Life | $99.99 | Jeremy Panasuk" />
+  <meta name="twitter:description" content="Pick Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini. You pay that path’s vendor. On top of that, $99.99 to wire it into your life. Future wires $1." />
   <meta name="twitter:image" content="https://jpanasuk-netizen.github.io/the-closer/headshot.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +28,7 @@
         "name": "What is CONNECT?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "CONNECT is Jeremy Panasuk’s offer to wire your life to a named agent desk — the Desk, the House Stack, or the Wire — with a human gate on send, spend, and public."
+          "text": "CONNECT is Jeremy Panasuk’s offer to wire your life to the agent path you pick: Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini. You keep a human gate on send, spend, and public."
         }
       },
       {
@@ -36,7 +36,15 @@
         "name": "What does $99.99 include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "$99.99 to start includes your first agent pick and all connections in the start package. Future connections are $1 each."
+          "text": "$99.99 is the one-time setup to wire your chosen path into your life, including the connections in the start package. Future connections are $1 each. It does not include the monthly plan you pay the agent vendor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I pay the agent vendor too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when that path has a vendor plan. Those prices are listed on this page with links to the official sources, checked November 10, 2026. The $99.99 is only Jeremy’s setup fee, on top of the path you pick."
         }
       },
       {
@@ -76,7 +84,12 @@
     html, body { background: var(--bg); color: var(--text); font-family: "IBM Plex Sans", sans-serif; }
     a { color: var(--cyan); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 36px; }
+    .wrap {
+      width: 100%;
+      max-width: 3000px;
+      margin: 0 auto;
+      padding: 0 72px;
+    }
     .kicker {
       font-family: "IBM Plex Mono", monospace;
       font-size: 12px;
@@ -95,7 +108,7 @@
     header.nav {
       position: sticky; top: 0; z-index: 20;
       display: flex; flex-direction: column; align-items: stretch; gap: 8px;
-      padding: 10px 36px 12px;
+      padding: 10px 72px 12px;
       background: rgba(5, 8, 20, 0.78);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(34, 211, 238, 0.15);
@@ -103,21 +116,18 @@
     header.nav .nav-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     header.nav .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.18em; font-size: 22px; color: var(--text); text-decoration: none; }
     header.nav .brand span { color: var(--cyan); }
-    section { padding: 72px 0; }
+    section { padding: 56px 0; }
+    #offer { padding-top: 40px; padding-bottom: 28px; }
     h1, h2 { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.04em; }
-    h1 { font-size: clamp(48px, 8vw, 92px); line-height: 0.92; }
-    h2 { font-size: 48px; }
+    h1 { font-size: clamp(48px, 6vw, 104px); line-height: 0.92; }
+    h2 { font-size: clamp(36px, 3vw, 56px); }
     h3 { font-size: 18px; font-weight: 600; }
     p { color: #c5d2e3; line-height: 1.55; }
     .c-purple { color: var(--purple); }
-    .c-orange { color: var(--orange); }
-    .c-cyan { color: var(--cyan); }
-    .c-green { color: var(--green); }
-    .c-gold { color: var(--gold); }
     .subline {
       font-family: "Cormorant Garamond", serif;
       font-style: italic;
-      font-size: 28px;
+      font-size: clamp(22px, 1.8vw, 32px);
       color: var(--purple);
       line-height: 1.25;
       margin-top: 10px;
@@ -125,9 +135,17 @@
     .lead { max-width: 820px; margin-top: 8px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 220px;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 460px);
+      gap: 48px;
       align-items: start;
+      max-width: 1680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-side {
+      display: grid;
+      justify-items: end;
+      gap: 18px;
     }
     .shot {
       width: 220px;
@@ -147,39 +165,70 @@
       line-height: 1.7;
     }
     .contact a { color: var(--cyan); }
-    .get-list {
-      margin-top: 18px;
-      list-style: none;
+    .tldr-box { margin-top: 18px; padding: 16px 18px; border: 1px solid var(--line); background: rgba(126,184,255,0.06); }
+    .tldr-box h2 { font-size: 22px; margin: 0 0 10px; }
+    .tldr-box p { margin: 0 0 8px; font-size: 16px; line-height: 1.45; color: #b8c0cc; }
+    .tldr-box p:last-child { margin-bottom: 0; }
+    .paths {
+      margin-top: 22px;
       display: grid;
-      gap: 12px;
-      max-width: 900px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
     }
-    .get-list li {
-      background: rgba(11, 18, 32, 0.78);
-      border: 1px solid rgba(34, 211, 238, 0.1);
-      padding: 14px 18px;
-      color: #c5d2e3;
-      line-height: 1.5;
-      font-size: 15px;
-    }
-    .get-list li strong { color: var(--cyan); font-weight: 600; }
-    .deals { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .deal {
       background: rgba(11, 18, 32, 0.78);
       border: 1px solid rgba(34, 211, 238, 0.1);
-      padding: 16px 18px 18px;
+      padding: 18px 18px 16px;
       cursor: pointer;
       text-align: left;
       color: inherit;
       font: inherit;
       width: 100%;
-      display: block;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 100%;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    .deal .num { font-family: "Bebas Neue", sans-serif; font-size: 28px; color: var(--cyan); }
-    .deal .who { font-weight: 700; margin: 2px 0 6px; }
-    .deal p { font-size: 13.5px; }
-    .deal ul { margin: 10px 0 0 16px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .deal .num { font-family: "Bebas Neue", sans-serif; font-size: 28px; color: var(--cyan); line-height: 1; }
+    .deal .who { font-weight: 700; font-size: 20px; }
+    .deal .tag {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--purple);
+      line-height: 1.3;
+    }
+    .deal .blurb { font-size: 14px; color: #c5d2e3; }
+    .deal .for { font-size: 13.5px; color: var(--muted); }
+    .deal .for b { color: var(--text); font-weight: 600; }
+    .cost {
+      margin-top: 4px;
+      padding: 10px 12px;
+      background: rgba(5, 8, 20, 0.7);
+      border: 1px solid rgba(251, 191, 36, 0.22);
+    }
+    .cost-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .cost-amt { margin-top: 4px; font-size: 14px; color: var(--text); font-weight: 600; line-height: 1.4; }
+    .src {
+      display: block;
+      margin-top: 6px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .src:hover { color: var(--cyan); }
+    .pc { margin-top: 4px; display: grid; gap: 8px; }
+    .pc p { font-size: 13px; color: var(--muted); line-height: 1.45; }
+    .pc b { color: var(--text); font-weight: 600; }
     .deal:hover { border-color: var(--line); text-decoration: none; }
     .deal.picked {
       border-color: var(--cyan);
@@ -192,9 +241,56 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 12px;
+      margin-top: auto;
+      padding-top: 12px;
     }
     .deal.picked .pick-state { color: var(--green); }
+    .table-scroll { overflow-x: auto; margin-top: 16px; -webkit-overflow-scrolling: touch; }
+    .table-hint { display: none; margin-top: 10px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    section[id] { scroll-margin-top: 96px; }
+    .cmp-table { width: 100%; min-width: 860px; border-collapse: collapse; font-size: 15px; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .cmp-table th {
+      color: var(--cyan);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(11, 18, 32, 0.9);
+    }
+    .cmp-table td { background: rgba(11, 18, 32, 0.55); }
+    .source-note { margin-top: 12px; font-size: 13px; color: var(--muted); max-width: 980px; }
+    .offer {
+      background: var(--navy);
+      border: 1px solid var(--line);
+      padding: 28px 28px 24px;
+      margin-top: 8px;
+    }
+    .price {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 88px;
+      color: var(--gold);
+      line-height: 0.9;
+    }
+    .price small {
+      font-size: 28px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .offer-chip {
+      background: var(--panel);
+      border: 1px solid rgba(34, 211, 238, 0.1);
+      padding: 16px 18px;
+    }
+    .offer-chip h3 { color: var(--cyan); margin-bottom: 6px; }
+    .hero-offer .price { font-size: 72px; }
+    .hero-offer { width: 100%; }
     .metrics {
       margin-top: 18px;
       display: grid;
@@ -224,43 +320,6 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-
-    .tldr-box { margin-top: 18px; padding: 16px 18px; border: 1px solid var(--line, #2a3340); border-radius: 10px; background: rgba(126,184,255,0.06); }
-    .tldr-box h2 { font-size: 22px; margin: 0 0 10px; }
-    .tldr-box p { margin: 0 0 8px; font-size: 16px; line-height: 1.45; color: var(--muted, #b8c0cc); }
-    .tldr-box p:last-child { margin-bottom: 0; }
-    .cmp-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 15px; }
-    .cmp-table th, .cmp-table td { border: 1px solid var(--line, #2a3340); padding: 10px 12px; text-align: left; vertical-align: top; }
-    .cmp-table th { color: var(--cyan, #7eb8ff); font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
-    .offer {
-      background: var(--navy);
-      border: 1px solid var(--line);
-      padding: 28px 28px 24px;
-      margin-top: 8px;
-    }
-    .price {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 88px;
-      color: var(--gold);
-      line-height: 0.9;
-    }
-    .price small {
-      font-size: 28px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-    .offer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-    .offer-chip {
-      background: var(--panel);
-      border: 1px solid rgba(34, 211, 238, 0.1);
-      padding: 16px 18px;
-    }
-    .offer-chip h3 { color: var(--cyan); margin-bottom: 6px; }
     .cta {
       text-align: center;
       padding: 56px 24px 64px;
@@ -269,8 +328,8 @@
         var(--navy);
       border-top: 1px solid rgba(34, 211, 238, 0.12);
     }
-    .cta h2 { font-size: 64px; }
-    .cta p { max-width: 720px; margin: 12px auto 0; font-size: 18px; }
+    .cta h2 { font-size: clamp(42px, 5vw, 64px); }
+    .cta p { max-width: 760px; margin: 12px auto 0; font-size: 18px; }
     .cta-line {
       font-family: "IBM Plex Mono", monospace;
       letter-spacing: 0.12em;
@@ -279,7 +338,7 @@
       margin-top: 18px !important;
       font-size: 14px !important;
     }
-    .cta a.btn {
+    .cta a.btn, a.btn {
       display: inline-block;
       margin-top: 22px;
       padding: 14px 28px;
@@ -290,7 +349,7 @@
       text-transform: uppercase;
       font-size: 12px;
     }
-    .cta a.btn:hover { background: rgba(34, 211, 238, 0.12); text-decoration: none; }
+    .cta a.btn:hover, a.btn:hover { background: rgba(34, 211, 238, 0.12); text-decoration: none; }
     .cta a.btn-secondary {
       display: inline-block;
       margin-top: 16px;
@@ -349,21 +408,37 @@
     .faq details[open] summary { color: var(--cyan); margin-bottom: 8px; }
     .faq details p { font-size: 15px; }
     footer.page {
-      padding: 20px 36px 28px;
+      padding: 20px 72px 28px;
       color: var(--muted);
       font-size: 12px;
       display: flex;
       justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(34, 211, 238, 0.12);
+    }
+    @media (max-width: 2400px) {
+      .paths { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 1400px) {
+      .wrap { padding: 0 36px; }
+      header.nav, footer.page { padding-left: 36px; padding-right: 36px; }
+      .paths { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .offer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-grid { gap: 28px; }
     }
     @media (max-width: 980px) {
       header.nav { padding: 10px 16px 12px; }
-      .deals, .metrics, .hero-grid, .offer-grid { grid-template-columns: 1fr; }
-      .wrap { padding: 0 24px; }
+      footer.page { padding: 20px 16px 28px; }
+      .paths, .metrics, .hero-grid, .offer-grid { grid-template-columns: 1fr; }
+      .hero-side { justify-items: start; }
+      .wrap { padding: 0 20px; }
       .shot { width: 160px; height: 204px; }
-      .cta h2 { font-size: 42px; }
       .price { font-size: 64px; }
       .cta a.btn-secondary { margin-left: 0; display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+      section { padding: 48px 0; }
+      .table-hint { display: block; }
+      section[id] { scroll-margin-top: 140px; }
     }
   </style>
   <link rel="stylesheet" href="css/catalog.css" />
@@ -377,19 +452,18 @@
     <script src="js/catalog.js"></script>
   </header>
 
-  <!-- 1. H1 offer -->
   <section id="offer">
     <div class="wrap hero-grid">
       <div>
-        <div class="kicker">One operator · three stacks · you keep the house</div>
+        <div class="kicker">Pick your path · then I wire it up</div>
         <div class="rule"></div>
-        <h1>Connect your life to the agents</h1>
-        <p class="subline">Named desk. Local stack. Wire into the world.</p>
-        <p class="lead" style="margin-top:18px;font-size:18px;">Not another chatbot tab. A desk that drafts with receipts, a house stack that stays up when the cloud dies, and a bounded wire out — measured, loyal, yours.</p>
+        <h1>Pick your path. I’ll wire it into your life.</h1>
+        <p class="subline">Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini.</p>
+        <p class="lead" style="margin-top:18px;font-size:18px;">Each path has its own bill, paid to that vendor. On top of that, I charge a flat $99.99 to connect it to your life. You keep the gate on send, spend, and public. Agents draft. You still click yes.</p>
         <aside class="tldr-box" id="connect-tldr" aria-label="Quick answer">
           <h2>Quick answer</h2>
-          <p><strong>$99.99 to start</strong> includes your first agent pick (the Desk, the House Stack, or the Wire) and all connections in the start package. <strong>Future wires are $1</strong> each.</p>
-          <p>You keep the gate on <strong>send, spend, and public</strong> — agents draft; you still click yes. Not another chatbot tab.</p>
+          <p>Pick one path below. <strong>You pay that vendor</strong> whatever their plan costs. Prices on this page were checked November 10, 2026, from official sources. If you’re reading this later, use the links.</p>
+          <p>Then it’s <strong>$99.99 once</strong> for me to wire it up: setup plus the connections in the start package. <strong>Future wires are $1</strong> each.</p>
         </aside>
         <p class="contact">
           Jeremy Panasuk · New Auburn, WI · <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a><br />
@@ -397,112 +471,235 @@
           · <a href="https://huggingface.co/jpanasuk">huggingface.co/jpanasuk</a>
         </p>
       </div>
-      <img class="shot" src="headshot.png" alt="Jeremy Panasuk" />
-    </div>
-  </section>
-
-  <!-- 2. Short outcome promise -->
-  <section id="outcome" style="padding-top:0;">
-    <div class="wrap">
-      <div class="kicker">The outcome</div>
-      <div class="rule"></div>
-      <h2>Do agents send without me?</h2>
-      <p class="lead" style="font-size:18px;">Pick a named agent desk — the Desk, the House Stack, or the Wire — wired into your life with a human gate on send, spend, and public. Work keeps moving. Receipts stay. The house stays yours.</p>
-    </div>
-  </section>
-
-  <!-- 3. What you get -->
-  <section id="what-you-get" style="padding-top:24px;">
-    <div class="wrap">
-      <div class="kicker">What you get</div>
-      <div class="rule orange"></div>
-      <h2>What do I get for $99.99?</h2>
-      <ul class="get-list">
-        <li><strong>Pick first agent:</strong> the Desk · the House Stack (WSL) · the Wire (bounded MCP)</li>
-        <li><strong>All connections included</strong> in the start price — not nickel-and-dime add-ons</li>
-        <li><strong>Future connections $1</strong> each (loyalty runbook, not a survey)</li>
-        <li><strong>Human gate stays yours:</strong> send / spend / public</li>
-        <li><strong>Continuity</strong> when the cloud tab dies — house stack on the metal</li>
-        <li><strong>Packets / receipts</strong> pattern: Done evidence, not vibes</li>
-      </ul>
-      <p class="lead" style="margin-top:22px;">Click a stack below. The CTA names who you picked.</p>
-      <div class="deals" role="list">
-        <button type="button" class="deal" data-agent="the Desk" aria-pressed="false">
-          <div class="num">01</div>
-          <div class="who">The Desk</div>
-          <p class="c-purple" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;margin-bottom:8px;">The desk that never sleeps.</p>
-          <p>Hunt, stamp, brief. Packets GH+HF. He still clicks Apply.</p>
-          <ul>
-            <li>Weekday hunt cadence. True-remote keepers. Closer-voice covers.</li>
-            <li>Packets live on GitHub Pages and Hugging Face the same morning.</li>
-            <li>Inbox scanned. Covers drafted. The closer still clicks Apply — the desk never drops the thread.</li>
-          </ul>
-          <div class="pick-state">Click to pick</div>
-        </button>
-        <button type="button" class="deal" data-agent="the House Stack" aria-pressed="false">
-          <div class="num">02</div>
-          <div class="who">The House Stack</div>
-          <p class="c-purple" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;margin-bottom:8px;">House stack WSL.</p>
-          <p>Continuity when cloud dies. Camera/CLI on the metal.</p>
-          <ul>
-            <li>WSL Ubuntu operator for the house stack.</li>
-            <li>Holds continuity when the cloud tab is gone.</li>
-            <li>Camera cut and CLI on the metal — the floor that stays up because it lives in the house.</li>
-          </ul>
-          <div class="pick-state">Click to pick</div>
-        </button>
-        <button type="button" class="deal" data-agent="the Wire" aria-pressed="false">
-          <div class="num">03</div>
-          <div class="who">The Wire</div>
-          <p class="c-purple" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;margin-bottom:8px;">The wire into the world.</p>
-          <p>WhatsApp, MCP bounded not host-root, systems/architect/validator.</p>
-          <ul>
-            <li>WhatsApp agents. Systems → architect → validator. Structured output, not a demo reel.</li>
-            <li>Bounded MCP: agents see the allowed surface, not host-root.</li>
-          </ul>
-          <div class="pick-state">Click to pick</div>
-        </button>
+      <div class="hero-side">
+        <img class="shot" src="headshot.png" alt="Jeremy Panasuk" />
+        <div class="offer hero-offer">
+          <div class="price">$99.99 <small>to wire it up</small></div>
+          <p style="margin-top:12px;">Flat setup, on top of any path. All start-package connections included. Later wires $1 each.</p>
+          <p>
+            <a class="btn" href="mailto:jpanasuk@gmail.com?subject=Connect%20your%20life%20%E2%80%94%20%2499.99">Email jpanasuk@gmail.com</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Pricing -->
+  <section id="paths" style="padding-top:0;">
+    <div class="wrap">
+      <div class="kicker">Six paths</div>
+      <div class="rule orange"></div>
+      <h2>Pick your path</h2>
+      <p class="lead" style="font-size:18px;">Click a card. The email subject will name the path you picked. The $99.99 is my setup fee. It is not a substitute for the vendor’s plan.</p>
+      <div class="paths" role="list">
+
+        <button type="button" class="deal" data-agent="Hermes" aria-pressed="false">
+          <div class="num">01</div>
+          <div class="who">Hermes</div>
+          <p class="tag">Nous Research agent. Runs on your machine.</p>
+          <p class="blurb">Free, MIT-licensed software. Talks to you in Telegram, Discord, Slack, WhatsApp, Signal, email, and the CLI. Memory stays with the agent. You can also hook it to Nous Portal for models and tools, or deploy optional cloud hosting.</p>
+          <p class="for"><b>Who it’s for.</b> People who want a local agent they can keep on their own metal, and only pay Nous if they want Portal or Cloud.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">Software $0. Optional Nous Portal: Free $0, Plus $20/mo, Super $100/mo, Ultra $200/mo.</div>
+            <a class="src" href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener">Source: hermes-agent.nousresearch.com · checked Nov 10, 2026</a>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> Running the agent yourself, picking your own model provider, and starting at $0 if you stay on free models or your own keys.</p>
+            <p><b>The catch.</b> You install it and keep it running. Portal usage, paid models, and Cloud hosting are extra and billed by Nous or the provider you choose.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+        <button type="button" class="deal" data-agent="Muse" aria-pressed="false">
+          <div class="num">02</div>
+          <div class="who">Muse</div>
+          <p class="tag">Meta’s personal agent, at muse.ai.</p>
+          <p class="blurb">A consumer agent that can take actions with your direction and connect to other apps. Free to use with a weekly cap. Paid plans raise the token allowance. Muse and the paid plans are still in limited testing and are not in every location.</p>
+          <p class="for"><b>Who it’s for.</b> People who want a Meta agent without standing up their own stack.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">Free with a usage limit. Power $20/mo (500M tokens/week). Maximum $100/mo (3B tokens/week).</div>
+            <a class="src" href="https://www.meta.com/help/subscriptions/1021145227643680/" target="_blank" rel="noopener">Source: Meta Muse subscriptions help · checked Nov 10, 2026</a>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> A simple start, a free tier, and an agent that already lives in Meta’s world.</p>
+            <p><b>The catch.</b> Weekly limits, not available everywhere yet, and you are inside a Meta account.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+        <button type="button" class="deal" data-agent="Grok Bot" aria-pressed="false">
+          <div class="num">03</div>
+          <div class="who">Grok Bot</div>
+          <p class="tag">The bot on The X Subscription.</p>
+          <p class="blurb">Grok Bot is included on Premium, Super, and Ultra. One bill covers Grok, Grok Bot, Cursor, and X benefits when you add a personal X account. Usage is a shared weekly pool, not a separate Grok Bot bucket. Plus does not include the bot.</p>
+          <p class="for"><b>Who it’s for.</b> People already in the Grok, Cursor, or X world, or who want that whole stack on one plan.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">Premium $30/mo, Super $100/mo, Ultra $200/mo. Annual: $300, $1,000, $2,000. Not on Free or Plus ($8/mo).</div>
+            <a class="src" href="https://x.ai/pricing" target="_blank" rel="noopener">Source: x.ai/pricing · checked Nov 10, 2026</a>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> One subscription that already includes the bot from Premium up, plus Grok and Cursor in the same pool.</p>
+            <p><b>The catch.</b> The bot starts at $30/mo. Heavy Cursor or Grok use draws from the same weekly allowance. Third-party models in Cursor are billed separately. Taxes may be added at checkout.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+        <button type="button" class="deal" data-agent="Self-hosted" aria-pressed="false">
+          <div class="num">04</div>
+          <div class="who">Self-hosted</div>
+          <p class="tag">Local models on hardware you already own.</p>
+          <p class="blurb">Run open-source model software on your own machine. The usual tools are free to download. You are not renting a vendor’s assistant. This path can stand alone, or it can sit under Hermes or OpenClaw as the model layer.</p>
+          <p class="for"><b>Who it’s for.</b> People who want the weights and the work on their own metal, and can live with whatever their hardware can run.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">$0 for the usual open-source software. Hardware and electricity are yours. Machine cost depends on what you already have or buy.</div>
+            <span class="src">No monthly vendor plan to quote. Cost is your hardware and power.</span>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> Privacy, no monthly model subscription if you stay local, and a desk that still works when a cloud tab dies.</p>
+            <p><b>The catch.</b> You buy, power, and maintain the box. Quality follows what that machine can hold. Updates are on you.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+        <button type="button" class="deal" data-agent="OpenClaw" aria-pressed="false">
+          <div class="num">05</div>
+          <div class="who">OpenClaw</div>
+          <p class="tag">The open-source bot. MIT license, no paid tier.</p>
+          <p class="blurb">An open assistant you run on your computer and talk to in WhatsApp, Telegram, Discord, Slack, iMessage, and other channels you already use. Stewarded by the OpenClaw Foundation, a 501(c)(3). There is no hosted product and no token to buy.</p>
+          <p class="for"><b>Who it’s for.</b> People who want an open bot in their existing chat apps and will bring their own model, API key, or local weights.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">Software $0. You pay the model provider you connect, or run a local model. Always-on hosting and power, if you want that, are yours.</div>
+            <a class="src" href="https://openclaw.ai/" target="_blank" rel="noopener">Source: openclaw.ai · checked Nov 10, 2026</a>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> No software subscription, many chat channels, and your memory and skills staying on your machine.</p>
+            <p><b>The catch.</b> You set it up and keep it running. Model and API costs vary by provider, so this page does not invent a monthly number for those.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+        <button type="button" class="deal" data-agent="Gemini" aria-pressed="false">
+          <div class="num">06</div>
+          <div class="who">Gemini</div>
+          <p class="tag">Google’s assistant, in the apps you already open.</p>
+          <p class="blurb">Gemini is free with a Google Account. Paid Google AI plans raise usage and add Gemini inside Gmail, Docs, and other Google apps, plus extra storage. Some features are limited by country.</p>
+          <p class="for"><b>Who it’s for.</b> People already living in Gmail, Drive, and Docs who want the assistant in those tools.</p>
+          <div class="cost">
+            <div class="cost-label">Your path cost</div>
+            <div class="cost-amt">Free $0. Google AI Plus $4.99/mo. Google AI Pro $19.99/mo. Google AI Ultra from $99.99/mo (5x) or $199.99/mo (20x).</div>
+            <a class="src" href="https://one.google.com/about/google-ai-plans/" target="_blank" rel="noopener">Source: one.google.com/about/google-ai-plans · checked Nov 10, 2026</a>
+          </div>
+          <div class="pc">
+            <p><b>Good for.</b> A real free tier, a clear paid ladder, and help inside Google apps you already use.</p>
+            <p><b>The catch.</b> You are in Google’s account world. Usage caps depend on the plan. Some features are not worldwide.</p>
+          </div>
+          <div class="pick-state">Click to pick</div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" style="padding-top:24px;">
     <div class="wrap">
-      <div class="kicker">Pricing</div>
+      <div class="kicker">Side by side</div>
       <div class="rule"></div>
-      <h2>How does $99.99 vs $1 work?</h2>
-      <p class="lead">All connections included. Future connections $1. One price. No tiers.</p>
-      <table class="cmp-table" id="cmp-pricing">
-        <thead>
-          <tr><th>Lane</th><th>What it is</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Start $99.99</strong></td><td>Includes first agent pick + all connections in the start package</td></tr>
-          <tr><td><strong>You keep the gate</strong></td><td>Send / spend / public stay yours — agents draft; you still click yes</td></tr>
-          <tr><td><strong>Future wires $1</strong></td><td>Each additional connection after start is $1 (loyalty runbook, not a survey)</td></tr>
-        </tbody>
-      </table>
-      <div class="offer">
-        <div class="price">$99.99 <small>to start</small></div>
+      <h2>Path costs, then the $99.99 setup</h2>
+      <p class="lead">The left-hand money goes to the vendor. The right-hand money comes to me, once, to wire it up.</p>
+      <p class="table-hint">Swipe the table sideways for sources and the setup fee.</p>
+      <div class="table-scroll">
+        <table class="cmp-table" id="cmp-pricing">
+          <thead>
+            <tr>
+              <th>Path</th>
+              <th>Best for</th>
+              <th>What you pay the vendor</th>
+              <th>CONNECT setup</th>
+              <th>Source, checked Nov 10, 2026</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hermes</strong></td>
+              <td>A local Nous agent you run yourself</td>
+              <td>$0 software; optional Portal Free $0, Plus $20/mo, Super $100/mo, Ultra $200/mo</td>
+              <td>$99.99 once</td>
+              <td><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener">hermes-agent.nousresearch.com</a></td>
+            </tr>
+            <tr>
+              <td><strong>Muse</strong></td>
+              <td>A Meta consumer agent, no stack to run</td>
+              <td>Free with a cap; Power $20/mo; Maximum $100/mo</td>
+              <td>$99.99 once</td>
+              <td><a href="https://www.meta.com/help/subscriptions/1021145227643680/" target="_blank" rel="noopener">Meta Muse subscriptions help</a></td>
+            </tr>
+            <tr>
+              <td><strong>Grok Bot</strong></td>
+              <td>Grok, Cursor, and X on one bill</td>
+              <td>From $30/mo (Premium). Super $100/mo. Ultra $200/mo. Not on Plus at $8/mo.</td>
+              <td>$99.99 once</td>
+              <td><a href="https://x.ai/pricing" target="_blank" rel="noopener">x.ai/pricing</a></td>
+            </tr>
+            <tr>
+              <td><strong>Self-hosted</strong></td>
+              <td>Local models on your own hardware</td>
+              <td>$0 software, plus your hardware and power. Machine cost depends on what you already have or buy.</td>
+              <td>$99.99 once</td>
+              <td>Your machine. No vendor plan to quote.</td>
+            </tr>
+            <tr>
+              <td><strong>OpenClaw</strong></td>
+              <td>An open bot in the chat apps you already use</td>
+              <td>$0 software, plus the model or API you connect. No OpenClaw subscription.</td>
+              <td>$99.99 once</td>
+              <td><a href="https://openclaw.ai/" target="_blank" rel="noopener">openclaw.ai</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gemini</strong></td>
+              <td>Google’s assistant inside Gmail and Docs</td>
+              <td>Free $0; Plus $4.99/mo; Pro $19.99/mo; Ultra from $99.99/mo or $199.99/mo</td>
+              <td>$99.99 once</td>
+              <td><a href="https://one.google.com/about/google-ai-plans/" target="_blank" rel="noopener">Google AI plans</a></td>
+            </tr>
+            <tr>
+              <td><strong>CONNECT setup</strong></td>
+              <td>Wiring the path you picked into your life</td>
+              <td>None. This is my fee, not a vendor plan.</td>
+              <td>$99.99 once, then $1 per future wire</td>
+              <td>This page. Same mailto as before.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Vendor prices change. These figures were read from the official pages on November 10, 2026 (America/Chicago). Annual Grok prices are also listed on <a href="https://docs.x.ai/x-subscription/pricing" target="_blank" rel="noopener">docs.x.ai/x-subscription/pricing</a>. Google’s Plus plan may offer more than one storage size at checkout; see the official plans page rather than assuming a second number.</p>
+
+      <div class="offer" style="margin-top:28px;">
+        <div class="price">$99.99 <small>to wire it up</small></div>
         <div class="offer-grid">
           <div class="offer-chip">
-            <h3>All connections included</h3>
-            <p>The desk, the house stack, and the wire. You pick the first agent. The rest of the connections ride with the start price — not a nickel-and-dime add-on.</p>
+            <h3>On top of any path</h3>
+            <p>The $99.99 is setup. I connect the path you picked to your life. It does not replace Hermes Portal, Muse Power, Grok Premium, or a Google AI plan.</p>
           </div>
           <div class="offer-chip">
-            <h3>Future wires $1</h3>
-            <p>The next wire is a dollar. Loyalty is the runbook they keep, not a survey they forget. Price the future so they stay.</p>
+            <h3>Start-package connections included</h3>
+            <p>The first connections ride with the setup price. After that, each new wire is $1. You keep the gate on send, spend, and public.</p>
+          </div>
+          <div class="offer-chip">
+            <h3>How you start</h3>
+            <p>Pick a path above, then email me. The subject line will name the path. If you have not picked one yet, say so in the email and we will choose.</p>
           </div>
         </div>
         <p style="margin-top:18px;">
-          <a class="btn" href="mailto:jpanasuk@gmail.com?subject=Connect%20your%20life%20%E2%80%94%20%2499.99" style="display:inline-block;padding:14px 28px;border:1px solid var(--cyan);color:var(--text);font-family:'IBM Plex Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;font-size:12px;">Email jpanasuk@gmail.com</a>
+          <a class="btn" href="mailto:jpanasuk@gmail.com?subject=Connect%20your%20life%20%E2%80%94%20%2499.99">Email jpanasuk@gmail.com</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 5. House proof only -->
   <section id="proof">
     <div class="wrap">
       <div class="kicker">Receipts from the floor</div>
@@ -529,20 +726,18 @@
     </div>
   </section>
 
-  <!-- 6. Single primary CTA (+ optional freebie) -->
   <div class="cta" id="start">
     <div class="kicker">Start the wire</div>
     <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
-    <h2>Ready to start the wire?</h2>
-    <p>$99.99 to start · all connections included · future wires $1. Pick the Desk, the House Stack, or the Wire above. Then send the closer the line.</p>
-    <p class="cta-line" id="picked-line">No agent picked yet — choose the Desk, the House Stack, or the Wire.</p>
+    <h2>Ready to wire it up?</h2>
+    <p>$99.99 once to connect the path you pick. Future wires $1. You keep the gate. Pick a path above, then send the line.</p>
+    <p class="cta-line" id="picked-line">No path picked yet. Choose Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini.</p>
     <a class="btn" id="primary-cta" href="mailto:jpanasuk@gmail.com?subject=Connect%20your%20life%20%E2%80%94%20%2499.99">Email jpanasuk@gmail.com</a>
     <div>
       <a class="btn-secondary" href="https://jpanasuk-netizen.github.io/house-hub/">See free tools first</a>
     </div>
   </div>
 
-  <!-- 8. Internal links rail -->
   <section id="rail" style="padding-top:40px;padding-bottom:40px;">
     <div class="wrap">
       <div class="kicker">House ladder</div>
@@ -559,7 +754,6 @@
     </div>
   </section>
 
-  <!-- 9. FAQ (visible + matches FAQPage schema) -->
   <section id="faq" class="faq" style="padding-top:24px;">
     <div class="wrap">
       <div class="kicker">FAQ</div>
@@ -567,19 +761,23 @@
       <h2>Questions before you wire</h2>
       <details open>
         <summary>What is CONNECT?</summary>
-        <p>CONNECT is Jeremy Panasuk’s offer to wire your life to a named agent desk — the Desk, the House Stack, or the Wire — with a human gate on send, spend, and public.</p>
+        <p>CONNECT is Jeremy Panasuk’s offer to wire your life to the agent path you pick: Hermes, Muse, Grok Bot, self-hosted, OpenClaw, or Gemini. You keep a human gate on send, spend, and public.</p>
       </details>
       <details>
         <summary>What does $99.99 include?</summary>
-        <p>$99.99 to start includes your first agent pick and all connections in the start package. Future connections are $1 each.</p>
+        <p>$99.99 is the one-time setup to wire your chosen path into your life, including the connections in the start package. Future connections are $1 each. It does not include the monthly plan you pay the agent vendor.</p>
+      </details>
+      <details>
+        <summary>Do I pay the agent vendor too?</summary>
+        <p>Yes, when that path has a vendor plan. Those prices are listed above with links to the official pages, checked November 10, 2026. If a path is free software, you may still pay for a model, an API, or the machine that runs it.</p>
       </details>
       <details>
         <summary>What are future connections at $1?</summary>
-        <p>After you start, each additional wire is $1. Loyalty is the runbook — not a survey. Price stays house-true: $99.99 to start, future wires $1.</p>
+        <p>After you start, each additional wire is $1. The path’s vendor plan, if it has one, stays a separate bill.</p>
       </details>
       <details>
-        <summary>Which agent should I pick first?</summary>
-        <p>The Desk if you want drafts and receipts. The House Stack if you want the house WSL stack. The Wire if you want the bounded wire into the world. Click a card — the email subject names who you picked.</p>
+        <summary>Which path should I pick first?</summary>
+        <p>Hermes or OpenClaw if you want to run an open agent yourself. Self-hosted if the models should live on your hardware. Muse if you want Meta’s consumer agent. Grok Bot if you already want The X Subscription. Gemini if you live in Google’s apps. Click a card and the email subject names who you picked.</p>
       </details>
       <details>
         <summary>Do I still control send, spend, and public?</summary>
@@ -593,7 +791,7 @@
   </section>
 
   <footer class="page">
-    <div>JEREMY PANASUK | THE CLOSER</div>
+    <div>JEREMY PANASUK | THE CLOSER · New Auburn, WI</div>
     <div>Customer loyalty is priceless.</div>
   </footer>
 
@@ -613,7 +811,7 @@
             if (st) st.textContent = on ? "Picked" : "Click to pick";
           });
           if (line) {
-            line.textContent = "Picked: " + name + " · $99.99 to start · all connections included · future wires $1";
+            line.textContent = "Picked: " + name + " · $99.99 to wire it up · start-package connections included · future wires $1";
           }
           if (cta) {
             cta.setAttribute(
