@@ -21,7 +21,7 @@ That is the lab that is actually running. 15 containers. Tabby Tavern UNIFIED. N
 Hunt board right now, from APPLICATIONS.xlsx, 3:12 AM CT: 32 roles tracked. 20 applied (each with a confirm: Gmail / Lever / Ashby / Indeed / LinkedIn sent). 7 pipeline. 4 withdrew. 1 rejected. Zero recruiter screens, hiring-manager loops, onsites, offers, or ghosts.
 
 Live packets, GitHub Pages + Hugging Face twins, HTML resume with a Download PDF button (no iframe):
-Paylocity MTO · Cresta ADM · Edisyl FDE · Palantir Warp Speed · Palantir American Tech · Carex Founding FDE · Toloka ADP · THE CLOSER.
+THE CLOSER.
 
 Tracking hub
 https://jpanasuk-netizen.github.io/the-closer/

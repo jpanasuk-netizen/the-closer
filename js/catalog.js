@@ -11,19 +11,15 @@
     ["hunt.html", "Hunt"],
     ["skill-matrix.html", "Matrix"],
     ["CONNECT_YOUR_LIFE.html", "Agents"],
-    ["week/2026-09-17_24/", "Sep 17–24"],
-    ["week/2026-09-22_28/", "Sep 22–28"]
+    ["week/2026-11-13_20/", "Nov 13–20"],
+    ["week/2026-11-06_12/", "Nov 6–12"],
+    ["week/2026-10-29_11-05/", "Oct 29–Nov 5"],
+    ["week/2026-09-22_28/", "Sep 22–28"],
+    ["week/2026-09-17_24/", "Sep 17–24"]
   ];
 
   var packets = [
-    ["Closer", "https://jpanasuk-netizen.github.io/the-closer/", "https://huggingface.co/spaces/jpanasuk/the-closer"],
-    ["American Tech", "https://jpanasuk-netizen.github.io/for-american-tech/", "https://huggingface.co/spaces/jpanasuk/for-american-tech"],
-    ["Paylocity", "https://jpanasuk-netizen.github.io/for-paylocity/", "https://huggingface.co/spaces/jpanasuk/for-paylocity"],
-    ["Carex", "https://jpanasuk-netizen.github.io/for-carex-fde/", "https://huggingface.co/spaces/jpanasuk/for-carex-fde"],
-    ["Cresta", "https://jpanasuk-netizen.github.io/for-cresta/", "https://huggingface.co/spaces/jpanasuk/for-cresta"],
-    ["Edisyl", "https://jpanasuk-netizen.github.io/for-edisyl/", "https://huggingface.co/spaces/jpanasuk/for-edisyl"],
-    ["Toloka", "https://jpanasuk-netizen.github.io/for-toloka/", "https://huggingface.co/spaces/jpanasuk/for-toloka"],
-    ["Warp Speed", "https://jpanasuk-netizen.github.io/for-warp-speed/", "https://huggingface.co/spaces/jpanasuk/for-warp-speed"]
+    ["Closer", "https://jpanasuk-netizen.github.io/the-closer/", "https://huggingface.co/spaces/jpanasuk/the-closer"]
   ];
 
   var file = (location.pathname.split("/").pop() || "").split("?")[0];
